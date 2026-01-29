@@ -1,0 +1,400 @@
+/* src/App.css */
+
+/* Base */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --p2-blue: #1f33ff;
+  --panel-bg: rgba(255,255,255,0.88);
+  --panel-radius: 22px;
+  --panel-shadow: 0 10px 28px rgba(0,0,0,0.10);
+}
+
+/* Keep menu usable */
+.btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.btn:hover { background: #f0f0f0; }
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.toggle-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.toggle-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Notices */
+.notice {
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 13px;
+}
+.notice-loading { background: #fff8e1; border: 1px solid #ffe082; }
+.notice-error   { background: #ffebee; border: 1px solid #ef9a9a; }
+
+.overlayNotice{
+  position: absolute;
+  left: 16px;
+  top: 64px;
+  z-index: 2000;
+  max-width: 320px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: var(--p2-blue);
+  background: var(--panel-bg);
+  box-shadow: var(--panel-shadow);
+}
+
+/* SPLASH (Figma style) */
+.splash {
+  height: 100vh;
+  background: #dcdcdc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splashCard {
+  width: 330px;
+  border-radius: var(--panel-radius);
+  background: rgba(255,255,255,0.90);
+  box-shadow: var(--panel-shadow);
+  padding: 26px 28px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: var(--p2-blue);
+}
+
+.splashCard h1 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.splashCard .subtitle {
+  margin: 0 0 16px;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.regionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.regionOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: var(--p2-blue);
+  font-size: 13px;
+}
+
+.regionOption input {
+  accent-color: #f2c300; /* yellow like your prototype */
+}
+
+.regionName {
+  user-select: none;
+}
+
+/* Continue button */
+.continueBtn {
+  margin-top: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: rgba(255,255,255,0.85);
+  box-shadow: var(--panel-shadow);
+  color: var(--p2-blue);
+}
+
+.continueBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* --- Logo bottom-left --- */
+.p2Logo {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  width: 120px; /* tweak as needed */
+  height: auto;
+  z-index: 2000;
+  opacity: 0.95;
+}
+
+.regionBtn{
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.regionBtn:hover{
+  opacity: 0.85;
+}
+
+.fakeCheckbox{
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.18);
+  flex: 0 0 auto;
+}
+
+.splashHint{
+  margin-top: 14px;
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+/* MAP + OVERLAYS */
+.mapShell{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #ddd;
+}
+
+/* Back button pill */
+.backBtn{
+  position: absolute;
+  top: 16px;
+  left: 52px;
+  z-index: 1500;
+  background: rgba(255,255,255,0.88);
+  box-shadow: var(--panel-shadow);
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: var(--p2-blue);
+  font-size: 12px;
+}
+
+/* Right stacked panels */
+.rightPanels{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding-right: 4px; /* tiny scrollbar breathing room */
+}
+
+.panel{
+  width: 330px;
+  background: var(--panel-bg);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
+  padding: 18px 18px;
+
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: var(--p2-blue);
+}
+
+.panel h3{
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.panel h4{
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.panelSub{
+  margin: 0 0 10px;
+  font-size: 11px;
+  line-height: 1.25;
+  opacity: 0.92;
+}
+
+.panelRow{
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 12px;
+  margin: 6px 0;
+}
+
+.panelInput{
+  width: 84px;
+  padding: 4px 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(31,51,255,0.25);
+  background: rgba(255,255,255,0.65);
+  color: var(--p2-blue);
+  font: inherit;
+}
+
+.panelNote{
+  margin-top: 8px;
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.panel.about{
+  padding: 18px;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+}
+
+.divider{
+  height: 1px;
+  background: rgba(31,51,255,0.15);
+  margin: 10px 0;
+}
+
+.panelGrid{
+  display: flex;
+  flex-direction: column;
+}
+
+.legendSwatch{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #f2c300;
+  border-radius: 2px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Bottom info + cards */
+.bottomMeta{
+  position: absolute;
+  bottom: 148px;
+  left: 16px;
+  z-index: 1500;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: var(--p2-blue);
+  font-size: 12px;
+}
+
+.bottomPanels{
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 1500;
+  display: flex;
+  gap: 14px;
+}
+
+.panel.small{
+  width: 260px;
+  height: 118px;
+  padding: 14px 14px;
+}
+
+.miniStat{
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+.miniPct{
+  display: inline-block;
+  background: rgba(242,195,0,0.95);
+  color: #2a2a2a;
+  padding: 3px 6px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.miniRow{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 2px 0;
+}
+
+/* Leaflet grayscale like Figma */
+.leaflet-container .base-map{
+  filter: grayscale(100%) brightness(92%) contrast(92%) !important;
+}
+
+/* Optional: hide attribution to match the clean prototype */
+.leaflet-control-attribution{
+  display: none;
+}
+
+/* Keep zoom control top-left; add some breathing room */
+.leaflet-top.leaflet-left{
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.regionBtn{
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.regionBtn:hover{ opacity: 0.85; }
+
+.fakeCheckbox{
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: rgba(0,0,0,0.18);
+}

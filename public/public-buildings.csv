@@ -1,0 +1,87 @@
+Facility type,P2GreeN Region,Name,"Coordinates (Lat, Long)",Yearly presence/ capacity,Source,Est. Attendance/Event/ uriners,Events/Year,Urine/Person/Event (L),Total Urine/Year
+Airport,"Campania, Italy",Naples International Airport (NAP),"40.886, 14.290",12394911,Wikipedia,7436947,,0.2,1487389
+Airport,"Campania, Italy",Salerno Costa d'Amalfi Airport (QSR),"40.620, 14.913",179123,Wikipedia,107474,,0.2,21495
+Airport,"Thessaly, Greece",Nea Anchialos National Airport (VOL),"39.220, 22.794",41357,Wikipedia,24814,,0.2,4963
+Airport,"Attica, Greece",Athens International Airport (ATH),"37.936, 23.947",31894511,Athens Airport Guide,19136707,,0.2,3827341
+Airport,"Pest County, Hungary",Budapest Ferenc Liszt Int'l Airport (BUD),"47.437, 19.255",17600000,Wikipedia,10560000,,0.2,2112000
+Airport,"Île-de-France, France",Charles de Gaulle Airport (CDG),"49.009, 2.547",70290260,Wikipedia,42174156,,0.2,8434831
+Airport,"Île-de-France, France",Paris Orly Airport (ORY),"48.726, 2.365",33123027,Wikipedia,19873816,,0.2,3974763
+Airport,"Île-de-France, France",Paris–Le Bourget Airport (LBG),"48.969, 2.441",52935,Wikipedia,31761,,0.2,6352
+University,"Campania, Italy",University of Naples Federico II,"40.842, 14.252",80000,unina.it,,,,
+University,"Campania, Italy",University of Salerno,"40.770, 14.790",40000,unisa.it,,,,
+University,"Campania, Italy",University of Naples Federico II,"40.842, 14.252",80000,https://en.wikipedia.org/wiki/University_of_Naples_Federico_II,,,,
+University,"Campania, Italy",University of Naples L'Orientale,"40.849, 14.260",10000,https://en.wikipedia.org/wiki/University_of_Naples_L%27Orientale,,,,
+University,"Campania, Italy",University of Naples Parthenope,"40.835, 14.248",16000,https://en.wikipedia.org/wiki/Parthenope_University_of_Naples,,,,
+University,"Campania, Italy",University of Salerno,"40.770, 14.790",40000,https://en.wikipedia.org/wiki/University_of_Salerno,,,,
+University,"Campania, Italy",Suor Orsola Benincasa University of Naples,"40.843, 14.244",8000,https://en.wikipedia.org/wiki/Suor_Orsola_Benincasa_University_of_Naples,,,,
+University,"Campania, Italy",Pegaso Telematic University,"40.847, 14.252",90000,https://en.wikipedia.org/wiki/Pegaso_University,,,,
+University,"Campania, Italy","University of Campania ""Luigi Vanvitelli""","41.072, 14.332",29000,https://en.wikipedia.org/wiki/University_of_Campania_Luigi_Vanvitelli,,,,
+University,"Thessaly, Greece",University of Thessaly,"39.363, 22.942",12000,edurank.org,,,,
+University,"Pest County, Hungary",Eötvös Loránd University (ELTE),"47.481, 19.055",28000,https://en.wikipedia.org/wiki/Eötvös_Loránd_University,,,,
+University,"Pest County, Hungary",Budapest University of Technology and Economics (BME),"47.477, 19.046",20000,https://en.wikipedia.org/wiki/Budapest_University_of_Technology_and_Economics,,,,
+University,"Pest County, Hungary",Corvinus University of Budapest,"47.485, 19.060",11000,https://en.wikipedia.org/wiki/Corvinus_University_of_Budapest,,,,
+University,"Pest County, Hungary",Semmelweis University,"47.490, 19.076",15000,https://en.wikipedia.org/wiki/Semmelweis_University,,,,
+University,"Pest County, Hungary",Óbuda University,"47.541, 19.040",10000,https://en.wikipedia.org/wiki/Óbuda_University,,,,
+University,"Pest County, Hungary",Hungarian University of Fine Arts,"47.509, 19.069",1500,https://en.wikipedia.org/wiki/Hungarian_University_of_Fine_Arts,,,,
+University,"Pest County, Hungary",Liszt Ferenc Academy of Music,"47.503, 19.064",1200,https://en.wikipedia.org/wiki/Liszt_Ferenc_Academy_of_Music,,,,
+University,"Pest County, Hungary",Moholy-Nagy University of Art and Design,"47.472, 19.027",2000,https://en.wikipedia.org/wiki/Moholy-Nagy_University_of_Art_and_Design,,,,
+University,"Pest County, Hungary",National University of Public Service,"47.524, 19.083",8000,https://en.wikipedia.org/wiki/National_University_of_Public_Service,,,,
+University,"Attica, Greece",National and Kapodistrian University of Athens,"37.968, 23.765",70000,https://en.wikipedia.org/wiki/National_and_Kapodistrian_University_of_Athens,,,,
+University,"Attica, Greece",National Technical University of Athens (NTUA),"37.978, 23.732",15000,https://en.wikipedia.org/wiki/National_Technical_University_of_Athens,,,,
+University,"Attica, Greece",University of West Attica,"38.011, 23.679",35000,https://en.wikipedia.org/wiki/University_of_West_Attica,,,,
+University,"Attica, Greece",Harokopio University,"37.964, 23.707",4000,https://en.wikipedia.org/wiki/Harokopio_University,,,,
+University,"Attica, Greece",Athens University of Economics and Business (AUEB),"38.015, 23.732",12000,https://en.wikipedia.org/wiki/Athens_University_of_Economics_and_Business,,,,
+University,"Attica, Greece",Panteion University of Social and Political Sciences,"37.951, 23.722",19000,https://en.wikipedia.org/wiki/Panteion_University,,,,
+University,"Attica, Greece",University of Piraeus,"37.941, 23.653",10000,https://en.wikipedia.org/wiki/University_of_Piraeus,,,,
+University,"Attica, Greece",School of Pedagogical and Technological Education (ASPETE),"38.016, 23.783",5000,https://en.wikipedia.org/wiki/School_of_Pedagogical_and_Technological_Education,,,,
+University,"Île-de-France, France",Paris Cit√© University,"48.847, 2.355",64100,https://en.wikipedia.org/wiki/Paris_Cit√©_University,,,,
+University,"Île-de-France, France",Sorbonne University,"48.847, 2.355",55600,https://en.wikipedia.org/wiki/Sorbonne_University,,,,
+University,"Île-de-France, France",Paris-Saclay University,"48.710, 2.166",48000,https://en.wikipedia.org/wiki/Paris-Saclay_University,,,,
+University,"Île-de-France, France",Paris 1 Panth√©on-Sorbonne University,"48.847, 2.355",45200,https://en.wikipedia.org/wiki/Panth√©on-Sorbonne_University,,,,
+University,"Île-de-France, France",Paris Nanterre University,"48.896, 2.215",32000,https://en.wikipedia.org/wiki/Paris_Nanterre_University,,,,
+University,"Île-de-France, France",Paris-Est Cr√©teil University,"48.790, 2.455",32100,https://en.wikipedia.org/wiki/Paris-Est_Cr√©teil_University,,,,
+University,"Île-de-France, France",CY Cergy Paris University,"49.037, 2.062",26500,https://en.wikipedia.org/wiki/CY_Cergy_Paris_University,,,,
+University,"Île-de-France, France",Sorbonne Paris North University,"48.953, 2.360",25000,https://en.wikipedia.org/wiki/Sorbonne_Paris_North_University,,,,
+University,"Île-de-France, France",Panth√©on-Assas University (Paris 2),"48.847, 2.355",23000,https://en.wikipedia.org/wiki/Panth√©on-Assas_University,,,,
+University,"Île-de-France, France",Sorbonne Nouvelle University (Paris 3),"48.847, 2.355",19400,https://en.wikipedia.org/wiki/Sorbonne_Nouvelle_University,,,,
+University,"Île-de-France, France",Paris 8 University Vincennes-Saint-Denis,"48.936, 2.357",22000,https://en.wikipedia.org/wiki/Paris_8_University,,,,
+University,"Île-de-France, France",University of Versailles Saint-Quentin-en-Yvelines,"48.801, 2.130",19000,https://en.wikipedia.org/wiki/University_of_Versailles_Saint-Quentin-en-Yvelines,,,,
+University,"Île-de-France, France",PSL University (Paris Sciences et Lettres),"48.847, 2.355",17000,https://en.wikipedia.org/wiki/PSL_University,,,,
+University,"Île-de-France, France",Gustave Eiffel University,"48.841, 2.587",17000,https://en.wikipedia.org/wiki/Gustave_Eiffel_University,,,,
+University,"Île-de-France, France",√âcole Polytechnique,"48.713, 2.210",8500,https://en.wikipedia.org/wiki/√âcole_Polytechnique,,,,
+University,"Île-de-France, France",University of √âvry Val d'Essonne,"48.632, 2.440",6500,https://en.wikipedia.org/wiki/University_of_√âvry_Val_d%27Essonne,,,,
+University,"Île-de-France, France",Catholic University of Paris,"48.846, 2.320",10000,https://en.wikipedia.org/wiki/Catholic_University_of_Paris,,,,
+University,"Île-de-France, France",American University of Paris,"48.855, 2.304",1200,https://en.wikipedia.org/wiki/American_University_of_Paris,,,,
+Stadium,"Campania, Italy",Stadio Diego Armando Maradona,"40.827, 14.193",54726,https://en.wikipedia.org/wiki/Stadio_Diego_Armando_Maradona,40000,25,0.4,600000
+Stadium,"Campania, Italy",Stadio Arechi,"40.646, 14.823",37000,https://en.wikipedia.org/wiki/Stadio_Arechi,25000,20,0.4,300000
+Stadium,"Campania, Italy",Stadio Ciro Vigorito,"41.133, 14.782",16767,https://en.wikipedia.org/wiki/Stadio_Ciro_Vigorito,12000,15,0.4,108000
+Stadium,"Attica, Greece","Olympic Stadium ""Spyros Louis""","38.039, 23.789",69618,https://en.wikipedia.org/wiki/Olympic_Stadium_(Athens),50000,30,0.4,900000
+Stadium,"Attica, Greece",Karaiskakis Stadium,"37.946, 23.664",33334,https://en.wikipedia.org/wiki/Georgios_Karaiskakis_Stadium,25000,25,0.4,375000
+Stadium,"Attica, Greece",Agia Sophia Stadium,"38.039, 23.684",31500,https://en.wikipedia.org/wiki/Agia_Sophia_Stadium,25000,20,0.4,300000
+Stadium,"Attica, Greece",Stadio Apostolos Nikolaidis,"37.983, 23.748",16003,https://en.wikipedia.org/wiki/Apostolos_Nikolaidis_Stadium,12000,18,0.4,129600
+Stadium,"Thessaly, Greece",Panthessaliko Stadium,"39.362, 22.942",22140,https://en.wikipedia.org/wiki/Panthessaliko_Stadium,15000,20,0.4,180000
+Stadium,"Thessaly, Greece",AEL FC Arena,"39.639, 22.416",16118,https://en.wikipedia.org/wiki/AEL_FC_Arena,12000,15,0.4,108000
+Stadium,"Pest County, Hungary",Puskás Aréna,"47.503, 19.098",67215,https://en.wikipedia.org/wiki/Puskás_Aréna,50000,25,0.4,750000
+Stadium,"Pest County, Hungary",Groupama Aréna,"47.476, 19.097",21689,https://en.wikipedia.org/wiki/Groupama_Aréna,17000,25,0.4,255000
+Stadium,"Pest County, Hungary",Bozsik Aréna,"47.463, 19.105",8200,https://en.wikipedia.org/wiki/Bozsik_Aréna,6000,20,0.4,72000
+Stadium,"Pest County, Hungary",Illovszky Rudolf Stadion,"47.514, 19.082",5145,https://en.wikipedia.org/wiki/Illovszky_Rudolf_Stadion,4000,20,0.4,48000
+Stadium,"Île-de-France, France",Stade de France,"48.924, 2.360",81338,https://en.wikipedia.org/wiki/Stade_de_France,60000,35,0.4,1260000
+Stadium,"Île-de-France, France",Parc des Princes,"48.841, 2.253",47929,https://en.wikipedia.org/wiki/Parc_des_Princes,40000,30,0.4,720000
+Stadium,"Île-de-France, France",Stade Sébastien Charléty,"48.821, 2.345",20000,https://en.wikipedia.org/wiki/Stade_Sébastien_Charléty,15000,20,0.4,180000
+Stadium,"Île-de-France, France",Stade Jean-Bouin,"48.841, 2.253",20000,https://en.wikipedia.org/wiki/Stade_Jean-Bouin,15000,15,0.4,135000
+Train Station,"Île-de-France, France",Gare du Nord,"48.880, 2.355",211700000,https://en.wikipedia.org/wiki/List_of_busiest_railway_stations_in_France,31755000,,0.4,12702000
+Train Station,"Île-de-France, France",Gare Saint-Lazare,"48.879, 2.325",102900000,https://en.wikipedia.org/wiki/List_of_busiest_railway_stations_in_France,15435000,,0.4,6174000
+Train Station,"Campania, Italy",Napoli Centrale,"40.852, 14.268",50000000,https://www.worldatlas.com/articles/the-10-busiest-railway-stations-in-italy.html,7500000,,0.4,3000000
+Train Station,"Attica, Greece",Athens Central Station (Larissa Station),"37.992, 23.721",,https://en.wikipedia.org/wiki/Railway_stations_in_Greece,,,,
+Train Station,"Thessaly, Greece",Volos Railway Station,"39.361, 22.942",,https://en.wikipedia.org/wiki/Railway_stations_in_Greece,,,,
+Train Station,"Pest County, Hungary",Budapest Keleti,"47.500, 19.083",12000000,https://www.seat61.com/stations/budapest-keleti.htm,1800000,,0.4,720000
+Train Station,"Pest County, Hungary",Budapest Nyugati,"47.510, 19.056",18000000,https://www.hawkinsbrown.com/projects/nyugati-railway-station/,2700000,,0.4,1080000
+Train Station,"Pest County, Hungary",Budapest Déli,"47.488, 19.024",,https://en.wikipedia.org/wiki/Budapest_D%C3%A9li_railway_station,,,,
+Prison,"Campania, Italy",Casa Circondariale di Napoli Poggioreale,"40.861, 14.276","1,900",https://en.wikipedia.org/wiki/Naples_Poggioreale_prison,,,1.3,901550
+Prison,"Campania, Italy",Casa Circondariale di Santa Maria Capua Vetere,"41.084, 14.247","1,000",https://en.wikipedia.org/wiki/Santa_Maria_Capua_Vetere_prison,,,1.3,474500
+Prison,"Attica, Greece",Korydallos Prison,"37.984, 23.650","1,800",https://en.wikipedia.org/wiki/Korydallos_Prison,,,1.3,854100
+Prison,"Attica, Greece",Avlona Special Juvenile Detention Establishment,"38.220, 23.800",500,https://en.wikipedia.org/wiki/Avlona_Prison,,,1.3,237250
+Prison,"Thessaly, Greece",Volos Special Juvenile Detention Establishment,"39.362, 22.942",300,https://en.wikipedia.org/wiki/Volos_Prison,,,1.3,142350
+Prison,"Pest County, Hungary",Váci Fegyház és Börtön,"47.782, 19.122",700,https://en.wikipedia.org/wiki/V%C3%A1c_Prison,,,1.3,332150
+Prison,"Île-de-France, France",Centre Pénitentiaire de Fresnes,"48.765, 2.325","1,700",https://en.wikipedia.org/wiki/Fresnes_Prison,,,1.3,806650
+Prison,"Île-de-France, France",Centre Pénitentiaire de Fleury-Mérogis,"48.636, 2.370","3,800",https://en.wikipedia.org/wiki/Fleury-M%C3%A9rogis_Prison,,,1.3,1803100
