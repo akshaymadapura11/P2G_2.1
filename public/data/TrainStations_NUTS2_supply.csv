@@ -1,0 +1,3 @@
+name,name_en,lat,lon,kg_n_per_year,country_code,country,province,yearly_presence_capacity,__type
+Napoli Centrale,Napoli Centrale,40.852,14.268,35000,IT,Italy,Campania,50000000,trainStations
+Athens Central Station (Larissa Station),Athens Central Station (Larissa Station),37.992,23.721,700,GR,Greece,Attica,1000000,trainStations

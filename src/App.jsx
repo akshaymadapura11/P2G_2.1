@@ -1,7 +1,6 @@
 // src/App.jsx
 import { Routes, Route, Navigate, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
-import * as turf from "@turf/turf";
 
 import Splash from "./pages/Splash";
 import Menu from "./pages/Menu";
@@ -15,36 +14,6 @@ import "./App.css";
 
 const landuseTypes = ["farmland", "plantation", "orchard", "vineyard", "greenhouse_horticulture"];
 
-function buildCirclesAndUnion(points, radiusKm) {
-  const valid = (points || []).filter(
-    (p) => Number.isFinite(Number(p.lat)) && Number.isFinite(Number(p.lon))
-  );
-
-  if (!valid.length || !Number.isFinite(radiusKm) || radiusKm <= 0) {
-    return { circlesFC: turf.featureCollection([]), unionPolygon: null, center: null };
-  }
-
-  const circles = valid.map((p) =>
-    turf.circle([Number(p.lon), Number(p.lat)], radiusKm, { units: "kilometers", steps: 64 })
-  );
-
-  const circlesFC = turf.featureCollection(circles);
-
-  let merged = circles[0];
-  for (let i = 1; i < circles.length; i++) {
-    try {
-      const u = turf.union(merged, circles[i]);
-      if (u) merged = u;
-    } catch {}
-  }
-
-  return {
-    circlesFC,
-    unionPolygon: merged,
-    center: [Number(valid[0].lat), Number(valid[0].lon)],
-  };
-}
-
 function MapProvincePage() {
   const nav = useNavigate();
   const { country, province } = useParams();
@@ -53,7 +22,7 @@ function MapProvincePage() {
   const decodedProvince = useMemo(() => decodeURIComponent(province || ""), [province]);
 
   const [radiusKm, setRadiusKm] = useState(2);
-  const [markerRadius, setMarkerRadius] = useState(6);
+  
 
   const [toggles, setToggles] = useState(() =>
     landuseTypes.reduce((o, t) => ({ ...o, [t]: true }), {})
@@ -95,19 +64,33 @@ function MapProvincePage() {
       .flatMap(([, rows]) => rows);
   }, [extraData.byKey, extraToggles]);
 
-  const activeSupplyPoints = useMemo(() => {
+  // ✅ Build supply points list for drawing circles (Leaflet circles, not Turf)
+  const supplyCircleCenters = useMemo(() => {
     const pts = [];
+
     if (showWtp) {
-      for (const r of wtp.effectiveRows || []) pts.push({ lat: r.lat ?? r.__lat, lon: r.lon ?? r.__lon });
+      for (const r of wtp.effectiveRows || []) {
+        const lat = Number(r.lat ?? r.__lat);
+        const lon = Number(r.lon ?? r.__lon);
+        if (Number.isFinite(lat) && Number.isFinite(lon)) pts.push({ lat, lon, kind: "wtp" });
+      }
     }
-    for (const p of extraPointsToShow || []) pts.push({ lat: p.lat, lon: p.lon });
-    return pts.filter((p) => p.lat != null && p.lon != null);
+
+    for (const p of extraPointsToShow || []) {
+      const lat = Number(p.lat);
+      const lon = Number(p.lon);
+      if (Number.isFinite(lat) && Number.isFinite(lon)) pts.push({ lat, lon, kind: p.__type || "extra" });
+    }
+
+    return pts;
   }, [showWtp, wtp.effectiveRows, extraPointsToShow]);
 
-  const aoi = useMemo(() => buildCirclesAndUnion(activeSupplyPoints, radiusKm), [activeSupplyPoints, radiusKm]);
-
-  // Start at first WTP if possible, else first active supply point
-  const initialMapCenter = wtp.firstPointCenter || aoi.center;
+  // ✅ Initial center: always first WTP if present, else first extra point
+  const initialMapCenter = useMemo(() => {
+    if (wtp.firstPointCenter) return wtp.firstPointCenter;
+    if (extraPointsToShow?.length) return [Number(extraPointsToShow[0].lat), Number(extraPointsToShow[0].lon)];
+    return null;
+  }, [wtp.firstPointCenter, extraPointsToShow]);
 
   // Supplies for graphs
   const wtpSupplyKg = showWtp ? Number(wtp.totalProduction || 0) : 0;
@@ -126,12 +109,17 @@ function MapProvincePage() {
         key={`${decodedCountry}__${decodedProvince}`}
         center={initialMapCenter}
         searchRadiusKm={radiusKm}
-        unionPolygon={aoi.unionPolygon}
-        circlesFC={aoi.circlesFC}
+
+        // ✅ circles drawn by Leaflet now
+        supplyCircleCenters={supplyCircleCenters}
+        circleRadiusKm={radiusKm}
+
         locationRows={showWtp ? wtp.effectiveRows : []}
         totalProduction={showWtp ? wtp.totalProduction : 0}
+
         extraPoints={extraPointsToShow}
-        markerRadius={markerRadius}
+        
+
         features={visibleFeatures}
         onDataUpdate={setFeatures}
         landuseToggles={toggles}
@@ -144,8 +132,7 @@ function MapProvincePage() {
       <Dashboard
         radiusKm={radiusKm}
         onRadiusKmChange={setRadiusKm}
-        markerRadius={markerRadius}
-        onMarkerRadiusChange={setMarkerRadius}
+        
         landuseTypes={landuseTypes}
         toggles={toggles}
         onToggle={(t) => setToggles((p) => ({ ...p, [t]: !p[t] }))}

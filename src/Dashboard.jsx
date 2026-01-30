@@ -27,6 +27,9 @@ const SUPPLY_COLORS = {
   stadiums: "#34a853",
   universities: "#a142f4",
   chefExpress: "#d93025",
+  trainStations: "#00acc1",
+  festivals: "#fb8c00",
+  construction: "#6d4c41",
 };
 
 function swatchStyle(hex) {
@@ -64,9 +67,6 @@ export default function Dashboard({
   extraDatasets = [],
   extraToggles = {},
   onToggleExtra = () => {},
-
-  markerRadius = 6,
-  onMarkerRadiusChange = () => {},
 
   radiusKm = 2,
   onRadiusKmChange = () => {},
@@ -141,24 +141,6 @@ export default function Dashboard({
               onChange={(e) => onRadiusKmChange(Number(e.target.value))}
             />
           </label>
-
-          <div className="divider" />
-
-          <div className="panelSub" style={{ marginBottom: 6 }}>
-            Circle marker radius (datasets)
-          </div>
-
-          <label className="panelRow" style={{ alignItems: "center" }}>
-            <span style={{ width: 140 }}>Radius (px)</span>
-            <input
-              className="panelInput"
-              type="number"
-              min="1"
-              step="1"
-              value={markerRadius}
-              onChange={(e) => onMarkerRadiusChange(Number(e.target.value))}
-            />
-          </label>
         </div>
 
         <div className="panel">
@@ -196,7 +178,11 @@ export default function Dashboard({
       </div>
 
       <div className="bottomPanels">
-        <SupplyCard title="Waste water treatment plants supply vs demand per year" supplyKg={wtpSupplyKg} demandKg={demandKg} />
+        <SupplyCard
+          title="Waste water treatment plants supply vs demand per year"
+          supplyKg={wtpSupplyKg}
+          demandKg={demandKg}
+        />
         <SupplyCard title="Public buildings supply vs demand per year" supplyKg={publicSupplyKg} demandKg={demandKg} />
         <SupplyCard title="Total supply vs demand per year" supplyKg={totalSupplyKg} demandKg={demandKg} />
       </div>

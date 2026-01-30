@@ -1,19 +1,20 @@
 // src/LandUseMap.jsx
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import {
   MapContainer,
   TileLayer,
-  GeoJSON,
   Marker,
   Popup,
   CircleMarker,
   LayerGroup,
+  Circle,
+  GeoJSON,
   useMap,
 } from "react-leaflet";
 import L from "leaflet";
 import osmtogeojson from "osmtogeojson";
-import area from "@turf/area";
 import * as turf from "@turf/turf";
+import area from "@turf/area";
 import "leaflet/dist/leaflet.css";
 
 /* ---------------- Icons ---------------- */
@@ -41,6 +42,9 @@ const DATASET_COLORS = {
   stadiums: "#34a853",
   universities: "#a142f4",
   chefExpress: "#d93025",
+  trainStations: "#00acc1",
+  festivals: "#fb8c00",
+  construction: "#6d4c41",
 };
 
 function normalizeDatasetKey(k) {
@@ -48,13 +52,13 @@ function normalizeDatasetKey(k) {
   if (!s) return "";
   const lower = s.toLowerCase();
   if (lower === "chefexpress" || lower === "cheffexpress") return "chefExpress";
-  return lower;
+  // keep camelCase keys like trainStations
+  return s;
 }
 
 function datasetColorFor(point) {
   const raw = point?.__type || point?.type || point?.dataset || "";
   const key = normalizeDatasetKey(raw);
-  if (key === "university") return DATASET_COLORS.universities;
   return DATASET_COLORS[key] || "#444";
 }
 
@@ -79,7 +83,7 @@ const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 async function fetchOverpassWithBackoff(query, abortSignal, cacheKey) {
   if (overpassCache.has(cacheKey)) return overpassCache.get(cacheKey);
 
-  const maxAttempts = 5;
+  const maxAttempts = 4;
   let endpointIdx = 0;
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
@@ -99,8 +103,8 @@ async function fetchOverpassWithBackoff(query, abortSignal, cacheKey) {
       return gj;
     } catch (err) {
       if (abortSignal?.aborted) throw err;
-      const backoff = Math.min(2000 * 2 ** attempt, 12000) + Math.random() * 500;
       endpointIdx++;
+      const backoff = Math.min(1500 * 2 ** attempt, 9000) + Math.random() * 400;
       await sleep(backoff);
     }
   }
@@ -108,63 +112,7 @@ async function fetchOverpassWithBackoff(query, abortSignal, cacheKey) {
   throw new Error("Overpass failed after multiple retries");
 }
 
-function circleFeatureToPolyString(circleFeature) {
-  if (!circleFeature?.geometry) return null;
-
-  let f = circleFeature;
-  try {
-    f = turf.simplify(circleFeature, { tolerance: 0.003, highQuality: false });
-  } catch {}
-
-  const g = f.geometry;
-  let outer = null;
-
-  if (g.type === "Polygon") outer = g.coordinates?.[0];
-  else if (g.type === "MultiPolygon") outer = g.coordinates?.[0]?.[0];
-
-  if (!outer || outer.length < 4) return null;
-
-  const parts = [];
-  for (const [lon, lat] of outer) {
-    if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
-    parts.push(`${lat} ${lon}`);
-  }
-  return parts.length >= 4 ? parts.join(" ") : null;
-}
-
-function clipToAllCircles(tf, circlesFC) {
-  const circles = circlesFC?.features || [];
-  if (!circles.length) return null;
-
-  const parts = [];
-  for (const c of circles) {
-    try {
-      const inter = turf.intersect(tf, c);
-      if (inter) parts.push(inter);
-    } catch {}
-  }
-
-  if (parts.length === 0) {
-    try {
-      const ctr = turf.centroid(tf);
-      for (const c of circles) {
-        if (turf.booleanPointInPolygon(ctr, c)) return tf;
-      }
-    } catch {}
-    return null;
-  }
-
-  let merged = parts[0];
-  for (let i = 1; i < parts.length; i++) {
-    try {
-      const u = turf.union(merged, parts[i]);
-      if (u) merged = u;
-    } catch {}
-  }
-  return merged;
-}
-
-/* ✅ Recenter helper: prevents ocean start */
+/* ✅ Recenter helper */
 function RecenterOnChange({ targetCenter, zoom = 12 }) {
   const map = useMap();
   const lastKeyRef = useRef("");
@@ -192,21 +140,13 @@ function asNum(v) {
 }
 
 function pickWtpName(pt, fallback) {
-  return (
-    pt?.name ||
-    pt?.wwtp_name ||
-    pt?.WTP ||
-    pt?.plant_name ||
-    pt?.["wwtp_name"] ||
-    fallback
-  );
+  return pt?.name || pt?.wwtp_name || pt?.plant_name || pt?.["wwtp_name"] || fallback;
 }
 
 function pickPeValue(pt) {
   return (
     asNum(pt?.peValue) ??
     asNum(pt?.capacity_pe) ??
-    asNum(pt?.capacity_p_e) ??
     asNum(pt?.pe) ??
     asNum(pt?.population_equivalent) ??
     null
@@ -214,7 +154,6 @@ function pickPeValue(pt) {
 }
 
 function pickWtpProduction(pt) {
-  // depending on your csv, production may be kg/year or liters/year
   return (
     asNum(pt?.production) ??
     asNum(pt?.liters_per_year) ??
@@ -225,25 +164,109 @@ function pickWtpProduction(pt) {
   );
 }
 
+/* ✅ One bbox around all circle centers to fetch quickly */
+function bboxAroundCenters(centers, radiusKm) {
+  const pts = (centers || [])
+    .map((p) => ({ lat: asNum(p.lat), lon: asNum(p.lon) }))
+    .filter((p) => p.lat != null && p.lon != null);
+
+  if (!pts.length) return null;
+
+  const km = Number(radiusKm);
+  const r = Number.isFinite(km) && km > 0 ? km : 0;
+
+  const latPad = r / 111;
+
+  let minLat = Infinity,
+    maxLat = -Infinity,
+    minLon = Infinity,
+    maxLon = -Infinity;
+
+  for (const p of pts) {
+    const cos = Math.cos((p.lat * Math.PI) / 180) || 1;
+    const lonPad = r / (111 * cos);
+
+    minLat = Math.min(minLat, p.lat - latPad);
+    maxLat = Math.max(maxLat, p.lat + latPad);
+    minLon = Math.min(minLon, p.lon - lonPad);
+    maxLon = Math.max(maxLon, p.lon + lonPad);
+  }
+
+  return { south: minLat, west: minLon, north: maxLat, east: maxLon };
+}
+
+/* ✅ Build per-circle bbox list for prefiltering */
+function buildCircleBBoxes(centers, radiusKm) {
+  const km = Number(radiusKm);
+  if (!Number.isFinite(km) || km <= 0) return [];
+
+  const out = [];
+  for (const p of centers || []) {
+    const lat = asNum(p.lat);
+    const lon = asNum(p.lon);
+    if (lat == null || lon == null) continue;
+
+    const latPad = km / 111;
+    const cos = Math.cos((lat * Math.PI) / 180) || 1;
+    const lonPad = km / (111 * cos);
+
+    out.push({
+      lat,
+      lon,
+      minLat: lat - latPad,
+      maxLat: lat + latPad,
+      minLon: lon - lonPad,
+      maxLon: lon + lonPad,
+    });
+  }
+  return out;
+}
+
+/* ✅ SUPER FAST: centroid inside ANY circle using bbox prefilter + distance */
+function centroidInsideAnyCircle(polyFeature, circleBoxes, radiusKm) {
+  const km = Number(radiusKm);
+  if (!Number.isFinite(km) || km <= 0) return false;
+
+  let c;
+  try {
+    c = turf.centroid(polyFeature);
+  } catch {
+    return false;
+  }
+  const [cx, cy] = c?.geometry?.coordinates || [];
+  if (!Number.isFinite(cx) || !Number.isFinite(cy)) return false;
+
+  // bbox prefilter first, distance second
+  for (const b of circleBoxes || []) {
+    if (cy < b.minLat || cy > b.maxLat || cx < b.minLon || cx > b.maxLon) continue;
+
+    const d = turf.distance([cx, cy], [b.lon, b.lat], { units: "kilometers" });
+    if (d <= km) return true;
+  }
+  return false;
+}
+
 export default function LandUseMap({
+  center,
+  searchRadiusKm,
+
+  // circles
+  supplyCircleCenters = [],
+  circleRadiusKm = 2,
+
+  // markers
+  locationRows = [],
   extraPoints = [],
   markerRadius = 6,
 
-  center,
-  searchRadiusKm,
-  landuseToggles,
+  // polygons
+  landuseToggles = {},
   features = [],
-  onDataUpdate,
-
-  unionPolygon,
-  circlesFC,
-
-  locationRows = [],
+  onDataUpdate = () => {},
   totalProduction = 0,
 }) {
   const abortRef = useRef(null);
 
-  // choose best center:
   const firstWtpCenter = useMemo(() => {
     if (!locationRows?.length) return null;
     const pt = locationRows[0];
@@ -263,54 +286,59 @@ export default function LandUseMap({
   const safeCenter = firstWtpCenter || center || firstExtraCenter || null;
   const initialCenter = safeCenter || [0, 0];
 
-  const circlesSig = useMemo(() => {
-    try {
-      if (!circlesFC?.features?.length) return "circles-none";
-      const b = turf.bbox(circlesFC).map((n) => n.toFixed(6)).join("|");
-      return `n:${circlesFC.features.length}|b:${b}`;
-    } catch {
-      return "circles-fallback";
-    }
-  }, [circlesFC]);
+  const radiusMeters = useMemo(() => {
+    const km = Number(circleRadiusKm);
+    if (!Number.isFinite(km) || km <= 0) return 0;
+    return km * 1000;
+  }, [circleRadiusKm]);
 
-  const extraLayerKey = useMemo(() => {
-    const n = Array.isArray(extraPoints) ? extraPoints.length : 0;
-    return `extra:${n}|r:${markerRadius}`;
-  }, [extraPoints, markerRadius]);
+  const circleKey = useMemo(
+    () => `circles:${supplyCircleCenters.length}|km:${circleRadiusKm}`,
+    [supplyCircleCenters.length, circleRadiusKm]
+  );
 
+  // ✅ precomputed circle bboxes for fast filtering
+  const circleBoxesKey = useMemo(() => {
+    const bbox = bboxAroundCenters(supplyCircleCenters, searchRadiusKm);
+    const b = bbox
+      ? `${bbox.south.toFixed(4)},${bbox.west.toFixed(4)},${bbox.north.toFixed(4)},${bbox.east.toFixed(4)}`
+      : "none";
+    return `cb|r:${Number(searchRadiusKm || 0).toFixed(2)}|n:${supplyCircleCenters.length}|b:${b}`;
+  }, [supplyCircleCenters, searchRadiusKm]);
+
+  const circleBoxes = useMemo(() => {
+    return buildCircleBBoxes(supplyCircleCenters, searchRadiusKm);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [circleBoxesKey]);
+
+  /* ✅ FAST fetch + centroid filter (bbox prefilter added) */
   useEffect(() => {
-    if (!safeCenter || !searchRadiusKm) return;
-    if (!circlesFC?.features?.length) return;
-
     const enabled = Object.keys(LANDUSE_COLORS).filter((k) => landuseToggles?.[k]);
     if (!enabled.length) {
       onDataUpdate([]);
       return;
     }
-    const tags = enabled.join("|");
 
-    const statements = (circlesFC.features || [])
-      .map((c) => circleFeatureToPolyString(c))
-      .filter(Boolean)
-      .map((p) => `nwr["landuse"~"${tags}"](poly:"${p}");`)
-      .join("\n");
-
-    if (!statements) {
+    const bbox = bboxAroundCenters(supplyCircleCenters, searchRadiusKm);
+    if (!bbox) {
       onDataUpdate([]);
       return;
     }
 
-    const query = `
-      [out:json][timeout:180];
-      (
-        ${statements}
-      );
-      out body;
-      >;
-      out skel qt;
-    `;
+    const tags = enabled.join("|");
+    const { south, west, north, east } = bbox;
 
-    const cacheKey = `circlesPolyPOST|${tags}|${circlesSig}`;
+    const cacheKey = `bbox|centroid+bbox|${tags}|${south.toFixed(4)},${west.toFixed(
+      4
+    )},${north.toFixed(4)},${east.toFixed(4)}|r:${Number(searchRadiusKm || 0).toFixed(2)}|n:${supplyCircleCenters.length}`;
+
+    const query = `
+      [out:json][timeout:90];
+      (
+        nwr["landuse"~"${tags}"](${south},${west},${north},${east});
+      );
+      out geom;
+    `;
 
     if (abortRef.current) abortRef.current.abort();
     const controller = new AbortController();
@@ -320,56 +348,55 @@ export default function LandUseMap({
       try {
         const gj = await fetchOverpassWithBackoff(query, controller.signal, cacheKey);
 
-        const clipped = [];
-        let totalArea = 0;
+        const kept = [];
+        let totalA = 0;
 
         for (const f of gj.features || []) {
-          const sourceLanduse =
+          const lu =
             f.properties?.landuse ?? f.properties?.tags?.landuse ?? f.properties?.["landuse"];
+          if (!lu || !landuseToggles[lu]) continue;
 
-          if (!sourceLanduse) continue;
-          if (!landuseToggles[sourceLanduse]) continue;
-          if (!f.geometry) continue;
+          const g = f.geometry;
+          if (!g || (g.type !== "Polygon" && g.type !== "MultiPolygon")) continue;
 
-          const tf = turf.feature(f.geometry, { landuse: sourceLanduse });
-          const inter = clipToAllCircles(tf, circlesFC);
-          if (!inter) continue;
+          const tf = turf.feature(g, { landuse: lu });
 
-          if (inter.geometry?.type !== "Polygon" && inter.geometry?.type !== "MultiPolygon") continue;
+          // ✅ Keep only if centroid is inside ANY circle (bbox prefilter)
+          if (!centroidInsideAnyCircle(tf, circleBoxes, searchRadiusKm)) continue;
 
-          const a = area(inter);
-          if (a > 0) {
-            inter.properties = { ...(inter.properties || {}), landuse: sourceLanduse, area: a };
-            totalArea += a;
-            clipped.push(inter);
-          }
+          const a = area(tf);
+          if (!Number.isFinite(a) || a <= 0) continue;
+
+          tf.properties.area = a;
+          kept.push(tf);
+          totalA += a;
         }
 
-        const totalFert = Number.isFinite(totalProduction) ? totalProduction : 0;
-        for (const feat of clipped) {
-          feat.properties.fertilizer = totalArea > 0 ? (feat.properties.area / totalArea) * totalFert : 0;
+        const prod = Number(totalProduction || 0);
+        for (const p of kept) {
+          p.properties.fertilizer = totalA > 0 ? (p.properties.area / totalA) * prod : 0;
         }
 
-        onDataUpdate(clipped);
-      } catch (err) {
-        if (err?.name === "AbortError") return;
-        console.error("Overpass error:", err);
+        onDataUpdate(kept);
+      } catch (e) {
+        if (e?.name === "AbortError") return;
+        console.error("Overpass landuse error:", e);
         onDataUpdate([]);
       }
     };
 
-    const t = setTimeout(run, 200);
+    const t = setTimeout(run, 250);
     return () => {
       clearTimeout(t);
       controller.abort();
     };
-  }, [safeCenter, searchRadiusKm, circlesFC, circlesSig, landuseToggles, totalProduction, onDataUpdate]);
+  }, [searchRadiusKm, supplyCircleCenters, landuseToggles, totalProduction, onDataUpdate, circleBoxes]);
 
   const featuresKey = useMemo(() => {
     if (!features?.length) return "features-none";
     try {
       const fc = turf.featureCollection(features);
-      const b = turf.bbox(fc).map((n) => n.toFixed(6)).join("|");
+      const b = turf.bbox(fc).map((n) => n.toFixed(4)).join("|");
       return `n:${features.length}|b:${b}`;
     } catch {
       return `n:${features.length}`;
@@ -380,27 +407,8 @@ export default function LandUseMap({
     fillColor: LANDUSE_COLORS[feature.properties.landuse] || "#ccc",
     weight: 1,
     color: "#555",
-    fillOpacity: 0.6,
+    fillOpacity: 0.55,
   });
-
-  const onEachFeature = (feature, layer) => {
-    layer.on({
-      mouseover: () => {
-        layer.setStyle({ weight: 3, fillOpacity: 0.9 });
-        layer
-          .bindPopup(
-            `Type: ${feature.properties.landuse}<br/>` +
-              `Area: ${(feature.properties.area / 1e6).toFixed(2)} km²<br/>` +
-              `Fertilizer: ${(feature.properties.fertilizer ?? 0).toFixed(2)}`
-          )
-          .openPopup();
-      },
-      mouseout: () => {
-        layer.setStyle(stylePlot(feature));
-        layer.closePopup();
-      },
-    });
-  };
 
   return (
     <MapContainer center={initialCenter} zoom={12} style={{ height: "100vh", width: "100%" }}>
@@ -412,17 +420,32 @@ export default function LandUseMap({
         attribution="© OpenStreetMap contributors"
       />
 
-      {/* Demand circles */}
-      {circlesFC?.features?.map((c, i) => (
-        <GeoJSON key={`aoi-${i}`} data={c} style={{ color: "#111", weight: 2, fillOpacity: 0.08 }} />
-      ))}
+      {/* ✅ thin circles */}
+      <LayerGroup key={circleKey}>
+        {radiusMeters > 0 &&
+          (supplyCircleCenters || []).map((p, i) => {
+            const lat = Number(p.lat);
+            const lon = Number(p.lon);
+            if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
 
-      {unionPolygon && (
-        <GeoJSON key="union" data={unionPolygon} style={{ color: "#333", weight: 2, fillOpacity: 0.04 }} />
+            return (
+              <Circle
+                key={`circ-${i}`}
+                center={[lat, lon]}
+                radius={radiusMeters}
+                pathOptions={{ color: "#111", weight: 1, opacity: 0.5, fillOpacity: 0 }}
+              />
+            );
+          })}
+      </LayerGroup>
+
+      {/* polygons (filtered) */}
+      {features?.length > 0 && (
+        <GeoJSON key={featuresKey} data={{ type: "FeatureCollection", features }} style={stylePlot} />
       )}
 
-      {/* ✅ WTP markers with details restored */}
-      {locationRows?.map((pt, i) => {
+      {/* WTP markers */}
+      {(locationRows || []).map((pt, i) => {
         const lat = asNum(pt.lat ?? pt.__lat ?? pt.latitude ?? pt.Latitude);
         const lon = asNum(pt.lon ?? pt.__lon ?? pt.longitude ?? pt.Longitude ?? pt.lng);
         if (lat == null || lon == null) return null;
@@ -436,25 +459,21 @@ export default function LandUseMap({
             <Popup>
               <div style={{ minWidth: 240 }}>
                 <strong>{displayName}</strong>
-
                 {pt?.province && pt?.country && (
                   <div style={{ marginTop: 4, color: "#444" }}>
                     {pt.province}, {pt.country}
                   </div>
                 )}
-
                 {pe != null && (
                   <div style={{ marginTop: 8 }}>
                     <strong>Capacity (p.e):</strong> {pe.toLocaleString()}
                   </div>
                 )}
-
                 {prod != null && (
                   <div style={{ marginTop: 4 }}>
                     <strong>Output:</strong> {prod.toLocaleString()}
                   </div>
                 )}
-
                 <div style={{ marginTop: 8, color: "#666" }}>
                   Lat/Lon: {lat.toFixed(5)}, {lon.toFixed(5)}
                 </div>
@@ -464,18 +483,8 @@ export default function LandUseMap({
         );
       })}
 
-      {/* Landuse overlays */}
-      {features?.length > 0 && (
-        <GeoJSON
-          key={featuresKey}
-          data={{ type: "FeatureCollection", features }}
-          style={stylePlot}
-          onEachFeature={onEachFeature}
-        />
-      )}
-
-      {/* ✅ Extra datasets (public buildings) with details restored */}
-      <LayerGroup key={extraLayerKey}>
+      {/* extra dataset markers */}
+      <LayerGroup>
         {(extraPoints || []).map((p, i) => {
           const lat = asNum(p.lat);
           const lon = asNum(p.lon);
@@ -484,12 +493,6 @@ export default function LandUseMap({
           const color = datasetColorFor(p);
           const label = p.__label || p.label || p.__type || "Dataset";
           const kg = asNum(p.kg_n_per_year) ?? 0;
-
-          // optional fields from your CSVs
-          const cap = asNum(p.capacity);
-          const students = asNum(p.students);
-          const passengers = asNum(p.passengers);
-          const year = asNum(p.year);
 
           return (
             <CircleMarker
@@ -502,36 +505,14 @@ export default function LandUseMap({
                 <div style={{ minWidth: 240 }}>
                   <strong>{p.name || "Location"}</strong>
                   <div style={{ marginTop: 4, color: "#444" }}>{label}</div>
-
                   {(p.province || p.country) && (
                     <div style={{ marginTop: 6, color: "#666" }}>
                       {[p.province, p.country].filter(Boolean).join(", ")}
                     </div>
                   )}
-
                   <div style={{ marginTop: 8 }}>
                     <strong>Kg N/year:</strong> {kg.toLocaleString()}
                   </div>
-
-                  {cap != null && (
-                    <div style={{ marginTop: 4 }}>
-                      <strong>Capacity:</strong> {cap.toLocaleString()}
-                    </div>
-                  )}
-
-                  {students != null && (
-                    <div style={{ marginTop: 4 }}>
-                      <strong>Students:</strong> {students.toLocaleString()}
-                    </div>
-                  )}
-
-                  {passengers != null && (
-                    <div style={{ marginTop: 4 }}>
-                      <strong>Passengers:</strong> {passengers.toLocaleString()}
-                      {year != null ? ` (${year})` : ""}
-                    </div>
-                  )}
-
                   <div style={{ marginTop: 8, color: "#666" }}>
                     Lat/Lon: {lat.toFixed(5)}, {lon.toFixed(5)}
                   </div>
