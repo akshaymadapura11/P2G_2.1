@@ -39,7 +39,7 @@ const wtpIcon = createColoredDotIcon("#1967d2");
 const DATASET_COLORS = {
   airports: "#1a73e8",
   prisons: "#f9ab00",
-  stadiums: "#34a853",
+  stadiums: "#2b412eff",
   universities: "#a142f4",
   chefExpress: "#d93025",
   trainStations: "#00acc1",
@@ -66,9 +66,10 @@ function datasetColorFor(point) {
 const LANDUSE_COLORS = {
   farmland: "#FFD700",
   plantation: "#8B4513",
-  orchard: "#7FFF00",
+  orchard: "#355811ff",
   vineyard: "#8B008B",
   greenhouse_horticulture: "#00CED1",
+  green_public_spaces: "#00b800ff",
 };
 
 const OVERPASS_ENDPOINTS = [
@@ -140,8 +141,17 @@ function asNum(v) {
 }
 
 function pickWtpName(pt, fallback) {
-  return pt?.name || pt?.wwtp_name || pt?.plant_name || pt?.["wwtp_name"] || fallback;
+  return (
+    pt?.name ||
+    pt?.["WWTP name"] ||     // ✅ WTP file
+    pt?.["WWTP Name"] ||
+    pt?.wwtp_name ||
+    pt?.plant_name ||
+    pt?.["wwtp_name"] ||
+    fallback
+  );
 }
+
 
 function pickPeValue(pt) {
   return (
@@ -155,14 +165,17 @@ function pickPeValue(pt) {
 
 function pickWtpProduction(pt) {
   return (
-    asNum(pt?.production) ??
-    asNum(pt?.liters_per_year) ??
-    asNum(pt?.n_kgper_year) ??
-    asNum(pt?.n_kg_per_year) ??
-    asNum(pt?.__production) ??
+    asNum(pt?.kg_n_per_year) ||               // ✅ standardized by hook
+    asNum(pt?.["N kg/per year"]) ||           // ✅ WTP file
+    asNum(pt?.production) ||
+    asNum(pt?.liters_per_year) ||
+    asNum(pt?.n_kgper_year) ||
+    asNum(pt?.n_kg_per_year) ||
+    asNum(pt?.__production) ||
     null
   );
 }
+
 
 /* ✅ One bbox around all circle centers to fetch quickly */
 function bboxAroundCenters(centers, radiusKm) {
@@ -336,9 +349,12 @@ export default function LandUseMap({
       [out:json][timeout:90];
       (
         nwr["landuse"~"${tags}"](${south},${west},${north},${east});
+        nwr["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});
       );
       out geom;
     `;
+
+    
 
     if (abortRef.current) abortRef.current.abort();
     const controller = new AbortController();
@@ -352,9 +368,25 @@ export default function LandUseMap({
         let totalA = 0;
 
         for (const f of gj.features || []) {
-          const lu =
-            f.properties?.landuse ?? f.properties?.tags?.landuse ?? f.properties?.["landuse"];
+          let lu =
+            f.properties?.landuse ??
+            f.properties?.tags?.landuse ??
+            f.properties?.["landuse"];
+
+          const leisure =
+            f.properties?.leisure ??
+            f.properties?.tags?.leisure;
+
+          if (!lu && leisure) {
+            if (
+              ["park", "garden", "nature_reserve", "recreation_ground"].includes(leisure)
+            ) {
+              lu = "green_public_spaces";
+            }
+          }
+
           if (!lu || !landuseToggles[lu]) continue;
+
 
           const g = f.geometry;
           if (!g || (g.type !== "Polygon" && g.type !== "MultiPolygon")) continue;

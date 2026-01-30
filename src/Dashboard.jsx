@@ -13,9 +13,10 @@ const LANDUSE_LABELS = {
 const LANDUSE_COLORS = {
   farmland: "#FFD700",
   plantation: "#8B4513",
-  orchard: "#7FFF00",
+  orchard: "#355811ff",
   vineyard: "#8B008B",
   greenhouse_horticulture: "#00CED1",
+  green_public_spaces: "#00b800ff",
 };
 
 const REQUIRED_KG_PER_HA = 160;
@@ -24,7 +25,7 @@ const SUPPLY_COLORS = {
   wtp: "#1967d2",
   airports: "#1a73e8",
   prisons: "#f9ab00",
-  stadiums: "#34a853",
+  stadiums: "#2b412eff",
   universities: "#a142f4",
   chefExpress: "#d93025",
   trainStations: "#00acc1",

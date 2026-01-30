@@ -1,12 +1,12 @@
 location,name,country,province,kg_n_per_year,students,country_code,name_en
 "58.97005, 5.73332",University of Stavanger,Norway,Vestlandet,19929,12000.0,NO,University of Stavanger
-"51.50722222, -0.1275","Goldsmiths, University of London",nan,,14674,8836.0,nan,"Goldsmiths, University of London"
+"51.50722222, -0.1275","Goldsmiths, University of London",,,14674,8836.0,,"Goldsmiths, University of London"
 "57.7075, 11.9675",University of Gothenburg,Sweden,Västsverige,59792,36003.0,SE,University of Gothenburg
 "57.7075, 11.9675",University of Gothenburg,Sweden,Västsverige,61448,37000.0,SE,University of Gothenburg
 "52.40833333, 16.93361111",Adam Mickiewicz University in Poznań,Poland,Wielkopolskie,61469,37013.0,PL,Adam Mickiewicz University in Poznań
 "48.20833333, 16.3725",Academy of Fine Arts Vienna,Austria,Wien,2481,1494.0,AT,Academy of Fine Arts Vienna
 "48.20833333, 16.3725",Academy of Fine Arts Vienna,Austria,Wien,2679,1613.0,AT,Academy of Fine Arts Vienna
-"52.20805556, 0.1225",Trinity College,nan,,1794,1080.0,nan,Trinity College
+"52.20805556, 0.1225",Trinity College,,,1794,1080.0,,Trinity College
 "42.01194444, 23.08972222",American University in Bulgaria,Bulgaria,Yugozapaden,1694,1020.0,BG,American University in Bulgaria
 "50.84666667, 4.351666666",Université Libre de Bruxelles,Belgium,Région de Bruxelles-Capitale/ Brussels Hoofdstedelijk Gewest,52490,31606.0,BE,Université Libre de Bruxelles
 "50.83916667, 4.329722222",Université Libre de Bruxelles,Belgium,Région de Bruxelles-Capitale/ Brussels Hoofdstedelijk Gewest,52490,31606.0,BE,Université Libre de Bruxelles
@@ -15,12 +15,12 @@ location,name,country,province,kg_n_per_year,students,country_code,name_en
 "44.40718611, 8.933983333",University of Genoa,Italy,Liguria,60996,36728.0,IT,University of Genoa
 "47.07779, 15.44989",University of Graz,Austria,Steiermark,53526,32230.0,AT,University of Graz
 "59.43722222, 24.745",Tallinn University of Technology,Estonia,Eesti,23501,14151.0,EE,Tallinn University of Technology
-"43.51, 16.44",University of Split,nan,,43180,26000.0,nan,University of Split
-"44.87027778, 13.84555556",University of Pula,nan,,4982,3000.0,nan,University of Pula
+"43.51, 16.44",University of Split,,,43180,26000.0,,University of Split
+"44.87027778, 13.84555556",University of Pula,,,4982,3000.0,,University of Pula
 "52.23, 21.01111111",University of Warsaw,Poland,Warszawski stołeczny,70914,42700.0,PL,University of Warsaw
 "51.75, 19.46666667",University of Łódź,Poland,Łódzkie,38509,23188.0,PL,University of Łódź
 "47.8, 13.045",University of Salzburg,Austria,Salzburg,29842,17969.0,AT,University of Salzburg
-"48.29083333, 25.93444444",Bukovinian State Medical University,nan,,8304,5000.0,nan,Bukovinian State Medical University
+"48.29083333, 25.93444444",Bukovinian State Medical University,,,8304,5000.0,,Bukovinian State Medical University
 "50.0875, 14.42138889",Charles University,Czechia,Praha,82220,49508.0,CZ,Charles University
 "60.3925, 5.323333333",University of Bergen,Norway,Vestlandet,28067,16900.0,NO,University of Bergen
 "59.32944444, 18.06861111",Karolinska Institutet,Sweden,Stockholm,9965,6000.0,SE,Karolinska Institutet
@@ -33,20 +33,20 @@ location,name,country,province,kg_n_per_year,students,country_code,name_en
 "51.43444444, 5.484166666",Eindhoven University of Technology,Netherlands,Noord-Brabant,18268,11000.0,NL,Eindhoven University of Technology
 "51.43444444, 5.484166666",Eindhoven University of Technology,Netherlands,Noord-Brabant,21704,13069.0,NL,Eindhoven University of Technology
 "52.16, 4.49",Leiden University,Netherlands,Zuid-Holland,55592,33474.0,NL,Leiden University
-"51.50722222, -0.1275",University of London,nan,,75564,45500.0,nan,University of London
-"54.04888889, -2.801388888",University of Lancaster,nan,,19929,12000.0,nan,University of Lancaster
-"52.0699, -0.6081",Cranfield University,nan,,8013,4825.0,nan,Cranfield University
-"51.500505, -0.178219",Imperial College London,nan,,29171,17565.0,nan,Imperial College London
+"51.50722222, -0.1275",University of London,,,75564,45500.0,,University of London
+"54.04888889, -2.801388888",University of Lancaster,,,19929,12000.0,,University of Lancaster
+"52.0699, -0.6081",Cranfield University,,,8013,4825.0,,Cranfield University
+"51.500505, -0.178219",Imperial College London,,,29171,17565.0,,Imperial College London
 "58.38, 26.7225",University of Tartu,Estonia,Eesti,21590,13000.0,EE,University of Tartu
-"43.00361111, 41.01916667",Abkhazian State University,nan,,4982,3000.0,nan,Abkhazian State University
-"43.00361111, 41.01916667",Abkhazian State University,nan,,4982,3000.0,nan,Abkhazian State University
+"43.00361111, 41.01916667",Abkhazian State University,,,4982,3000.0,,Abkhazian State University
+"43.00361111, 41.01916667",Abkhazian State University,,,4982,3000.0,,Abkhazian State University
 "59.66027778, 10.78361111",Norwegian University of Life Sciences,Norway,Oslo og Viken,10537,6345.0,NO,Norwegian University of Life Sciences
 "52.23, 21.01111111",Warsaw University of Technology,Poland,Warszawski stołeczny,44960,27072.0,PL,Warsaw University of Technology
 "53.11666667, 18.0",Kazimierz Wielki University in Bydgoszcz,Poland,Kujawsko-pomorskie,23232,13989.0,PL,Kazimierz Wielki University in Bydgoszcz
 "53.78, 20.49416667",University of Warmia and Mazury in Olsztyn,Poland,Warmińsko-mazurskie,72500,43655.0,PL,University of Warmia and Mazury in Olsztyn
 "54.396, 18.577",University of Gdańsk,Poland,Pomorskie,41623,25063.0,PL,University of Gdańsk
-"53.38083333, -1.470277777",Sheffield Hallam University,nan,,49837,30009.0,nan,Sheffield Hallam University
-"52.08472222, 23.65694444",Brest State Technical University,nan,,8968,5400.0,nan,Brest State Technical University
+"53.38083333, -1.470277777",Sheffield Hallam University,,,49837,30009.0,,Sheffield Hallam University
+"52.08472222, 23.65694444",Brest State Technical University,,,8968,5400.0,,Brest State Technical University
 "47.6375, 6.862777777",Université de technologie de Belfort-Montbéliard,France,Franche-Comté,3589,2161.0,FR,Université de technologie de Belfort-Montbéliard
 "47.6375, 6.862777777",Université de technologie de Belfort-Montbéliard,France,Franche-Comté,3758,2263.0,FR,Université de technologie de Belfort-Montbéliard
 "47.6375, 6.862777777",Université de technologie de Belfort-Montbéliard,France,Franche-Comté,3976,2394.0,FR,Université de technologie de Belfort-Montbéliard
@@ -64,19 +64,19 @@ location,name,country,province,kg_n_per_year,students,country_code,name_en
 "47.6375, 6.862777777",Université de technologie de Belfort-Montbéliard,France,Franche-Comté,4660,2806.0,FR,Université de technologie de Belfort-Montbéliard
 "47.6375, 6.862777777",Université de technologie de Belfort-Montbéliard,France,Franche-Comté,4793,2886.0,FR,Université de technologie de Belfort-Montbéliard
 "47.6375, 6.862777777",Université de technologie de Belfort-Montbéliard,France,Franche-Comté,4884,2941.0,FR,Université de technologie de Belfort-Montbéliard
-"46.30027778, 28.65722222",Comrat State University,nan,,830,500.0,nan,Comrat State University
-"56.13333333, 47.25",Chuvash State University,nan,,26738,16100.0,nan,Chuvash State University
-"53.902246, 27.561837",Belarusian State Economic University,nan,,21590,13000.0,nan,Belarusian State Economic University
-"53.861667, 27.485019",Belarusian State Medical University,nan,,10816,6513.0,nan,Belarusian State Medical University
-"47.76166667, 27.92888889",Alecu Russo State University of Bălți,nan,,9624,5795.0,nan,Alecu Russo State University of Bălți
-"44.11416667, 15.2275",University of Zadar,nan,,9965,6000.0,nan,University of Zadar
+"46.30027778, 28.65722222",Comrat State University,,,830,500.0,,Comrat State University
+"56.13333333, 47.25",Chuvash State University,,,26738,16100.0,,Chuvash State University
+"53.902246, 27.561837",Belarusian State Economic University,,,21590,13000.0,,Belarusian State Economic University
+"53.861667, 27.485019",Belarusian State Medical University,,,10816,6513.0,,Belarusian State Medical University
+"47.76166667, 27.92888889",Alecu Russo State University of Bălți,,,9624,5795.0,,Alecu Russo State University of Bălți
+"44.11416667, 15.2275",University of Zadar,,,9965,6000.0,,University of Zadar
 "50.06138889, 19.93722222",University of the National Education Commission,Poland,Małopolskie,24911,15000.0,PL,University of the National Education Commission
 "46.2, 6.15",Geneva Graduate Institute,Switzerland,Région lémanique,1895,1141.0,CH,Geneva Graduate Institute
 "47.37444444, 8.541111111",International Institute for Management Development,Switzerland,Zürich,14781,8900.0,CH,International Institute for Management Development
 "47.26833333, 11.39333333",Medical University of Innsbruck,Austria,Tirol,5990,3607.0,AT,Medical University of Innsbruck
 "46.61666667, 14.3",University of Klagenfurt,Austria,Kärnten,21126,12721.0,AT,University of Klagenfurt
-"55.86111111, -4.25",Glasgow School of Art,nan,,2657,1600.0,nan,Glasgow School of Art
-"52.28916667, 104.28",Irkutsk State University,nan,,29894,18000.0,nan,Irkutsk State University
+"55.86111111, -4.25",Glasgow School of Art,,,2657,1600.0,,Glasgow School of Art
+"52.28916667, 104.28",Irkutsk State University,,,29894,18000.0,,Irkutsk State University
 "50.97805556, 11.02888889",University of Erfurt,Germany,Thüringen,15,9.0,DE,University of Erfurt
 "50.97805556, 11.02888889",University of Erfurt,Germany,Thüringen,242,146.0,DE,University of Erfurt
 "50.97805556, 11.02888889",University of Erfurt,Germany,Thüringen,608,366.0,DE,University of Erfurt
@@ -108,14 +108,14 @@ location,name,country,province,kg_n_per_year,students,country_code,name_en
 "59.266926, 15.19652247",Örebro University,Sweden,Östra Mellansverige,19328,11638.0,SE,Örebro University
 "65.58382088, 22.1914983",Luleå University of Technology,Sweden,Övre Norrland,31812,19155.0,SE,Luleå University of Technology
 "62.39550919, 17.28599426",Mid Sweden University,Sweden,Mellersta Norrland,20437,12306.0,SE,Mid Sweden University
-"53.75944444, -2.698055555",University of Lancashire,nan,,47913,28850.0,nan,University of Lancashire
-"55.75055556, 37.6175",Plekhanov Russian Economic University,nan,,27238,16401.0,nan,Plekhanov Russian Economic University
-"56.83555556, 60.61277778",Ural State University of Railway Transport,nan,,29894,18000.0,nan,Ural State University of Railway Transport
-"53.902246, 27.561837",Maxim Tank Belarusian State Pedagogical University,nan,,25742,15500.0,nan,Maxim Tank Belarusian State Pedagogical University
-"49.8425, 24.03222222",National Forestry University,nan,,11625,7000.0,nan,National Forestry University
+"53.75944444, -2.698055555",University of Lancashire,,,47913,28850.0,,University of Lancashire
+"55.75055556, 37.6175",Plekhanov Russian Economic University,,,27238,16401.0,,Plekhanov Russian Economic University
+"56.83555556, 60.61277778",Ural State University of Railway Transport,,,29894,18000.0,,Ural State University of Railway Transport
+"53.902246, 27.561837",Maxim Tank Belarusian State Pedagogical University,,,25742,15500.0,,Maxim Tank Belarusian State Pedagogical University
+"49.8425, 24.03222222",National Forestry University,,,11625,7000.0,,National Forestry University
 "49.74138889, 13.3825",University of West Bohemia,Czechia,Jihozápad,18554,11172.0,CZ,University of West Bohemia
-"42.01027778, 20.97138889",South East European University,MK,Severna Makedonija ,6643,4000.0,MK,South East European University
-"41.7225, 44.7925",Ilia State University,nan,,27570,16601.0,nan,Ilia State University
+"42.01027778, 20.97138889",South East European University,MK,Severna Makedonija,6643,4000.0,MK,South East European University
+"41.7225, 44.7925",Ilia State University,,,27570,16601.0,,Ilia State University
 "41.3825, 2.176944444",Open University of Catalonia,Spain,Cataluña,144485,87000.0,ES,Open University of Catalonia
 "41.1175, 1.252777777",Rovira i Virgili University,Spain,Cataluña,19300,11621.0,ES,Rovira i Virgili University
 "41.41477966, 2.133085012",Open University of Catalonia,Spain,Cataluña,144485,87000.0,ES,Open University of Catalonia
@@ -130,60 +130,60 @@ location,name,country,province,kg_n_per_year,students,country_code,name_en
 "48.85666667, 2.352222222",Paris Institute of Earth Physics,France,Ile-de-France,216,130.0,FR,Paris Institute of Earth Physics
 "48.85666667, 2.352222222",Paris Institute of Earth Physics,France,Ile-de-France,218,131.0,FR,Paris Institute of Earth Physics
 "48.85666667, 2.352222222",Paris Institute of Earth Physics,France,Ile-de-France,229,138.0,FR,Paris Institute of Earth Physics
-"55.75055556, 37.6175",Moscow State Institute of Radio-engineering Electronics and Automation,nan,,35708,21501.0,nan,Moscow State Institute of Radio-engineering Electronics and Automation
-"46.35, 48.035",Astrakhan State University,nan,,26572,16000.0,nan,Astrakhan State University
-"53.35666667, 83.78722222",Altai State Medical University,nan,,8304,5000.0,nan,Altai State Medical University
+"55.75055556, 37.6175",Moscow State Institute of Radio-engineering Electronics and Automation,,,35708,21501.0,,Moscow State Institute of Radio-engineering Electronics and Automation
+"46.35, 48.035",Astrakhan State University,,,26572,16000.0,,Astrakhan State University
+"53.35666667, 83.78722222",Altai State Medical University,,,8304,5000.0,,Altai State Medical University
 "47.49833333, 19.04083333",Corvinus University of Budapest,Hungary,Budapest,29894,18000.0,HU,Corvinus University of Budapest
 "55.58333333, 13.0",Malmö University,Sweden,Sydsverige,25949,15625.0,SE,Malmö University
 "57.7075, 11.9675",Chalmers University of Technology,Sweden,Västsverige,17891,10773.0,SE,Chalmers University of Technology
 "58.40941804, 15.62565613",Linköping University,Sweden,Östra Mellansverige,37269,22441.0,SE,Linköping University
 "59.34777778, 18.07305556",Royal Institute of Technology,Sweden,Stockholm,23712,14278.0,SE,Royal Institute of Technology
-"53.794, -1.751",University of Bradford,nan,,16051,9665.0,nan,University of Bradford
-"51.58861111, -2.997777777","University of Wales, Newport",nan,,15993,9630.0,nan,"University of Wales, Newport"
-"55.75055556, 37.6175",Peoples' Friendship University of Russia,nan,,52744,31759.0,nan,Peoples' Friendship University of Russia
-"59.95, 30.31666667",European University at Saint Petersburg,nan,,282,170.0,nan,European University at Saint Petersburg
-"59.947832, 30.341376",European University at Saint Petersburg,nan,,282,170.0,nan,European University at Saint Petersburg
-"59.94777778, 30.34166667",European University at Saint Petersburg,nan,,282,170.0,nan,European University at Saint Petersburg
+"53.794, -1.751",University of Bradford,,,16051,9665.0,,University of Bradford
+"51.58861111, -2.997777777","University of Wales, Newport",,,15993,9630.0,,"University of Wales, Newport"
+"55.75055556, 37.6175",Peoples' Friendship University of Russia,,,52744,31759.0,,Peoples' Friendship University of Russia
+"59.95, 30.31666667",European University at Saint Petersburg,,,282,170.0,,European University at Saint Petersburg
+"59.947832, 30.341376",European University at Saint Petersburg,,,282,170.0,,European University at Saint Petersburg
+"59.94777778, 30.34166667",European University at Saint Petersburg,,,282,170.0,,European University at Saint Petersburg
 "50.11055556, 8.682222222",Sankt Georgen Graduate School of Philosophy and Theology,Germany,Darmstadt,644,388.0,DE,Sankt Georgen Graduate School of Philosophy and Theology
-"53.902246, 27.561837",Belarusian State University of Informatics and Radioelectronics,nan,,26572,16000.0,nan,Belarusian State University of Informatics and Radioelectronics
-"51.73722222, 36.18722222",South-West State University,nan,,18683,11250.0,nan,South-West State University
+"53.902246, 27.561837",Belarusian State University of Informatics and Radioelectronics,,,26572,16000.0,,Belarusian State University of Informatics and Radioelectronics
+"51.73722222, 36.18722222",South-West State University,,,18683,11250.0,,South-West State University
 "46.07083333, 18.23305556",University of Pécs,Hungary,Dél-Dunántúl,33215,20000.0,HU,University of Pécs
 "63.82845358, 20.27056646",Umeå University,Sweden,Övre Norrland,42867,25812.0,SE,Umeå University
-"41.89305556, 12.48277778",Tor Vergata University of Rome,nan,,64298,38716.0,nan,Tor Vergata University of Rome
+"41.89305556, 12.48277778",Tor Vergata University of Rome,,,64298,38716.0,,Tor Vergata University of Rome
 "45.46694444, 9.19",University of Milan-Bicocca,Italy,Lombardia,56035,33741.0,IT,University of Milan-Bicocca
 "50.86666667, 5.683333333",Maastricht University,Netherlands,Limburg (NL),35017,21085.0,NL,Maastricht University
-"51.50722222, -0.1275",Royal Academy of Music,nan,,1212,730.0,nan,Royal Academy of Music
-"51.59672, -3.33682",University of Glamorgan,nan,,35631,21455.0,nan,University of Glamorgan
-"55.75055556, 37.6175",State University of Management,nan,,41519,25000.0,nan,State University of Management
-"51.82722222, 107.6063889",Buryat State University,nan,,16608,10000.0,nan,Buryat State University
-"64.1475, -21.935",Iceland University of the Arts,nan,,1244,749.0,nan,Iceland University of the Arts
-"50.45, 30.52361111",National University of Kyiv-Mohyla Academy,nan,,5319,3203.0,nan,National University of Kyiv-Mohyla Academy
-"49.9925, 36.23111111",Kharkiv Polytechnic Institute,nan,,33215,20000.0,nan,Kharkiv Polytechnic Institute
+"51.50722222, -0.1275",Royal Academy of Music,,,1212,730.0,,Royal Academy of Music
+"51.59672, -3.33682",University of Glamorgan,,,35631,21455.0,,University of Glamorgan
+"55.75055556, 37.6175",State University of Management,,,41519,25000.0,,State University of Management
+"51.82722222, 107.6063889",Buryat State University,,,16608,10000.0,,Buryat State University
+"64.1475, -21.935",Iceland University of the Arts,,,1244,749.0,,Iceland University of the Arts
+"50.45, 30.52361111",National University of Kyiv-Mohyla Academy,,,5319,3203.0,,National University of Kyiv-Mohyla Academy
+"49.9925, 36.23111111",Kharkiv Polytechnic Institute,,,33215,20000.0,,Kharkiv Polytechnic Institute
 "50.0875, 14.42138889",Prague University of Economics and Business,Czechia,Praha,32287,19441.0,CZ,Prague University of Economics and Business
 "49.19527778, 16.60833333",Brno University of Technology,Czechia,Jihovýchod,29852,17975.0,CZ,Brno University of Technology
-"47.02277778, 28.83527778",Technical University of Moldova,nan,,15810,9520.0,nan,Technical University of Moldova
+"47.02277778, 28.83527778",Technical University of Moldova,,,15810,9520.0,,Technical University of Moldova
 "46.76891, 23.59066",Iuliu Hațieganu University of Medicine and Pharmacy,Romania,Nord-Vest,17322,10430.0,RO,Iuliu Hațieganu University of Medicine and Pharmacy
-"43.24, 76.915",Narxoz University,nan,,11625,7000.0,nan,Narxoz University
-"54.57388889, -1.233333333",Teesside University,nan,,32036,19290.0,nan,Teesside University
-"55.75055556, 37.6175",Moscow Polytechnic University,nan,,29930,18022.0,nan,Moscow Polytechnic University
-"55.75055556, 37.6175",Moscow State University of Technology STANKIN,nan,,6643,4000.0,nan,Moscow State University of Technology STANKIN
-"55.75055556, 37.6175",Russian Biotechnological University (BIOTECH),nan,,9300,5600.0,nan,Russian Biotechnological University (BIOTECH)
-"55.75055556, 37.6175",Moscow State University of Fine Chemical Technologies,nan,,7473,4500.0,nan,Moscow State University of Fine Chemical Technologies
-"51.73722222, 36.18722222",Kursk State University,nan,,28233,17000.0,nan,Kursk State University
-"51.67166667, 39.21055556",Voronezh State University of Engineering Technology,nan,,13618,8200.0,nan,Voronezh State University of Engineering Technology
-"53.35666667, 83.78722222",Altai State Technical University,nan,,33215,20000.0,nan,Altai State Technical University
-"51.96, 85.96",Gorno-Altaisk State University,nan,,6643,4000.0,nan,Gorno-Altaisk State University
-"50.45, 30.52361111",Kyiv National University of Culture and Arts,nan,,41519,25000.0,nan,Kyiv National University of Culture and Arts
-"48.73916667, 37.58388889",Donetsk National Medical University,nan,,8304,5000.0,nan,Donetsk National Medical University
-"48.4675, 35.04",Dnipro Institute of Infrastructure and Transport,nan,,6643,4000.0,nan,Dnipro Institute of Infrastructure and Transport
+"43.24, 76.915",Narxoz University,,,11625,7000.0,,Narxoz University
+"54.57388889, -1.233333333",Teesside University,,,32036,19290.0,,Teesside University
+"55.75055556, 37.6175",Moscow Polytechnic University,,,29930,18022.0,,Moscow Polytechnic University
+"55.75055556, 37.6175",Moscow State University of Technology STANKIN,,,6643,4000.0,,Moscow State University of Technology STANKIN
+"55.75055556, 37.6175",Russian Biotechnological University (BIOTECH),,,9300,5600.0,,Russian Biotechnological University (BIOTECH)
+"55.75055556, 37.6175",Moscow State University of Fine Chemical Technologies,,,7473,4500.0,,Moscow State University of Fine Chemical Technologies
+"51.73722222, 36.18722222",Kursk State University,,,28233,17000.0,,Kursk State University
+"51.67166667, 39.21055556",Voronezh State University of Engineering Technology,,,13618,8200.0,,Voronezh State University of Engineering Technology
+"53.35666667, 83.78722222",Altai State Technical University,,,33215,20000.0,,Altai State Technical University
+"51.96, 85.96",Gorno-Altaisk State University,,,6643,4000.0,,Gorno-Altaisk State University
+"50.45, 30.52361111",Kyiv National University of Culture and Arts,,,41519,25000.0,,Kyiv National University of Culture and Arts
+"48.73916667, 37.58388889",Donetsk National Medical University,,,8304,5000.0,,Donetsk National Medical University
+"48.4675, 35.04",Dnipro Institute of Infrastructure and Transport,,,6643,4000.0,,Dnipro Institute of Infrastructure and Transport
 "42.425668, 25.634595",Trakia University,Bulgaria,Yugoiztochen,14947,9000.0,BG,Trakia University
-"55.75055556, 37.6175",Moscow University for Industry and Finance,nan,,83038,50000.0,nan,Moscow University for Industry and Finance
-"55.75055556, 37.6175",Moscow State Aviation Technological University,nan,,15777,9500.0,nan,Moscow State Aviation Technological University
-"55.03333333, 82.91666667",Novosibirsk State Medical University,nan,,9744,5867.0,nan,Novosibirsk State Medical University
-"56.83555556, 60.61277778",Russian State Vocational Pedagogical University,nan,,19929,12000.0,nan,Russian State Vocational Pedagogical University
-"56.32694444, 44.0075",Dobrolyubov Linguistics University of Nizhny Novgorod,nan,,5231,3150.0,nan,Dobrolyubov Linguistics University of Nizhny Novgorod
-"46.45336111, 30.75333333",Odesa National Polytechnic University,nan,,19584,11792.0,nan,Odesa National Polytechnic University
-"41.89305556, 12.48277778",John Cabot University,nan,,2076,1250.0,nan,John Cabot University
+"55.75055556, 37.6175",Moscow University for Industry and Finance,,,83038,50000.0,,Moscow University for Industry and Finance
+"55.75055556, 37.6175",Moscow State Aviation Technological University,,,15777,9500.0,,Moscow State Aviation Technological University
+"55.03333333, 82.91666667",Novosibirsk State Medical University,,,9744,5867.0,,Novosibirsk State Medical University
+"56.83555556, 60.61277778",Russian State Vocational Pedagogical University,,,19929,12000.0,,Russian State Vocational Pedagogical University
+"56.32694444, 44.0075",Dobrolyubov Linguistics University of Nizhny Novgorod,,,5231,3150.0,,Dobrolyubov Linguistics University of Nizhny Novgorod
+"46.45336111, 30.75333333",Odesa National Polytechnic University,,,19584,11792.0,,Odesa National Polytechnic University
+"41.89305556, 12.48277778",John Cabot University,,,2076,1250.0,,John Cabot University
 "37.50266944, 15.08726944",University of Catania,Italy,Sicilia,73634,44338.0,IT,University of Catania
 "43.31833333, 11.33138889",University of Siena,Italy,Toscana,33215,20000.0,IT,University of Siena
 "46.498113, 11.35478",Free University of Bozen-Bolzano,Italy,Provincia Autonoma di Bolzano/Bozen,7002,4216.0,IT,Free University of Bozen-Bolzano
@@ -202,22 +202,22 @@ location,name,country,province,kg_n_per_year,students,country_code,name_en
 "48.85666667, 2.352222222",Institut national des langues et civilisations orientales,France,Ile-de-France,11376,6850.0,FR,Institut national des langues et civilisations orientales
 "48.85666667, 2.352222222",Institut national des langues et civilisations orientales,France,Ile-de-France,11602,6986.0,FR,Institut national des langues et civilisations orientales
 "48.85666667, 2.352222222",Institut national des langues et civilisations orientales,France,Ile-de-France,11763,7083.0,FR,Institut national des langues et civilisations orientales
-"51.50722222, -0.1275",University of Westminster,nan,,41037,24710.0,nan,University of Westminster
-"51.50722222, -0.1275",Guildhall School of Music and Drama,nan,,1802,1085.0,nan,Guildhall School of Music and Drama
-"55.86111111, -4.25",Glasgow Caledonian University,nan,,28307,17045.0,nan,Glasgow Caledonian University
-"52.63611111, -1.133055555",University of Leicester,nan,,29603,17825.0,nan,University of Leicester
-"56.46055556, -2.97",University of Dundee,nan,,30907,18610.0,nan,University of Dundee
-"55.84555556, -4.423888888",University of the West of Scotland,nan,,25833,15555.0,nan,University of the West of Scotland
-"55.75055556, 37.6175",Finance University under the Government of the Russian Federation,nan,,79238,47712.0,nan,Finance University under the Government of the Russian Federation
+"51.50722222, -0.1275",University of Westminster,,,41037,24710.0,,University of Westminster
+"51.50722222, -0.1275",Guildhall School of Music and Drama,,,1802,1085.0,,Guildhall School of Music and Drama
+"55.86111111, -4.25",Glasgow Caledonian University,,,28307,17045.0,,Glasgow Caledonian University
+"52.63611111, -1.133055555",University of Leicester,,,29603,17825.0,,University of Leicester
+"56.46055556, -2.97",University of Dundee,,,30907,18610.0,,University of Dundee
+"55.84555556, -4.423888888",University of the West of Scotland,,,25833,15555.0,,University of the West of Scotland
+"55.75055556, 37.6175",Finance University under the Government of the Russian Federation,,,79238,47712.0,,Finance University under the Government of the Russian Federation
 "50.06138889, 19.93722222",Krakow University of Economics,Poland,Małopolskie,38197,23000.0,PL,Krakow University of Economics
 "48.85666667, 2.352222222",Institut national des langues et civilisations orientales,France,Ile-de-France,12062,7263.0,FR,Institut national des langues et civilisations orientales
 "48.85666667, 2.352222222",Institut national des langues et civilisations orientales,France,Ile-de-France,13422,8082.0,FR,Institut national des langues et civilisations orientales
-"55.95333333, -3.189166666",Heriot-Watt University,nan,,48162,29000.0,nan,Heriot-Watt University
-"55.75055556, 37.6175",Russian University of Transport,nan,,149468,90000.0,nan,Russian University of Transport
-"59.95, 30.31666667",Saint-Petersburg State University of Architecture and Civil Engineering,nan,,18268,11000.0,nan,Saint-Petersburg State University of Architecture and Civil Engineering
+"55.95333333, -3.189166666",Heriot-Watt University,,,48162,29000.0,,Heriot-Watt University
+"55.75055556, 37.6175",Russian University of Transport,,,149468,90000.0,,Russian University of Transport
+"59.95, 30.31666667",Saint-Petersburg State University of Architecture and Civil Engineering,,,18268,11000.0,,Saint-Petersburg State University of Architecture and Civil Engineering
 "52.4, 13.1",Konrad Wolf Film University of Babelsberg,Germany,Brandenburg,1535,924.0,DE,Konrad Wolf Film University of Babelsberg
-"50.45, 30.52361111",Kyiv National Economic University named after Vadym Hetman,nan,,59787,36000.0,nan,Kyiv National Economic University named after Vadym Hetman
-"50.00444444, 36.23416667",National University of Kharkiv,nan,,25958,15630.0,nan,National University of Kharkiv
+"50.45, 30.52361111",Kyiv National Economic University named after Vadym Hetman,,,59787,36000.0,,Kyiv National Economic University named after Vadym Hetman
+"50.00444444, 36.23416667",National University of Kharkiv,,,25958,15630.0,,National University of Kharkiv
 "50.0875, 14.42138889",Czech University of Life Sciences Prague,Czechia,Praha,33215,20000.0,CZ,Czech University of Life Sciences Prague
 "50.0875, 14.42138889",University of Chemistry and Technology,Czechia,Praha,6829,4112.0,CZ,University of Chemistry and Technology
 "44.41336111, 26.09777778",Politehnica University of Bucharest,Romania,Bucureşti-Ilfov,42298,25469.0,RO,Politehnica University of Bucharest
@@ -233,11 +233,11 @@ location,name,country,province,kg_n_per_year,students,country_code,name_en
 "45.56027778, 18.67027778",University of Osijek,Croatia,Panonska Hrvatska,33215,20000.0,HR,University of Osijek
 "42.88333333, 20.86666667",University of Priština (North Mitrovica),XK,Kosovo,16176,9740.0,XK,University of Priština (North Mitrovica)
 "42.88333333, 20.86666667",University of Priština (North Mitrovica),XK,Kosovo,16176,9740.0,XK,University of Priština (North Mitrovica)
-"50.45, 30.52361111",Ukrainian State University of Finance and International Trade,nan,,3700,2228.0,nan,Ukrainian State University of Finance and International Trade
-"50.45, 30.52361111",National University of Physical Education and Sport of Ukraine,nan,,4982,3000.0,nan,National University of Physical Education and Sport of Ukraine
-"48.92277778, 24.71055556",Ivano-Frankivsk National Technical University of Oil and Gas,nan,,16608,10000.0,nan,Ivano-Frankivsk National Technical University of Oil and Gas
+"50.45, 30.52361111",Ukrainian State University of Finance and International Trade,,,3700,2228.0,,Ukrainian State University of Finance and International Trade
+"50.45, 30.52361111",National University of Physical Education and Sport of Ukraine,,,4982,3000.0,,National University of Physical Education and Sport of Ukraine
+"48.92277778, 24.71055556",Ivano-Frankivsk National Technical University of Oil and Gas,,,16608,10000.0,,Ivano-Frankivsk National Technical University of Oil and Gas
 "35.10886207, 32.84530637",European University of Lefke,Cyprus,Kýpros,5270,3173.0,CY,European University of Lefke
-"59.41722222, 10.48344444",University of South-Eastern Norway,nan,,31023,18680.0,nan,University of South-Eastern Norway
+"59.41722222, 10.48344444",University of South-Eastern Norway,,,31023,18680.0,,University of South-Eastern Norway
 "59.91333333, 10.73888889",Oslo Metropolitan University,Norway,Oslo og Viken,33215,20000.0,NO,Oslo Metropolitan University
 "47.49833333, 19.04083333",Haynal Imre University of Health Sciences,Hungary,Budapest,2152,1296.0,HU,Haynal Imre University of Health Sciences
 "50.35805556, 3.523333333",INSA Hauts-de-France,France,Nord-Pas de Calais,3539,2131.0,FR,INSA Hauts-de-France
@@ -247,17 +247,17 @@ location,name,country,province,kg_n_per_year,students,country_code,name_en
 "45.75083333, 3.110833333",National Polytechnic Institute of Clermont Auvergne,France,Auvergne,4690,2824.0,FR,National Polytechnic Institute of Clermont Auvergne
 "45.75083333, 3.110833333",National Polytechnic Institute of Clermont Auvergne,France,Auvergne,4768,2871.0,FR,National Polytechnic Institute of Clermont Auvergne
 "45.75083333, 3.110833333",National Polytechnic Institute of Clermont Auvergne,France,Auvergne,5130,3089.0,FR,National Polytechnic Institute of Clermont Auvergne
-"47.91, 33.39",Q135580139,nan,,3322,2000.0,nan,Q135580139
-"40.63, 22.95805556",Aristotle University of Thessaloniki,EL,Kentriki Makedonia,157771,95000.0,EL,Aristotle University of Thessaloniki
-"37.95111111, 23.73877778",National and Kapodistrian University of Athens,EL,Attiki,117018,70461.0,EL,National and Kapodistrian University of Athens
-"37.9596291, 23.7170648",Panteion University,EL,Attiki,30724,18500.0,EL,Panteion University
-"39.62, 20.84",University of Ioannina,EL,Ipeiros,41519,25000.0,EL,University of Ioannina
-"40.6253, 22.96",University of Macedonia,EL,Kentriki Makedonia,13286,8000.0,EL,University of Macedonia
-"38.28666667, 21.78638889",University of Patras,nan,,34876,21000.0,nan,University of Patras
-"23.732, 37.978",National Technical University of Athens (NTUA),nan,,24911,15000.0,nan,National Technical University of Athens (NTUA)
-"23.679, 38.011",University of West Attica,nan,,58126,35000.0,nan,University of West Attica
-"23.707, 37.964",Harokopio University,nan,,6643,4000.0,nan,Harokopio University
-"23.732, 38.015",Athens University of Economics and Business (AUEB),nan,,19929,12000.0,nan,Athens University of Economics and Business (AUEB)
-"23.722, 37.951",Panteion University of Social and Political Sciences,nan,,31554,19000.0,nan,Panteion University of Social and Political Sciences
-"23.653, 37.941",University of Piraeus,nan,,16608,10000.0,nan,University of Piraeus
-"23.783, 38.016",School of Pedagogical and Technological Education (ASPETE),nan,,8304,5000.0,nan,School of Pedagogical and Technological Education (ASPETE)
+"47.91, 33.39",Q135580139,,,3322,2000.0,,Q135580139
+"40.63, 22.95805556",Aristotle University of Thessaloniki,Greece,Central Macedonia,157771,95000.0,Greece,Aristotle University of Thessaloniki
+"37.95111111, 23.73877778",National and Kapodistrian University of Athens,Greece,Attica,117018,70461.0,Greece,National and Kapodistrian University of Athens
+"37.9596291, 23.7170648",Panteion University,Greece,Attica,30724,18500.0,Greece,Panteion University
+"39.62, 20.84",University of Ioannina,Greece,Epirus,41519,25000.0,Greece,University of Ioannina
+"40.6253, 22.96",University of Macedonia,Greece,Central Macedonia,13286,8000.0,Greece,University of Macedonia
+"38.28666667, 21.78638889",University of Patras,,,34876,21000.0,,University of Patras
+"23.732, 37.978",National Technical University of Athens (NTUA),,,24911,15000.0,,National Technical University of Athens (NTUA)
+"23.679, 38.011",University of West Attica,,,58126,35000.0,,University of West Attica
+"23.707, 37.964",Harokopio University,,,6643,4000.0,,Harokopio University
+"23.732, 38.015",Athens University of Economics and Business (AUEB),,,19929,12000.0,,Athens University of Economics and Business (AUEB)
+"23.722, 37.951",Panteion University of Social and Political Sciences,,,31554,19000.0,,Panteion University of Social and Political Sciences
+"23.653, 37.941",University of Piraeus,,,16608,10000.0,,University of Piraeus
+"23.783, 38.016",School of Pedagogical and Technological Education (ASPETE),,,8304,5000.0,,School of Pedagogical and Technological Education (ASPETE)

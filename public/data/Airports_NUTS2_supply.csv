@@ -10,7 +10,7 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "46.64277778, 14.33722222",Klagenfurt Airport,Austria,Kärnten,96,137844,,AT,Klagenfurt Airport
 "44.81944444, 20.30694444",Belgrade Nikola Tesla Airport,RS,City of Belgrade,5858,8367931,,RS,Belgrade Nikola Tesla Airport
 "60.31722222, 24.96333333",Helsinki Airport,Finland,Helsinki-Uusimaa,11416,16308814,,FI,Helsinki Airport
-"43.35194444, 77.04055556",Almaty International Airport,nan,,7999,11426650,,nan,Almaty International Airport
+"43.35194444, 77.04055556",Almaty International Airport,,,7999,11426650,,,Almaty International Airport
 "47.43944444, 19.26194444",Budapest Ferenc Liszt International Airport,Hungary,Budapest,12302,17574413,,HU,Budapest Ferenc Liszt International Airport
 "55.044192, -8.341",Donegal Airport,Ireland,Northern and Western,35,50530,,IE,Donegal Airport
 "42.77, -1.647",Pamplona Airport,Spain,Comunidad Foral de Navarra,154,220243,,ES,Pamplona Airport
@@ -41,14 +41,14 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "44.36222222, 28.48833333",Mihail Kogălniceanu International Airport,Romania,Sud-Est,77,109371,,RO,Mihail Kogălniceanu International Airport
 "52.36224722, 13.50067222",Berlin Brandenburg Airport,Germany,Brandenburg,17826,25465872,,DE,Berlin Brandenburg Airport
 "45.07972222, 3.763333333",Le Puy – Loudes Airport,France,Auvergne,2,2462,,FR,Le Puy – Loudes Airport
-"51.4775, -0.461389",London Heathrow Airport,nan,,58719,83884572,,nan,London Heathrow Airport
+"51.4775, -0.461389",London Heathrow Airport,,,58719,83884572,,,London Heathrow Airport
 "49.62333333, 6.204444444",Luxembourg Airport,Luxembourg,Luxembourg,3647,5209656,,LU,Luxembourg Airport
 "37.842005, -4.848878",Córdoba Airport,Spain,Andalucía,6,8474,,ES,Córdoba Airport
 "44.31805556, 23.88861111",Craiova Airport,Romania,Sud-Vest Oltenia,297,424976,,RO,Craiova Airport
 "47.687478, 26.354025",Suceava International Airport,Romania,Nord-Est,523,746600,,RO,Suceava International Airport
 "47.02527778, 21.9025",Oradea International Airport,Romania,Nord-Vest,118,169166,,RO,Oradea International Airport
 "48.68987778, 9.221963888",Stuttgart Airport,Germany,Stuttgart,6370,9100000,,DE,Stuttgart Airport
-"35.27972222, -2.956388888",Melilla Airport,nan,,356,507957,,nan,Melilla Airport
+"35.27972222, -2.956388888",Melilla Airport,,,356,507957,,,Melilla Airport
 "42.76111111, 10.23972222",Marina di Campo Airport,Italy,Toscana,1,1815,,IT,Marina di Campo Airport
 "46.46777778, 24.4125",Târgu Mureș International Airport,Romania,Centru,149,213312,,RO,Târgu Mureș International Airport
 "40.47222222, -3.560833333",Madrid-Barajas Airport,Spain,Comunidad de Madrid,46338,66197066,,ES,Madrid-Barajas Airport
@@ -57,7 +57,7 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "42.57277778, 21.03583333",Pristina International Airport Adem Jashari,XK,Kosovo,2858,4082481,,XK,Pristina International Airport Adem Jashari
 "49.94581944, 7.261077777",Hahn Airport,Germany,Koblenz,1302,1860000,,DE,Hahn Airport
 "45.7890231, 24.0949867",Sibiu International Airport,Romania,Centru,402,573918,,RO,Sibiu International Airport
-"51.02222222, 71.46694444",Nursultan Nazarbayev International Airport,nan,,5821,8315108,,nan,Nursultan Nazarbayev International Airport
+"51.02222222, 71.46694444",Nursultan Nazarbayev International Airport,,,5821,8315108,,,Nursultan Nazarbayev International Airport
 "45.7071, 25.5243",Brașov-Ghimbav International Airport,Romania,Centru,160,227900,,RO,Brașov-Ghimbav International Airport
 "60.29361111, 5.218061111",Bergen Airport,Norway,Vestlandet,4587,6552286,,NO,Bergen Airport
 "46.23833333, 6.109444444",Geneva International Airport,Switzerland,Région lémanique,12457,17796333,,CH,Geneva International Airport
@@ -69,14 +69,14 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "42.35944444, 19.25194444",Podgorica Airport,ME,Crna Gora,1160,1657522,,ME,Podgorica Airport
 "50.637778, 5.444167",Liege Airport,Belgium,Prov. Liège,123,175606,,BE,Liege Airport
 "51.18944444, 4.460277777",Antwerp International Airport,Belgium,Prov. Antwerpen,182,259764,,BE,Antwerp International Airport
-"55.97277778, 37.41472222",Sheremetyevo International Airport,nan,,25620,36600000,,nan,Sheremetyevo International Airport
+"55.97277778, 37.41472222",Sheremetyevo International Airport,,,25620,36600000,,,Sheremetyevo International Airport
 "46.46027778, 11.32638889",Bolzano airport,Italy,Provincia Autonoma di Bolzano/Bozen,59,83668,,IT,Bolzano airport
 "65.28333333, -14.40138889",Egilsstaðir Airport,Iceland,Ísland,65,92795,,IS,Egilsstaðir Airport
-"59.34333333, 5.2125","Haugesund Airport, Karmøy",nan,,435,621302,,nan,"Haugesund Airport, Karmøy"
-"49.70666667, -2.214444444",Alderney Airport,nan,,35,49823,,nan,Alderney Airport
+"59.34333333, 5.2125","Haugesund Airport, Karmøy",,,435,621302,,,"Haugesund Airport, Karmøy"
+"49.70666667, -2.214444444",Alderney Airport,,,35,49823,,,Alderney Airport
 "46.68638889, 17.15916667",Hévíz–Balaton Airport,Hungary,Nyugat-Dunántúl,3,4085,,HU,Hévíz–Balaton Airport
 "51.38916667, 21.21361111",Warsaw Radom Airport,Poland,Mazowiecki regionalny,72,103048,,PL,Warsaw Radom Airport
-"41.96111111, 21.62694444",Skopje International Airport,MK,Severna Makedonija ,2018,2883378,,MK,Skopje International Airport
+"41.96111111, 21.62694444",Skopje International Airport,MK,Severna Makedonija,2018,2883378,,MK,Skopje International Airport
 "57.09277778, 9.849166666",Aalborg Airport,Denmark,Nordjylland,996,1423024,,DK,Aalborg Airport
 "51.200278, 2.870278",Ostend-Bruges International Airport,Belgium,Prov. West-Vlaanderen,270,386387,,BE,Ostend-Bruges International Airport
 "41.296944, 2.078333",Josep Tarradellas Airport Barcelona-El Prat,Spain,Cataluña,34937,49909544,,ES,Josep Tarradellas Airport Barcelona-El Prat
@@ -90,123 +90,123 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "39.551675, 2.738808333",Palma de Mallorca Airport,Spain,Illes Balears,21774,31105987,,ES,Palma de Mallorca Airport
 "46.99305556, 15.43916667",Graz Airport,Austria,Steiermark,513,733146,,AT,Graz Airport
 "47.48888889, 21.61527778",Debrecen International Airport,Hungary,Észak-Alföld,214,306095,,HU,Debrecen International Airport
-"53.8825, 28.0325",Minsk National Airport,nan,,1748,2497631,,nan,Minsk National Airport
+"53.8825, 28.0325",Minsk National Airport,,,1748,2497631,,,Minsk National Airport
 "42.22916667, -8.6275",Vigo-Peinador Airport,Spain,Galicia,790,1128578,,ES,Vigo-Peinador Airport
 "41.41472222, 19.72055556",Tirana International Airport Nënë Tereza,AL,Qender,5080,7257634,,AL,Tirana International Airport Nënë Tereza
 "47.62444444, 17.81361111",Győr-Pér International Airport,Hungary,Nyugat-Dunántúl,5,6807,,HU,Győr-Pér International Airport
 "43.09540709, 12.50280403",Perugia San Francesco d'Assisi,Italy,Umbria,373,532474,,IT,Perugia San Francesco d'Assisi
 "51.72194444, 19.39805556",Łódź Władysław Reymont Airport,Poland,Łódzkie,250,356878,,PL,Łódź Władysław Reymont Airport
-"51.14722222, -0.190277777",London Gatwick Airport,nan,,28629,40899000,,nan,London Gatwick Airport
+"51.14722222, -0.190277777",London Gatwick Airport,,,28629,40899000,,,London Gatwick Airport
 "39.25146944, 9.054283333",Cagliari Elmas Airport,Italy,Sardegna,3392,4846000,,IT,Cagliari Elmas Airport
 "40.6575, 17.94694444",Brindisi – Salento Airport,Italy,Puglia,2218,3168786,,IT,Brindisi – Salento Airport
 "42.43722222, 14.18722222",Abruzzo Airport,Italy,Abruzzo,611,872701,,IT,Abruzzo Airport
-"49.435, -2.601944444",Guernsey Airport,nan,,488,697021,,nan,Guernsey Airport
+"49.435, -2.601944444",Guernsey Airport,,,488,697021,,,Guernsey Airport
 "41.43388889, 15.53583333","Foggia ""Gino Lisa"" Airport",Italy,Puglia,34,48972,,IT,"Foggia ""Gino Lisa"" Airport"
 "63.194445, 14.500278",Åre Östersund Airport,Sweden,Mellersta Norrland,16,22740,,SE,Åre Östersund Airport
-"39.0925, -28.02861111",Graciosa Airport,nan,,3,3857,,nan,Graciosa Airport
-"38.52, -28.71638889",Horta Airport,nan,,10,14024,,nan,Horta Airport
-"62.0636, -7.2772",Vágar Airport,nan,,16,22373,,nan,Vágar Airport
+"39.0925, -28.02861111",Graciosa Airport,,,3,3857,,,Graciosa Airport
+"38.52, -28.71638889",Horta Airport,,,10,14024,,,Horta Airport
+"62.0636, -7.2772",Vágar Airport,,,16,22373,,,Vágar Airport
 "63.793055, 20.28",Umeå Airport,Sweden,Övre Norrland,37,52869,,SE,Umeå Airport
 "39.67083333, -31.11277778",Corvo Airport,Portugal,Região Autónoma dos Açores,0,543,,PT,Corvo Airport
-"39.45910263, -31.13110542",Flores Airport,nan,,2,2813,,nan,Flores Airport
+"39.45910263, -31.13110542",Flores Airport,,,2,2813,,,Flores Airport
 "59.35444444, 17.93972222",Stockholm Bromma Airport,Sweden,Stockholm,70,100706,,SE,Stockholm Bromma Airport
 "55.53, 13.37138889",Malmö Airport,Sweden,Sydsverige,68,97323,,SE,Malmö Airport
-"37.01444444, -7.965833333",Faro Airport,nan,,209,298551,,nan,Faro Airport
+"37.01444444, -7.965833333",Faro Airport,,,209,298551,,,Faro Airport
 "33.07108688, -16.34954834",Porto Santo Airport,Portugal,Região Autónoma da Madeira,6,8742,,PT,Porto Santo Airport
 "56.26666667, 15.265",Ronneby Airport,Sweden,Sydsverige,7,9504,,SE,Ronneby Airport
 "57.66277778, 18.34611111",Visby Airport,Sweden,Småland med öarna,12,16854,,SE,Visby Airport
-"38.66333333, -28.17027778",São Jorge Airport,nan,,4,5691,,nan,São Jorge Airport
+"38.66333333, -28.17027778",São Jorge Airport,,,4,5691,,,São Jorge Airport
 "38.774167, -9.134167",Humberto Delgado Airport,Portugal,Grande Lisboa,1608,2296958,,PT,Humberto Delgado Airport
 "37.74194444, -25.69777778",João Paulo II Airport,Portugal,Região Autónoma dos Açores,93,132263,,PT,João Paulo II Airport
 "57.66, 12.29111111",Gothenburg-Landvetter Airport,Sweden,Västsverige,237,338295,,SE,Gothenburg-Landvetter Airport
 "41.23555556, -8.678055555",Francisco de Sá Carneiro Airport,Portugal,Norte,685,978501,,PT,Francisco de Sá Carneiro Airport
 "67.82138889, 20.33555556",Kiruna Airport,Sweden,Övre Norrland,15,22053,,SE,Kiruna Airport
-"32.69416667, -16.77805556",Madeira Cristiano-Ronaldo Airport,nan,,223,317937,,nan,Madeira Cristiano-Ronaldo Airport
+"32.69416667, -16.77805556",Madeira Cristiano-Ronaldo Airport,,,223,317937,,,Madeira Cristiano-Ronaldo Airport
 "59.65194444, 17.91861111",Stockholm Arlanda Airport,Sweden,Stockholm,1061,1515672,,SE,Stockholm Arlanda Airport
-"38.55444444, -28.44138889",Pico Airport,nan,,5,7397,,nan,Pico Airport
+"38.55444444, -28.44138889",Pico Airport,,,5,7397,,,Pico Airport
 "65.54361111, 22.12194444",Luleå/Kallax Airport,Sweden,Övre Norrland,63,89302,,SE,Luleå/Kallax Airport
-"38.76194444, -27.09083333",Lajes Airport,nan,,32,45468,,nan,Lajes Airport
-"-15.95905556, -5.645916666",Saint Helena Airport,nan,,0,583,,nan,Saint Helena Airport
+"38.76194444, -27.09083333",Lajes Airport,,,32,45468,,,Lajes Airport
+"-15.95905556, -5.645916666",Saint Helena Airport,,,0,583,,,Saint Helena Airport
 "51.84138889, -8.491111111",Cork Airport,Ireland,Southern,173,247537,,IE,Cork Airport
 "50.90138889, 4.484444444",Brussels Airport,Belgium,Prov. Vlaams-Brabant,1098,1568413,,BE,Brussels Airport
 "37.46666667, 15.06388889",Catania-Fontanarossa Airport,Italy,Sicilia,7070,10099441,,IT,Catania-Fontanarossa Airport
-"48.46212, -5.06231",Ushant Airport,nan,,2,3328,,nan,Ushant Airport
+"48.46212, -5.06231",Ushant Airport,,,2,3328,,,Ushant Airport
 "65.46111111, 12.2175","Brønnøysund Airport, Brønnøy",Norway,Nord-Norge,90,128032,,NO,"Brønnøysund Airport, Brønnøy"
-"51.57027778, 0.693333333",London Southend Airport,nan,,63,89361,,nan,London Southend Airport
+"51.57027778, 0.693333333",London Southend Airport,,,63,89361,,,London Southend Airport
 "38.89138889, -6.821388888",Badajoz Airport,Spain,Extremadura,46,65564,,ES,Badajoz Airport
-"52.6758, 1.28278",Norwich International Airport,nan,,223,319040,,nan,Norwich International Airport
-"50.73444444, -3.413888888",Exeter Airport,nan,,268,382198,,nan,Exeter Airport
-"49.173333, -0.45",Caen – Carpiquet Airport,France,Basse-Normandie ,211,301395,,FR,Caen – Carpiquet Airport
-"64.6, 40.71666667",Talagi Airport,nan,,700,1000000,,nan,Talagi Airport
+"52.6758, 1.28278",Norwich International Airport,,,223,319040,,,Norwich International Airport
+"50.73444444, -3.413888888",Exeter Airport,,,268,382198,,,Exeter Airport
+"49.173333, -0.45",Caen – Carpiquet Airport,France,Basse-Normandie,211,301395,,FR,Caen – Carpiquet Airport
+"64.6, 40.71666667",Talagi Airport,,,700,1000000,,,Talagi Airport
 "51.280925, 6.757311111",Düsseldorf Airport,Germany,Düsseldorf,11250,16071936,,DE,Düsseldorf Airport
-"-9.3522, -140.0778",Ua Pou Airport,nan,,2,3321,,nan,Ua Pou Airport
-"35.42068333, 27.14672778",Karpathos National Airport,nan,,193,275007,,nan,Karpathos National Airport
-"53.353889, -2.275",Manchester Airport,nan,,16338,23340418,,nan,Manchester Airport
+"-9.3522, -140.0778",Ua Pou Airport,,,2,3321,,,Ua Pou Airport
+"35.42068333, 27.14672778",Karpathos National Airport,,,193,275007,,,Karpathos National Airport
+"53.353889, -2.275",Manchester Airport,,,16338,23340418,,,Manchester Airport
 "45.53416667, 4.297222222",Saint-Étienne-Loire Airport,France,Rhône-Alpes,2,3305,,FR,Saint-Étienne-Loire Airport
-"59.80027778, 30.2625",Pulkovo Airport,nan,,12698,18140100,,nan,Pulkovo Airport
-"35.339722, 25.180278","Heraklion International Airport ""Nikos Kazantzakis""",nan,,5661,8087146,,nan,"Heraklion International Airport ""Nikos Kazantzakis"""
-"37.42208649, 24.94778178",Syros Island National Airport,EL,Notio Aigaio,11,15885,,EL,Syros Island National Airport
-"53.47527778, -1.004166666",Doncaster Sheffield Airport,nan,,672,959321,,nan,Doncaster Sheffield Airport
-"67.26916667, 14.36527778",Bodø Airport,nan,,1148,1639469,,nan,Bodø Airport
-"35.21610833, 26.101325","Sitia Public Airport ""Vitsentzos Kornaros""",EL,Kriti,16,22692,,EL,"Sitia Public Airport ""Vitsentzos Kornaros"""
-"54.6575, -6.215833",Belfast International Airport,nan,,3373,4818214,,nan,Belfast International Airport
+"59.80027778, 30.2625",Pulkovo Airport,,,12698,18140100,,,Pulkovo Airport
+"35.339722, 25.180278","Heraklion International Airport ""Nikos Kazantzakis""",,,5661,8087146,,,"Heraklion International Airport ""Nikos Kazantzakis"""
+"37.42208649, 24.94778178",Syros Island National Airport,Greece,South Aegean,11,15885,,Greece,Syros Island National Airport
+"53.47527778, -1.004166666",Doncaster Sheffield Airport,,,672,959321,,,Doncaster Sheffield Airport
+"67.26916667, 14.36527778",Bodø Airport,,,1148,1639469,,,Bodø Airport
+"35.21610833, 26.101325","Sitia Public Airport ""Vitsentzos Kornaros""",Greece,Crete,16,22692,,Greece,"Sitia Public Airport ""Vitsentzos Kornaros"""
+"54.6575, -6.215833",Belfast International Airport,,,3373,4818214,,,Belfast International Airport
 "28.04444444, -16.5725",Tenerife South Airport,Spain,Canarias,7575,10821703,,ES,Tenerife South Airport
 "47.8975, 2.16416667",Orléans – Saint-Denis-de-l'Hôtel Airport,France,Centre — Val de Loire,1,1761,,FR,Orléans – Saint-Denis-de-l'Hôtel Airport
-"37.435111, 25.348083","Mykonos National Airport ""Manto Mavrogeni""",EL,Notio Aigaio,1177,1680868,,EL,"Mykonos National Airport ""Manto Mavrogeni"""
-"40.91333333, 24.61916667","Kavala International Airport ""Alexander the Great""",EL,"Anatoliki Makedonia, Thraki",176,251615,,EL,"Kavala International Airport ""Alexander the Great"""
+"37.435111, 25.348083","Mykonos National Airport ""Manto Mavrogeni""",Greece,South Aegean,1177,1680868,,Greece,"Mykonos National Airport ""Manto Mavrogeni"""
+"40.91333333, 24.61916667","Kavala International Airport ""Alexander the Great""",Greece,"Anatoliki Makedonia, Thraki",176,251615,,Greece,"Kavala International Airport ""Alexander the Great"""
 "37.77472222, -0.812222222",Murcia-San Javier Airport,Spain,Región de Murcia,0,0,,ES,Murcia-San Javier Airport
 "35.8575, 14.4775",Malta International Airport,Malta,Malta,4095,5850499,,MT,Malta International Airport
-"55.60666667, 49.28166667",Kazan International Airport,nan,,2813,4018000,,nan,Kazan International Airport
-"-17.35527778, -138.445",Tatakoto Airport,nan,,1,1818,,nan,Tatakoto Airport
-"40.519722, 22.970917","Thessaloniki Airport ""Makedonia""",EL,Kentriki Makedonia,4146,5923175,,EL,"Thessaloniki Airport ""Makedonia"""
+"55.60666667, 49.28166667",Kazan International Airport,,,2813,4018000,,,Kazan International Airport
+"-17.35527778, -138.445",Tatakoto Airport,,,1,1818,,,Tatakoto Airport
+"40.519722, 22.970917","Thessaloniki Airport ""Makedonia""",Greece,Central Macedonia,4146,5923175,,Greece,"Thessaloniki Airport ""Makedonia"""
 "43.7575, 4.416388888",Nîmes-Alès-Camargue-Cévennes Airport,France,Languedoc-Roussillon,130,185242,,FR,Nîmes-Alès-Camargue-Cévennes Airport
 "63.72027778, 23.13916667",Kokkola-Pietarsaari Airport,Finland,Länsi-Suomi,12,17198,,FI,Kokkola-Pietarsaari Airport
-"52.83055556, -1.327777777",East Midlands Airport,nan,,2230,3186367,,nan,East Midlands Airport
-"40.85586944, 25.95626389","Alexandroupolis International Airport ""Democritus""",EL,"Anatoliki Makedonia, Thraki",175,249584,,EL,"Alexandroupolis International Airport ""Democritus"""
-"41.61027778, 41.59944444",Batumi International Airport,nan,,432,616885,,nan,Batumi International Airport
+"52.83055556, -1.327777777",East Midlands Airport,,,2230,3186367,,,East Midlands Airport
+"40.85586944, 25.95626389","Alexandroupolis International Airport ""Democritus""",Greece,"Anatoliki Makedonia, Thraki",175,249584,,Greece,"Alexandroupolis International Airport ""Democritus"""
+"41.61027778, 41.59944444",Batumi International Airport,,,432,616885,,,Batumi International Airport
 "28.029625, -17.2146",La Gomera Airport,Spain,Canarias,67,95163,,ES,La Gomera Airport
 "50.4592, 4.45382",Brussels South Charleroi Airport,Belgium,Prov. Hainaut,5790,8272000,,BE,Brussels South Charleroi Airport
-"55.87194444, -4.433055555",Glasgow Airport,nan,,4561,6516029,,nan,Glasgow Airport
-"-20.64166667, 166.5733333",Ouvéa Airport,nan,,47,67509,,nan,Ouvéa Airport
+"55.87194444, -4.433055555",Glasgow Airport,,,4561,6516029,,,Glasgow Airport
+"-20.64166667, 166.5733333",Ouvéa Airport,,,47,67509,,,Ouvéa Airport
 "69.78666667, 20.95972222",Sørkjosen Airport,Norway,Nord-Norge,13,18745,,NO,Sørkjosen Airport
 "59.58944444, 16.63361111",Stockholm Västerås Airport,Sweden,Östra Mellansverige,65,93080,,SE,Stockholm Västerås Airport
 "44.45861111, 18.72472222",Tuzla International Airport,BA,Federacija Bosne i Hercegovine,332,474336,,BA,Tuzla International Airport
-"78.24611111, 15.46555556",Svalbard Airport,nan,,119,170277,,nan,Svalbard Airport
-"-15.24638889, -146.6202778",Arutua Airport,nan,,8,11409,,nan,Arutua Airport
+"78.24611111, 15.46555556",Svalbard Airport,,,119,170277,,,Svalbard Airport
+"-15.24638889, -146.6202778",Arutua Airport,,,8,11409,,,Arutua Airport
 "53.58472222, 14.90222222","""Solidarity"" Szczecin-Goleniów Airport",Poland,Zachodniopomorskie,293,419105,,PL,"""Solidarity"" Szczecin-Goleniów Airport"
 "44.8975, 2.416666666",Aurillac Airport,France,Auvergne,23,32777,,FR,Aurillac Airport
 "47.599696, 7.5316",EuroAirport Basel-Mulhouse-Freiburg,France,Alsace,4936,7050905,,FR,EuroAirport Basel-Mulhouse-Freiburg
 "60.025, 13.58055556",Hagfors Airport,Sweden,Norra Mellansverige,1,1864,,SE,Hagfors Airport
 "48.11027778, 7.359166666",Colmar-Houssen Airport,France,Alsace,2,2476,,FR,Colmar-Houssen Airport
 "60.42194444, 15.515",Dala Airport,Sweden,Norra Mellansverige,8,11027,,SE,Dala Airport
-"-23.08333333, -134.8833333",Totegegie Airport,nan,,6,9275,,nan,Totegegie Airport
+"-23.08333333, -134.8833333",Totegegie Airport,,,6,9275,,,Totegegie Airport
 "48.23527778, 14.18805556",Linz Airport,Austria,Oberösterreich,145,207766,,AT,Linz Airport
 "59.41638889, 24.79916667",Tallinn Airport,Estonia,Eesti,1924,2748255,,EE,Tallinn Airport
 "43.21583333, 2.308611111",Carcassonne Airport,France,Languedoc-Roussillon,195,279275,,FR,Carcassonne Airport
-"58.21555556, -6.331111111",Stornoway Airport,nan,,71,101121,,nan,Stornoway Airport
+"58.21555556, -6.331111111",Stornoway Airport,,,71,101121,,,Stornoway Airport
 "43.185, -0.001944444",Tarbes-Lourdes-Pyrénées Airport,France,Midi-Pyrénées,282,403325,,FR,Tarbes-Lourdes-Pyrénées Airport
 "43.28277778, 17.84583333",Mostar International Airport,BA,Federacija Bosne i Hercegovine,7,10711,,BA,Mostar International Airport
-"-22.25833333, 166.4727778",Nouméa Magenta Airport,nan,,266,380557,,nan,Nouméa Magenta Airport
-"51.382778, -2.719167",Bristol Airport,nan,,5562,7945038,,nan,Bristol Airport
-"-14.31138889, -178.0661111",Pointe Vele Airport,nan,,9,13009,,nan,Pointe Vele Airport
-"43.35638889, -1.790555555",San Sebastián Airport,nan,,269,383584,,nan,San Sebastián Airport
+"-22.25833333, 166.4727778",Nouméa Magenta Airport,,,266,380557,,,Nouméa Magenta Airport
+"51.382778, -2.719167",Bristol Airport,,,5562,7945038,,,Bristol Airport
+"-14.31138889, -178.0661111",Pointe Vele Airport,,,9,13009,,,Pointe Vele Airport
+"43.35638889, -1.790555555",San Sebastián Airport,,,269,383584,,,San Sebastián Airport
 "44.54595, 7.62182",Cuneo International Airport,Italy,Piemonte,112,160189,,IT,Cuneo International Airport
 "43.56361111, -6.034722222",Asturias Airport,Spain,Principado de Asturias,1018,1454763,,ES,Asturias Airport
-"37.06838333, 22.02563611","Kalamata International Airport ""Captain Vasilis Konstantakopoulos""",EL,Peloponnisos,248,354546,,EL,"Kalamata International Airport ""Captain Vasilis Konstantakopoulos"""
-"-13.23828056, -176.1992278",Hihifo Airport,nan,,22,31961,,nan,Hihifo Airport
+"37.06838333, 22.02563611","Kalamata International Airport ""Captain Vasilis Konstantakopoulos""",Greece,Peloponnese,248,354546,,Greece,"Kalamata International Airport ""Captain Vasilis Konstantakopoulos"""
+"-13.23828056, -176.1992278",Hihifo Airport,,,22,31961,,,Hihifo Airport
 "37.80363889, -1.124111111",Región de Murcia International Airport,Spain,Región de Murcia,587,838940,,ES,Región de Murcia International Airport
-"61.58361111, 5.024722222",Florø Airport,nan,,105,150339,,nan,Florø Airport
-"43.66527778, 7.215",Nice Côte d'Azur Airport,nan,,8483,12119043,,nan,Nice Côte d'Azur Airport
+"61.58361111, 5.024722222",Florø Airport,,,105,150339,,,Florø Airport
+"43.66527778, 7.215",Nice Côte d'Azur Airport,,,8483,12119043,,,Nice Côte d'Azur Airport
 "42.88277778, -2.724444444",Vitoria Airport,Spain,País Vasco,165,235186,,ES,Vitoria Airport
-"62.09333333, 129.7716667",Yakutsk Airport,nan,,690,986064,,nan,Yakutsk Airport
+"62.09333333, 129.7716667",Yakutsk Airport,,,690,986064,,,Yakutsk Airport
 "44.94138889, 17.2975",Banja Luka International Airport,BA,Republika Srpska,240,343009,,BA,Banja Luka International Airport
 "45.50527778, 12.35194444",Venice Marco Polo Airport,Italy,Veneto,6523,9319156,,IT,Venice Marco Polo Airport
 "49.454444, 2.112778",Beauvais-Tillé Airport,France,Picardie,3230,4614424,,FR,Beauvais-Tillé Airport
 "44.01944444, 12.60944444",Federico Fellini International Airport,Italy,Emilia-Romagna,150,214851,,IT,Federico Fellini International Airport
-"-21.09583333, 167.8038889",Tiga Airport,nan,,1,2016,,nan,Tiga Airport
-"57.5425, -4.0475",Inverness Airport,nan,,490,699982,,nan,Inverness Airport
-"36.405278, 28.086112","Rhodes International Airport ""Diagoras""",nan,,4098,5853917,,nan,"Rhodes International Airport ""Diagoras"""
-"56.23, 43.78666667",Nizhny Novgorod International Airport,nan,,840,1200000,,nan,Nizhny Novgorod International Airport
+"-21.09583333, 167.8038889",Tiga Airport,,,1,2016,,,Tiga Airport
+"57.5425, -4.0475",Inverness Airport,,,490,699982,,,Inverness Airport
+"36.405278, 28.086112","Rhodes International Airport ""Diagoras""",,,4098,5853917,,,"Rhodes International Airport ""Diagoras"""
+"56.23, 43.78666667",Nizhny Novgorod International Airport,,,840,1200000,,,Nizhny Novgorod International Airport
 "52.42103, 16.82633",Poznań-Ławica Airport,Poland,Wielkopolskie,1577,2252428,,PL,Poznań-Ławica Airport
 "42.58888889, -5.655555555",León Airport,Spain,Castilla y León,31,44941,,ES,León Airport
 "69.05583333, 18.54027778",Bardufoss Airport,Norway,Nord-Norge,126,179853,,NO,Bardufoss Airport
@@ -214,205 +214,205 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "45.64, 5.881111111",Chambéry Airport,France,Rhône-Alpes,85,120970,,FR,Chambéry Airport
 "64.13, -21.94055556",Reykjavík Airport,Iceland,Ísland,244,348773,,IS,Reykjavík Airport
 "46.86027778, 1.721111111","Châteauroux-Centre ""Marcel Dassault"" Airport",France,Centre — Val de Loire,2,3274,,FR,"Châteauroux-Centre ""Marcel Dassault"" Airport"
-"54.89, 20.5925",Khrabrovo Airport,nan,,2620,3742387,,nan,Khrabrovo Airport
+"54.89, 20.5925",Khrabrovo Airport,,,2620,3742387,,,Khrabrovo Airport
 "62.65888889, 29.62444444",Joensuu Airport,Finland,Pohjois- ja Itä-Suomi,13,18755,,FI,Joensuu Airport
-"50.95611111, 0.939166666",Lydd Airport,nan,,0,0,,nan,Lydd Airport
+"50.95611111, 0.939166666",Lydd Airport,,,0,0,,,Lydd Airport
 "45.74305556, 16.06888889",Zagreb Airport,Croatia,Grad Zagreb,2187,3124605,,HR,Zagreb Airport
 "46.48, 15.68611111",Maribor Edvard Rusjan Airport,Slovenia,Vzhodna Slovenija,3,3919,,SI,Maribor Edvard Rusjan Airport
-"-16.045, -142.4769444",Raroia Airport,nan,,2,2628,,nan,Raroia Airport
+"-16.045, -142.4769444",Raroia Airport,,,2,2628,,,Raroia Airport
 "42.3575, -3.613611111",Burgos Airport,Spain,Castilla y León,1,2098,,ES,Burgos Airport
 "42.55, 9.484722222",Bastia – Poretta Airport,France,Corse,1042,1489038,,FR,Bastia – Poretta Airport
 "56.69083333, 12.82",Halmstad Airport,Sweden,Västsverige,54,76517,,SE,Halmstad Airport
 "44.56583333, 14.39305556",Lošinj Airport,Croatia,Jadranska Hrvatska,4,5384,,HR,Lošinj Airport
 "61.39111111, 5.756944444",Førde Airport,Norway,Vestlandet,45,64026,,NO,Førde Airport
-"35.42135833, 26.91004722",Kassos Public Airport,EL,Notio Aigaio,2,2584,,EL,Kassos Public Airport
-"55.68333333, -6.249166666",Islay Airport,nan,,18,26148,,nan,Islay Airport
-"38.28222222, -0.558055555",Alicante Airport,Spain,Comunitat Valenciana ,9242,13202880,,ES,Alicante Airport
-"36.39916944, 25.47933333",Santorini (Thira) National Airport,EL,Notio Aigaio,1757,2509888,,EL,Santorini (Thira) National Airport
+"35.42135833, 26.91004722",Kassos Public Airport,Greece,South Aegean,2,2584,,Greece,Kassos Public Airport
+"55.68333333, -6.249166666",Islay Airport,,,18,26148,,,Islay Airport
+"38.28222222, -0.558055555",Alicante Airport,Spain,Comunitat Valenciana,9242,13202880,,ES,Alicante Airport
+"36.39916944, 25.47933333",Santorini (Thira) National Airport,Greece,South Aegean,1757,2509888,,Greece,Santorini (Thira) National Airport
 "62.04777778, 14.42277778",Härjedalen Sveg Airport,Sweden,Mellersta Norrland,4,6252,,SE,Härjedalen Sveg Airport
 "45.860833, 1.180278",Limoges – Bellegarde Airport,France,Limousin,135,193382,,FR,Limoges – Bellegarde Airport
-"39.601945, 19.912222",Corfu International Airport,EL,Ionia Nisia,2624,3749106,,EL,Corfu International Airport
+"39.601945, 19.912222",Corfu International Airport,Greece,Ionian Islands,2624,3749106,,Greece,Corfu International Airport
 "43.46833333, -1.523333333",Biarritz – Anglet – Bayonne Airport,France,Aquitaine,652,931698,,FR,Biarritz – Anglet – Bayonne Airport
 "53.910297, -8.818492",Ireland West Airport Knock,Ireland,Northern and Western,497,709540,,IE,Ireland West Airport Knock
 "57.0688, 8.705225",Thisted Airport,Denmark,Nordjylland,0,549,,DK,Thisted Airport
 "58.20388889, 8.085","Kristiansand Airport, Kjevik",Norway,Agder og Sør-Østlandet,518,739907,,NO,"Kristiansand Airport, Kjevik"
 "64.92916667, 25.35555556",Oulu Airport,Finland,Pohjois- ja Itä-Suomi,442,632130,,FI,Oulu Airport
 "47.43194444, 0.723055555",Tours Val de Loire Airport,France,Centre — Val de Loire,125,178151,,FR,Tours Val de Loire Airport
-"58.95805556, -2.900555555",Kirkwall Airport,nan,,86,123055,,nan,Kirkwall Airport
+"58.95805556, -2.900555555",Kirkwall Airport,,,86,123055,,,Kirkwall Airport
 "37.418056, -5.898889",San Pablo Airport,Spain,Andalucía,4746,6779453,,ES,San Pablo Airport
-"55.95, -3.3725",Edinburgh Airport,nan,,7883,11261873,,nan,Edinburgh Airport
+"55.95, -3.3725",Edinburgh Airport,,,7883,11261873,,,Edinburgh Airport
 "59.22361111, 15.03805556",Örebro Airport,Sweden,Östra Mellansverige,47,67712,,SE,Örebro Airport
 "68.1525, 13.60944444",Leknes Airport,Norway,Nord-Norge,73,104890,,NO,Leknes Airport
 "69.725, 29.88777778","Kirkenes Airport, Høybuktmoen",Norway,Nord-Norge,173,247107,,NO,"Kirkenes Airport, Høybuktmoen"
 "68.2433, 14.6692",Svolvær Airport,Norway,Nord-Norge,63,89927,,NO,Svolvær Airport
-"69.2925, 16.14416667",Andøya Airport,nan,,47,66829,,nan,Andøya Airport
+"69.2925, 16.14416667",Andøya Airport,,,47,66829,,,Andøya Airport
 "40.88444444, 14.29083333",Naples International Airport,Italy,Campania,7643,10918234,,IT,Naples International Airport
 "61.15611111, 7.137777777","Sogndal Airport, Haukåsen",Norway,Vestlandet,62,88961,,NO,"Sogndal Airport, Haukåsen"
-"64.83833333, 11.14611111",Rørvik Airport,nan,,34,48039,,nan,Rørvik Airport
-"53.33361111, -2.849722222",Liverpool John Lennon Airport,nan,,2443,3490655,,nan,Liverpool John Lennon Airport
+"64.83833333, 11.14611111",Rørvik Airport,,,34,48039,,,Rørvik Airport
+"53.33361111, -2.849722222",Liverpool John Lennon Airport,,,2443,3490655,,,Liverpool John Lennon Airport
 "54.63694444, 25.28777778",Vilnius Airport,Lithuania,Sostinės regionas,2741,3915960,,LT,Vilnius Airport
 "41.50222222, 9.096666666",Figari Sud-Corse Airport,France,Corse,635,907102,,FR,Figari Sud-Corse Airport
-"38.343056, 26.140556",Chios Island National Airport,EL,Voreio Aigaio,171,244694,,EL,Chios Island National Airport
+"38.343056, 26.140556",Chios Island National Airport,Greece,North Aegean,171,244694,,Greece,Chios Island National Airport
 "55.52583333, 8.553333333",Esbjerg Airport,Denmark,Syddanmark,55,78460,,DK,Esbjerg Airport
 "60.20277778, 11.08388889",Oslo Airport,Norway,Oslo og Viken,15727,22467510,,NO,Oslo Airport
 "42.525, 8.79",Calvi – Sainte-Catherine Airport,France,Corse,243,346496,,FR,Calvi – Sainte-Catherine Airport
-"50.10277778, -5.670555555",Land's End Airport,nan,,45,63629,,nan,Land's End Airport
-"50.44083333, -4.995277777",Newquay Airport,nan,,171,244674,,nan,Newquay Airport
+"50.10277778, -5.670555555",Land's End Airport,,,45,63629,,,Land's End Airport
+"50.44083333, -4.995277777",Newquay Airport,,,171,244674,,,Newquay Airport
 "67.69861111, 24.84805556",Kittilä Airport,Finland,Pohjois- ja Itä-Suomi,236,337198,,FI,Kittilä Airport
 "44.19545, 12.069583",Forlì Airport,Italy,Emilia-Romagna,66,94610,,IT,Forlì Airport
 "48.77333333, 4.206111111",Châlons Vatry Airport,France,Champagne-Ardenne,43,62007,,FR,Châlons Vatry Airport
-"53.86583333, -1.660555555",Leeds Bradford Airport,nan,,2302,3287968,,nan,Leeds Bradford Airport
+"53.86583333, -1.660555555",Leeds Bradford Airport,,,2302,3287968,,,Leeds Bradford Airport
 "42.56138889, 18.26833333",Dubrovnik Ruđer Bošković Airport,Croatia,Jadranska Hrvatska,1504,2149181,,HR,Dubrovnik Ruđer Bošković Airport
-"55.61805556, 12.65611111",Copenhagen Airport,nan,,15500,22143135,,nan,Copenhagen Airport
-"-17.55666667, -149.6113889",Faa'a International Airport,nan,,983,1404115,,nan,Faa'a International Airport
-"-15.11972222, -148.2336111",Tikehau Airport,nan,,35,49913,,nan,Tikehau Airport
+"55.61805556, 12.65611111",Copenhagen Airport,,,15500,22143135,,,Copenhagen Airport
+"-17.55666667, -149.6113889",Faa'a International Airport,,,983,1404115,,,Faa'a International Airport
+"-15.11972222, -148.2336111",Tikehau Airport,,,35,49913,,,Tikehau Airport
 "63.407778, 18.9925",Örnsköldsvik Airport,Sweden,Mellersta Norrland,7,10419,,SE,Örnsköldsvik Airport
-"68.58083333, 15.02611111",Stokmarknes Airport,nan,,78,111177,,nan,Stokmarknes Airport
-"57.48111111, -7.362777777",Benbecula Airport,nan,,21,30230,,nan,Benbecula Airport
+"68.58083333, 15.02611111",Stokmarknes Airport,,,78,111177,,,Stokmarknes Airport
+"57.48111111, -7.362777777",Benbecula Airport,,,21,30230,,,Benbecula Airport
 "66.36388889, 14.30138889","Mo i Rana Airport, Røssvoll",Norway,Nord-Norge,77,110118,,NO,"Mo i Rana Airport, Røssvoll"
 "28.48804722, -16.34591389",Tenerife North Airport,Spain,Canarias,3896,5566243,,ES,Tenerife North Airport
-"37.690278, 26.912778",Samos International Airport,EL,Voreio Aigaio,317,452264,,EL,Samos International Airport
+"37.690278, 26.912778",Samos International Airport,Greece,North Aegean,317,452264,,Greece,Samos International Airport
 "70.60027778, 29.6925",Båtsfjord Airport,Norway,Nord-Norge,18,25620,,NO,Båtsfjord Airport
 "42.46027778, -2.320277777",Logroño-Agoncillo Airport,Spain,Comunidad Foral de Navarra,7,10304,,ES,Logroño-Agoncillo Airport
 "47.15694444, -1.607777777",Nantes Atlantique Airport,France,Pays de la Loire,4060,5800372,,FR,Nantes Atlantique Airport
-"39.48944444, -0.481666666",Valencia Airport,Spain,Comunitat Valenciana ,5680,8114852,,ES,Valencia Airport
-"-16.42638889, -152.2433333",Maupiti Airport,nan,,23,32294,,nan,Maupiti Airport
-"39.91707222, 25.23630833",Lemnos International Airport,EL,Voreio Aigaio,87,124089,,EL,Lemnos International Airport
+"39.48944444, -0.481666666",Valencia Airport,Spain,Comunitat Valenciana,5680,8114852,,ES,Valencia Airport
+"-16.42638889, -152.2433333",Maupiti Airport,,,23,32294,,,Maupiti Airport
+"39.91707222, 25.23630833",Lemnos International Airport,Greece,North Aegean,87,124089,,Greece,Lemnos International Airport
 "58.32416667, 12.33638889",Trollhättan-Vänersborg Airport,Sweden,Västsverige,8,11927,,SE,Trollhättan-Vänersborg Airport
 "34.87888889, 33.63027778",Larnaca International Airport,Cyprus,Kýpros,4226,6037053,,CY,Larnaca International Airport
-"55.43722222, -5.686388888",Campbeltown Airport,nan,,4,5812,,nan,Campbeltown Airport
+"55.43722222, -5.686388888",Campbeltown Airport,,,4,5812,,,Campbeltown Airport
 "70.06666667, 24.97388889","Lakselv Airport, Banak",Norway,Nord-Norge,42,59646,,NO,"Lakselv Airport, Banak"
-"36.15111111, -5.349722222",Gibraltar International Airport,nan,,312,446187,,nan,Gibraltar International Airport
+"36.15111111, -5.349722222",Gibraltar International Airport,,,312,446187,,,Gibraltar International Airport
 "45.93083333, 6.106388888",Annecy – Haute-Savoie – Mont Blanc Airport,France,Rhône-Alpes,0,0,,FR,Annecy – Haute-Savoie – Mont Blanc Airport
 "41.70611111, -4.851944444",Valladolid Airport,Spain,Castilla y León,120,172006,,ES,Valladolid Airport
 "27.93194444, -15.38666667",Gran Canaria Airport,Spain,Canarias,8692,12417699,,ES,Gran Canaria Airport
-"55.04277778, -7.161944444",City of Derry Airport,nan,,114,163379,,nan,City of Derry Airport
-"36.27425833, 23.01697778","Kithira Island National Airport ""Alexandros Aristotelous Onassis""",EL,Attiki,25,35018,,EL,"Kithira Island National Airport ""Alexandros Aristotelous Onassis"""
+"55.04277778, -7.161944444",City of Derry Airport,,,114,163379,,,City of Derry Airport
+"36.27425833, 23.01697778","Kithira Island National Airport ""Alexandros Aristotelous Onassis""",Greece,Attica,25,35018,,Greece,"Kithira Island National Airport ""Alexandros Aristotelous Onassis"""
 "60.51472222, 22.26166667",Turku Airport,Finland,Etelä-Suomi,93,133137,,FI,Turku Airport
-"39.05666667, 26.59833333",Mytilene International Airport,nan,,307,438928,,nan,Mytilene International Airport
-"41.18, 20.74222222","Ohrid ""St. Paul the Apostle"" Airport",MK,Severna Makedonija ,163,232232,,MK,"Ohrid ""St. Paul the Apostle"" Airport"
+"39.05666667, 26.59833333",Mytilene International Airport,,,307,438928,,,Mytilene International Airport
+"41.18, 20.74222222","Ohrid ""St. Paul the Apostle"" Airport",MK,Severna Makedonija,163,232232,,MK,"Ohrid ""St. Paul the Apostle"" Airport"
 "60.89638889, 26.93805556",Utti Airport,Finland,Etelä-Suomi,0,0,,FI,Utti Airport
 "4.28333333, -54.38111111",Grand-Santi Airport,France,Guyane,4,5469,,FR,Grand-Santi Airport
-"-16.44361111, -151.7525",Bora Bora Airport,nan,,225,320905,,nan,Bora Bora Airport
+"-16.44361111, -151.7525",Bora Bora Airport,,,225,320905,,,Bora Bora Airport
 "68.61083333, 27.41388889",Ivalo Airport,Finland,Pohjois- ja Itä-Suomi,139,197987,,FI,Ivalo Airport
 "55.74027778, 9.151944444",Billund Airport,Denmark,Syddanmark,2578,3682398,,DK,Billund Airport
 "63.00861111, 27.79444444",Kuopio Airport,Finland,Pohjois- ja Itä-Suomi,88,126083,,FI,Kuopio Airport
 "38.90527778, 16.24222222",Lamezia Terme International Airport,Italy,Calabria,1836,2622535,,IT,Lamezia Terme International Airport
 "59.18666667, 10.25861111",Sandefjord Airport,Norway,Agder og Sør-Østlandet,1220,1743132,,NO,Sandefjord Airport
 "48.66305556, 21.24111111",Košice International Airport,Slovakia,Východné Slovensko,378,539749,,SK,Košice International Airport
-"-20.7748, 167.2398639",Lifou Airport,nan,,113,160928,,nan,Lifou Airport
+"-20.7748, 167.2398639",Lifou Airport,,,113,160928,,,Lifou Airport
 "43.61666667, 13.36027778",Ancona/Falconara Airport,Italy,Marche,327,467622,,IT,Ancona/Falconara Airport
 "43.38, -0.418611111",Pau Pyrénées Airport,France,Aquitaine,258,368053,,FR,Pau Pyrénées Airport
-"37.68271667, 26.34706111","Ikaria National Airport ""Icarus""",nan,,40,57240,,nan,"Ikaria National Airport ""Icarus"""
-"37.08111111, 25.36805556","Naxos National Airport ""Apollon""",EL,Notio Aigaio,86,123220,,EL,"Naxos National Airport ""Apollon"""
+"37.68271667, 26.34706111","Ikaria National Airport ""Icarus""",,,40,57240,,,"Ikaria National Airport ""Icarus"""
+"37.08111111, 25.36805556","Naxos National Airport ""Apollon""",Greece,South Aegean,86,123220,,Greece,"Naxos National Airport ""Apollon"""
 "56.3105, 9.1216",Midtjylland Airport,Denmark,Midtjylland,25,35804,,DK,Midtjylland Airport
 "42.896333, -8.415145",Santiago–Rosalía de Castro Airport,Spain,Galicia,2266,3236619,,ES,Santiago–Rosalía de Castro Airport
-"43.39916667, 132.1513889",Vladivostok International Airport,nan,,1446,2065000,,nan,Vladivostok International Airport
-"53.77138889, -3.028333333",Blackpool Airport,nan,,7,9428,,nan,Blackpool Airport
+"43.39916667, 132.1513889",Vladivostok International Airport,,,1446,2065000,,,Vladivostok International Airport
+"53.77138889, -3.028333333",Blackpool Airport,,,7,9428,,,Blackpool Airport
 "47.042778, 5.435",Dole–Jura Airport,France,Franche-Comté,70,100401,,FR,Dole–Jura Airport
-"51.885, 0.235",London Stansted Airport,nan,,16324,23319523,,nan,London Stansted Airport
+"51.885, 0.235",London Stansted Airport,,,16324,23319523,,,London Stansted Airport
 "48.541944, 7.634444",Strasbourg Airport,France,Alsace,651,930428,,FR,Strasbourg Airport
 "53.120556, 6.578056",Groningen Airport Eelde,Netherlands,Drenthe,61,87205,,NL,Groningen Airport Eelde
-"-12.806667, 45.280555",Dzaoudzi Pamandzi International Airport,nan,,281,400866,,nan,Dzaoudzi Pamandzi International Airport
-"71.00972222, 25.98361111","Honningsvåg Airport, Valan",nan,,17,23728,,nan,"Honningsvåg Airport, Valan"
+"-12.806667, 45.280555",Dzaoudzi Pamandzi International Airport,,,281,400866,,,Dzaoudzi Pamandzi International Airport
+"71.00972222, 25.98361111","Honningsvåg Airport, Valan",,,17,23728,,,"Honningsvåg Airport, Valan"
 "65.65999444, -18.07270278",Akureyri Airport,Iceland,Ísland,137,195763,,IS,Akureyri Airport
 "38.07194444, 15.65361111",Reggio Calabria Airport,Italy,Calabria,142,202386,,IT,Reggio Calabria Airport
-"52.45388889, -1.748055555",Birmingham Airport,nan,,6717,9595557,,nan,Birmingham Airport
+"52.45388889, -1.748055555",Birmingham Airport,,,6717,9595557,,,Birmingham Airport
 "61.46138889, 21.79777778",Pori Airport,Finland,Länsi-Suomi,8,11628,,FI,Pori Airport
-"43.09722222, 6.146111111",Toulon-Hyères Airport,nan,,300,428013,,nan,Toulon-Hyères Airport
+"43.09722222, 6.146111111",Toulon-Hyères Airport,,,300,428013,,,Toulon-Hyères Airport
 "43.53888889, 16.29805556",Saint Jerome Airport,Croatia,Jadranska Hrvatska,2036,2908577,,HR,Saint Jerome Airport
 "36.675, -4.499167",Málaga-Costa del Sol,Spain,Andalucía,12920,18457194,,ES,Málaga-Costa del Sol
 "69.97611111, 23.37166667",Alta Airport,Norway,Nord-Norge,230,329203,,NO,Alta Airport
-"18.09991389, -63.04719722",L'Espérance Airport,nan,,136,193795,,nan,L'Espérance Airport
-"56.5, -6.88",Tiree Airport,nan,,8,10982,,nan,Tiree Airport
+"18.09991389, -63.04719722",L'Espérance Airport,,,136,193795,,,L'Espérance Airport
+"56.5, -6.88",Tiree Airport,,,8,10982,,,Tiree Airport
 "69.68138889, 18.91777778",Tromsø Airport,Norway,Nord-Norge,1549,2212225,,NO,Tromsø Airport
-"-15.6677, -146.8857",Kaukura Airport,nan,,2,3221,,nan,Kaukura Airport
+"-15.6677, -146.8857",Kaukura Airport,,,2,3221,,,Kaukura Airport
 "50.912558, 5.769536",Maastricht Aachen Airport,Netherlands,Limburg (NL),186,266032,,NL,Maastricht Aachen Airport
-"49.91333333, -6.291666666",St Mary's Airport,nan,,61,86846,,nan,St Mary's Airport
+"49.91333333, -6.291666666",St Mary's Airport,,,61,86846,,,St Mary's Airport
 "48.58777778, -2.08",Dinard–Pleurtuit–Saint-Malo Airport,France,Bretagne,1,1237,,FR,Dinard–Pleurtuit–Saint-Malo Airport
-"54.5575, 55.87416667",Ufa International Airport,nan,,2862,4089111,,nan,Ufa International Airport
+"54.5575, 55.87416667",Ufa International Airport,,,2862,4089111,,,Ufa International Airport
 "44.10833333, 15.34666667",Zadar Airport,Croatia,Jadranska Hrvatska,772,1102381,,HR,Zadar Airport
-"37.18472222, 26.80027778",Leros Island National Airport,EL,Notio Aigaio,14,19974,,EL,Leros Island National Airport
+"37.18472222, 26.80027778",Leros Island National Airport,Greece,South Aegean,14,19974,,Greece,Leros Island National Airport
 "50.81722222, 3.204722222",Kortrijk-Wevelgem International Airport,Belgium,Prov. West-Vlaanderen,7,9794,,BE,Kortrijk-Wevelgem International Airport
-"63.11194444, 7.826111111","Kristiansund Airport, Kvernberget",nan,,197,280972,,nan,"Kristiansund Airport, Kvernberget"
-"55.55333333, 38.15166667",Zhukovsky International Airport,nan,,980,1400000,,nan,Zhukovsky International Airport
-"-15.5726, -146.414",Apataki Airport,nan,,0,409,,nan,Apataki Airport
-"-20.78083333, -138.5669444",Tureia Airport,nan,,1,1392,,nan,Tureia Airport
-"40.285833, 21.841667","Kozani National Airport ""Filippos""",EL,Dytiki Makedonia,4,5195,,EL,"Kozani National Airport ""Filippos"""
-"50.95027778, -1.356666666",Southampton Airport,nan,,442,631329,,nan,Southampton Airport
+"63.11194444, 7.826111111","Kristiansund Airport, Kvernberget",,,197,280972,,,"Kristiansund Airport, Kvernberget"
+"55.55333333, 38.15166667",Zhukovsky International Airport,,,980,1400000,,,Zhukovsky International Airport
+"-15.5726, -146.414",Apataki Airport,,,0,409,,,Apataki Airport
+"-20.78083333, -138.5669444",Tureia Airport,,,1,1392,,,Tureia Airport
+"40.285833, 21.841667","Kozani National Airport ""Filippos""",Greece,Western Macedonia,4,5195,,Greece,"Kozani National Airport ""Filippos"""
+"50.95027778, -1.356666666",Southampton Airport,,,442,631329,,,Southampton Airport
 "65.59027778, 19.28194444",Arvidsjaur Airport,Sweden,Övre Norrland,34,48470,,SE,Arvidsjaur Airport
-"37.93638889, 23.94444444","Athens International Airport ""Eleftherios Venizelos""",EL,Attiki,15696,22422704,,EL,"Athens International Airport ""Eleftherios Venizelos"""
-"47.09583333, -56.38444444",Miquelon Airport,nan,,5,6929,,nan,Miquelon Airport
+"37.93638889, 23.94444444","Athens International Airport ""Eleftherios Venizelos""",Greece,Attica,15696,22422704,,Greece,"Athens International Airport ""Eleftherios Venizelos"""
+"47.09583333, -56.38444444",Miquelon Airport,,,5,6929,,,Miquelon Airport
 "50.86591667, 7.142744444",Cologne Bonn Airport,Germany,Köln,6130,8756712,,DE,Cologne Bonn Airport
 "65.80611111, 15.08277778",Hemavan-Tärnaby Airport,Sweden,Övre Norrland,10,14435,,SE,Hemavan-Tärnaby Airport
 "45.396388, 10.888055",Verona Villafranca Airport,Italy,Veneto,2087,2982060,,IT,Verona Villafranca Airport
 "65.95972222, 12.47222222",Sandnessjøen Airport,Norway,Nord-Norge,49,69455,,NO,Sandnessjøen Airport
-"51.83694444, -1.32",London Oxford Airport,nan,,0,120,,nan,London Oxford Airport
+"51.83694444, -1.32",London Oxford Airport,,,0,120,,,London Oxford Airport
 "42.08083333, -0.323333333",Huesca-Pirineos Airport,Spain,Aragón,0,324,,ES,Huesca-Pirineos Airport
-"55.0375, -1.691666666",Newcastle International Airport,nan,,2889,4127035,,nan,Newcastle International Airport
+"55.0375, -1.691666666",Newcastle International Airport,,,2889,4127035,,,Newcastle International Airport
 "60.95861111, 14.51111111",Mora-Siljan Airport,Sweden,Norra Mellansverige,0,72,,SE,Mora-Siljan Airport
-"38.12, 20.50027778",Kefalonia International Airport,nan,,572,817216,,nan,Kefalonia International Airport
-"51.33083333, 0.0325",London Biggin Hill Airport,nan,,3,4002,,nan,London Biggin Hill Airport
+"38.12, 20.50027778",Kefalonia International Airport,,,572,817216,,,Kefalonia International Airport
+"51.33083333, 0.0325",London Biggin Hill Airport,,,3,4002,,,London Biggin Hill Airport
 "68.48888889, 16.67833333",Harstad/Narvik Airport,Norway,Nord-Norge,556,794106,,NO,Harstad/Narvik Airport
 "58.22972222, 22.50944444",Kuressaare Airport,Estonia,Eesti,27,38749,,EE,Kuressaare Airport
 "64.54805556, 18.71611111",Lycksele Airport,Sweden,Övre Norrland,9,13287,,SE,Lycksele Airport
-"-14.8093, -138.8109",Puka-Puka Airport,nan,,1,1477,,nan,Puka-Puka Airport
+"-14.8093, -138.8109",Puka-Puka Airport,,,1,1477,,,Puka-Puka Airport
 "38.99722222, 17.08027778",Crotone Airport,Italy,Calabria,120,170898,,IT,Crotone Airport
-"46.76305556, -56.17416667",Saint-Pierre Airport,nan,,20,28501,,nan,Saint-Pierre Airport
+"46.76305556, -56.17416667",Saint-Pierre Airport,,,20,28501,,,Saint-Pierre Airport
 "42.74055556, 2.870555555",Perpignan–Rivesaltes Airport,France,Languedoc-Roussillon,291,415904,,FR,Perpignan–Rivesaltes Airport
 "65.99027778, 29.23194444",Kuusamo Airport,Finland,Pohjois- ja Itä-Suomi,82,117104,,FI,Kuusamo Airport
-"70.35527778, 31.045","Vardø Airport, Svartnes",nan,,19,27683,,nan,"Vardø Airport, Svartnes"
-"55.97333333, 21.09388889",Palanga International Airport,Lithuania,Vidurio ir vakarų Lietuvos regionas ,192,274879,,LT,Palanga International Airport
-"51.874722, -0.368333",London Luton Airport,nan,,9326,13322236,,nan,London Luton Airport
-"28.62638889, -17.75555556",La Palma Airport,nan,,915,1306947,,nan,La Palma Airport
-"-19.285, -138.7719444",Nukutavake Airport,nan,,1,1196,,nan,Nukutavake Airport
+"70.35527778, 31.045","Vardø Airport, Svartnes",,,19,27683,,,"Vardø Airport, Svartnes"
+"55.97333333, 21.09388889",Palanga International Airport,Lithuania,Vidurio ir vakarų Lietuvos regionas,192,274879,,LT,Palanga International Airport
+"51.874722, -0.368333",London Luton Airport,,,9326,13322236,,,London Luton Airport
+"28.62638889, -17.75555556",La Palma Airport,,,915,1306947,,,La Palma Airport
+"-19.285, -138.7719444",Nukutavake Airport,,,1,1196,,,Nukutavake Airport
 "43.43666667, 5.215",Marseille Provence Airport,France,Provence-Alpes-Côte d’Azur,6404,9148306,,FR,Marseille Provence Airport
-"17.90444444, -62.84388889",Gustaf III Airport,nan,,153,218984,,nan,Gustaf III Airport
+"17.90444444, -62.84388889",Gustaf III Airport,,,153,218984,,,Gustaf III Airport
 "41.92388889, 8.8025",Ajaccio Napoleon Bonaparte Airport,France,Corse,1164,1662931,,FR,Ajaccio Napoleon Bonaparte Airport
 "37.18861111, -3.777222222",Federico García Lorca Granada Airport,Spain,Andalucía,636,908713,,ES,Federico García Lorca Granada Airport
 "4.819722222, -52.36194444",Cayenne – Félix Eboué Airport,France,Guyane,342,488721,,FR,Cayenne – Félix Eboué Airport
 "42.57027778, 27.51527778",Burgas Airport,Bulgaria,Yugoiztochen,1151,1643581,,BG,Burgas Airport
-"-23.88524167, -147.6619333",Raivavae Airport,nan,,16,23128,,nan,Raivavae Airport
+"-23.88524167, -147.6619333",Raivavae Airport,,,16,23128,,,Raivavae Airport
 "37.91194444, 12.49333333",Vincenzo Florio Airport Trapani-Birgi,Italy,Sicilia,624,891670,,IT,Vincenzo Florio Airport Trapani-Birgi
-"-16.68722222, -151.0216667",Huahine – Fare Airport,nan,,103,147435,,nan,Huahine – Fare Airport
-"53.57444444, -0.350833333",Humberside Airport,nan,,65,92280,,nan,Humberside Airport
+"-16.68722222, -151.0216667",Huahine – Fare Airport,,,103,147435,,,Huahine – Fare Airport
+"53.57444444, -0.350833333",Humberside Airport,,,65,92280,,,Humberside Airport
 "45.201787, 7.649595",Turin Airport,Italy,Piemonte,2935,4193371,,IT,Turin Airport
-"55.06333333, 14.75944444",Bornholm Airport,nan,,140,199456,,nan,Bornholm Airport
+"55.06333333, 14.75944444",Bornholm Airport,,,140,199456,,,Bornholm Airport
 "38.872858, 1.373117",Ibiza Airport,Spain,Illes Balears,5710,8156675,,ES,Ibiza Airport
 "49.15138889, 16.69388889",Brno-Tuřany Airport,Czechia,Jihovýchod,330,471811,,CZ,Brno-Tuřany Airport
 "47.76055556, -3.44",Lorient South Brittany Airport,France,Bretagne,4,6244,,FR,Lorient South Brittany Airport
 "41.520903, 2.105028",Sabadell Airport,Spain,Cataluña,4,6070,,ES,Sabadell Airport
 "43.426944, -3.82",Santander Airport,Spain,Cantabria,772,1102439,,ES,Santander Airport
 "45.72555556, 5.081111111",Lyon–Saint-Exupéry Airport,France,Rhône-Alpes,5991,8558341,,FR,Lyon–Saint-Exupéry Airport
-"38.9675, 24.48722222",Skyros Island National Airport,nan,,13,18924,,nan,Skyros Island National Airport
+"38.9675, 24.48722222",Skyros Island National Airport,,,13,18924,,,Skyros Island National Airport
 "40.62, 14.9125",Salerno Costa d'Amalfi Airport,Italy,Campania,0,0,,IT,Salerno Costa d'Amalfi Airport
-"66.07, 76.52166667",Novy Urengoy Airport,nan,,722,1031640,,nan,Novy Urengoy Airport
+"66.07, 76.52166667",Novy Urengoy Airport,,,722,1031640,,,Novy Urengoy Airport
 "44.17472222, 0.590555555",Agen La Garenne Airport,France,Aquitaine,0,572,,FR,Agen La Garenne Airport
 "44.41348, 8.837563",Genoa Cristoforo Colombo Airport,Italy,Liguria,850,1214907,,IT,Genoa Cristoforo Colombo Airport
-"34.71833333, 32.485",Paphos International Airport,nan,,2226,3179776,,nan,Paphos International Airport
+"34.71833333, 32.485",Paphos International Airport,,,2226,3179776,,,Paphos International Airport
 "48.447222, -4.421667",Brest Bretagne Airport,France,Bretagne,561,801854,,FR,Brest Bretagne Airport
 "43.28571944, 16.67971944",Brač Airport,Croatia,Jadranska Hrvatska,11,15948,,HR,Brač Airport
-"58.45888889, -3.093055555",Wick Airport,nan,,5,6935,,nan,Wick Airport
+"58.45888889, -3.093055555",Wick Airport,,,5,6935,,,Wick Airport
 "51.10277778, 16.88583333",Wrocław – Copernicus Airport,Poland,Dolnośląskie,2015,2878054,,PL,Wrocław – Copernicus Airport
-"55.59611111, 37.2675",Vnukovo International Airport,nan,,11480,16400000,,nan,Vnukovo International Airport
-"-16.05416667, -145.6569444",Fakarava Airport,nan,,29,41907,,nan,Fakarava Airport
-"27.81472222, -17.88694444",El Hierro Airport,nan,,192,273687,,nan,El Hierro Airport
+"55.59611111, 37.2675",Vnukovo International Airport,,,11480,16400000,,,Vnukovo International Airport
+"-16.05416667, -145.6569444",Fakarava Airport,,,29,41907,,,Fakarava Airport
+"27.81472222, -17.88694444",El Hierro Airport,,,192,273687,,,El Hierro Airport
 "61.83, 6.105833333",Sandane Airport,Norway,Vestlandet,28,40240,,NO,Sandane Airport
-"-21.48138889, 168.0375",Maré Airport,nan,,52,74208,,nan,Maré Airport
+"-21.48138889, 168.0375",Maré Airport,,,52,74208,,,Maré Airport
 "47.975, -4.167777777",Quimper – Cornouaille Airport,France,Bretagne,13,18764,,FR,Quimper – Cornouaille Airport
 "51.450556, 5.374167",Eindhoven Airport,Netherlands,Noord-Brabant,4431,6330599,,NL,Eindhoven Airport
 "62.18, 6.074166666",Ørsta-Volda Airport,Norway,Vestlandet,72,103418,,NO,Ørsta-Volda Airport
 "62.74472222, 7.2625",Molde Airport,Norway,Vestlandet,246,352047,,NO,Molde Airport
-"-17.5478, -142.613",Hikueru Airport,nan,,2,2546,,nan,Hikueru Airport
-"57.201944, -2.197778",Aberdeen Airport,nan,,1372,1959883,,nan,Aberdeen Airport
-"28.45277778, -13.86388889",Fuerteventura Airport,nan,,3949,5641500,,nan,Fuerteventura Airport
+"-17.5478, -142.613",Hikueru Airport,,,2,2546,,,Hikueru Airport
+"57.201944, -2.197778",Aberdeen Airport,,,1372,1959883,,,Aberdeen Airport
+"28.45277778, -13.86388889",Fuerteventura Airport,,,3949,5641500,,,Fuerteventura Airport
 "51.95, 4.433333333",Rotterdam The Hague Airport,Netherlands,Zuid-Holland,1494,2133708,,NL,Rotterdam The Hague Airport
-"-16.6867, -145.32899",Faaite Airport,nan,,2,2755,,nan,Faaite Airport
+"-16.6867, -145.32899",Faaite Airport,,,2,2755,,,Faaite Airport
 "67.24583333, 23.06888889",Pajala Airport,Sweden,Övre Norrland,6,8768,,SE,Pajala Airport
-"51.505278, 0.055278",London City Airport,nan,,2107,3009313,,nan,London City Airport
+"51.505278, 0.055278",London City Airport,,,2107,3009313,,,London City Airport
 "45.82123, 13.48557",Trieste – Friuli Venezia Giulia Airport,Italy,Friuli-Venezia Giulia,489,698613,,IT,Trieste – Friuli Venezia Giulia Airport
 "48.06833, -1.72611",Rennes – Saint-Jacques Airport,France,Bretagne,450,643231,,FR,Rennes – Saint-Jacques Airport
-"49.36527778, 0.154166666",Deauville – Saint-Gatien Airport,France,Basse-Normandie ,53,75378,,FR,Deauville – Saint-Gatien Airport
+"49.36527778, 0.154166666",Deauville – Saint-Gatien Airport,France,Basse-Normandie,53,75378,,FR,Deauville – Saint-Gatien Airport
 "36.74472222, -6.06",Jerez Airport,Spain,Andalucía,641,915269,,ES,Jerez Airport
 "62.529445, 17.442778",Sundsvall-Timrå Airport,Sweden,Mellersta Norrland,33,47367,,SE,Sundsvall-Timrå Airport
 "57.75833333, 14.07166667",Jönköping Airport,Sweden,Småland med öarna,11,15604,,SE,Jönköping Airport
@@ -422,148 +422,148 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "16.26416667, -61.52583333",Pointe-à-Pitre International Airport,France,Guadeloupe,1099,1569807,,FR,Pointe-à-Pitre International Airport
 "44.82222222, 10.29527778",Parma Airport,Italy,Emilia-Romagna,82,116720,,IT,Parma Airport
 "43.635, 1.367780555",Toulouse-Blagnac,France,Midi-Pyrénées,4926,7037150,,FR,Toulouse-Blagnac
-"42.17638889, 42.4825",Kutaisi International Airport,nan,,557,796063,,nan,Kutaisi International Airport
+"42.17638889, 42.4825",Kutaisi International Airport,,,557,796063,,,Kutaisi International Airport
 "56.92083333, 23.97083333",Riga International Airport,Latvia,Latvija,3767,5380779,,LV,Riga International Airport
 "38.94833333, -1.863333333",Albacete Airport,Spain,Castilla-La Mancha,1,857,,ES,Albacete Airport
 "47.31055556, -2.161111111",Saint-Nazaire - Montoir Airport,France,Pays de la Loire,5,6859,,FR,Saint-Nazaire - Montoir Airport
 "43.555, 2.290555555",Castres–Mazamet Airport,France,Midi-Pyrénées,26,36445,,FR,Castres–Mazamet Airport
-"41.66916667, 44.95472222",Tbilisi International Airport,nan,,2099,2998566,,nan,Tbilisi International Airport
+"41.66916667, 44.95472222",Tbilisi International Airport,,,2099,2998566,,,Tbilisi International Airport
 "43.23194444, 27.82527778",Varna Airport,Bulgaria,Severoiztochen,1039,1484186,,BG,Varna Airport
-"-15.8197, -140.887",Fangatau Airport,nan,,1,2128,,nan,Fangatau Airport
+"-15.8197, -140.887",Fangatau Airport,,,1,2128,,,Fangatau Airport
 "43.82472222, 18.33138889",Sarajevo International Airport (SJJ),BA,Federacija Bosne i Hercegovine,964,1377348,,BA,Sarajevo International Airport (SJJ)
-"36.6969, 24.4769",Milos Island National Airport,EL,Notio Aigaio,60,86191,,EL,Milos Island National Airport
+"36.6969, 24.4769",Milos Island National Airport,Greece,South Aegean,60,86191,,Greece,Milos Island National Airport
 "40.37055556, -3.785",Cuatro Vientos Airport,Spain,Comunidad de Madrid,2,2221,,ES,Cuatro Vientos Airport
-"39.21944444, 22.79416667",Nea Anchialos National Airport,EL,Thessalia,32,45244,,EL,Nea Anchialos National Airport
+"39.21944444, 22.79416667",Nea Anchialos National Airport,Greece,Thessaly,32,45244,,Greece,Nea Anchialos National Airport
 "58.41916667, 24.47277778",Pärnu Airport,Estonia,Eesti,2,2887,,EE,Pärnu Airport
-"35.497778, 12.618056",Lampedusa Airport,nan,,230,328576,,nan,Lampedusa Airport
+"35.497778, 12.618056",Lampedusa Airport,,,230,328576,,,Lampedusa Airport
 "43.54638889, 6.954166666",Cannes – Mandelieu Airport,France,Provence-Alpes-Côte d’Azur,7,9984,,FR,Cannes – Mandelieu Airport
 "50.56333333, 3.086944444",Lille Airport,France,Nord-Pas de Calais,1241,1773154,,FR,Lille Airport
-"70.67972222, 23.66861111",Hammerfest Airport,nan,,109,155493,,nan,Hammerfest Airport
-"38.93, 20.772",Aktion National Airport,nan,,542,773587,,nan,Aktion National Airport
-"-23.371, -149.529",Tubuai – Mataura Airport,nan,,18,25860,,nan,Tubuai – Mataura Airport
+"70.67972222, 23.66861111",Hammerfest Airport,,,109,155493,,,Hammerfest Airport
+"38.93, 20.772",Aktion National Airport,,,542,773587,,,Aktion National Airport
+"-23.371, -149.529",Tubuai – Mataura Airport,,,18,25860,,,Tubuai – Mataura Airport
 "5.48305556, -54.03444444",Saint-Laurent-du-Maroni Airport,France,Guyane,4,6399,,FR,Saint-Laurent-du-Maroni Airport
 "43.32333333, 3.353333333",Béziers Cap d'Agde Airport,France,Languedoc-Roussillon,154,219762,,FR,Béziers Cap d'Agde Airport
 "63.4575, 10.92416667",Trondheim Airport,Norway,Trøndelag/Trööndelage,2663,3803933,,NO,Trondheim Airport
 "53.80536667, 10.71922222",Lübeck-Blankensee Airport,Germany,Schleswig-Holstein,58,82590,,DE,Lübeck-Blankensee Airport
-"-14.42805556, -146.2569444",Ahe Airport,nan,,7,9646,,nan,Ahe Airport
-"51.39666667, -3.343333333",Cardiff Airport,nan,,600,857397,,nan,Cardiff Airport
-"-15.485571, -145.464855",Aratika Airport,nan,,2,3061,,nan,Aratika Airport
-"-17.34888889, -145.5122222",Anaa Airport,nan,,3,3927,,nan,Anaa Airport
-"-22.4335, -151.3678",Rurutu Airport,nan,,19,27776,,nan,Rurutu Airport
+"-14.42805556, -146.2569444",Ahe Airport,,,7,9646,,,Ahe Airport
+"51.39666667, -3.343333333",Cardiff Airport,,,600,857397,,,Cardiff Airport
+"-15.485571, -145.464855",Aratika Airport,,,2,3061,,,Aratika Airport
+"-17.34888889, -145.5122222",Anaa Airport,,,3,3927,,,Anaa Airport
+"-22.4335, -151.3678",Rurutu Airport,,,19,27776,,,Rurutu Airport
 "47.56027778, -0.312222222",Angers – Loire Airport,France,Pays de la Loire,3,3646,,FR,Angers – Loire Airport
 "51.13434444, 13.768",Dresden Airport,Germany,Dresden,587,838387,,DE,Dresden Airport
 "58.586111, 16.231667",Norrköping Airport,Sweden,Östra Mellansverige,28,40186,,SE,Norrköping Airport
-"-15.7808, -145.12399",Kauehi aerodrome,nan,,2,3526,,nan,Kauehi aerodrome
+"-15.7808, -145.12399",Kauehi aerodrome,,,2,3526,,,Kauehi aerodrome
 "3.61361111, -53.20416667",Saül Airport,France,Guyane,3,4180,,FR,Saül Airport
 "52.45111111, 20.65166667",Warsaw-Modlin Mazovia Airport,Poland,Warszawski stołeczny,2188,3126428,,PL,Warsaw-Modlin Mazovia Airport
 "47.67131667, 9.511486111",Friedrichshafen Airport,Germany,Tübingen,238,339556,,DE,Friedrichshafen Airport
 "67.13305556, 20.81222222",Gällivare Airport,Sweden,Övre Norrland,15,21062,,SE,Gällivare Airport
-"39.69638889, 20.8225","Ioannina National Airport ""King Pyrros""",EL,Ipeiros,52,73665,,EL,"Ioannina National Airport ""King Pyrros"""
+"39.69638889, 20.8225","Ioannina National Airport ""King Pyrros""",Greece,Epirus,52,73665,,Greece,"Ioannina National Airport ""King Pyrros"""
 "45.78583333, 3.1625",Clermont-Ferrand Auvergne Airport,France,Auvergne,132,188641,,FR,Clermont-Ferrand Auvergne Airport
 "48.11027778, 16.56972222",Wien-Schwechat Airport,Austria,Niederösterreich,16577,23682133,,AT,Wien-Schwechat Airport
 "62.40083333, 25.67277778",Jyväskylä Airport,Finland,Länsi-Suomi,8,10980,,FI,Jyväskylä Airport
-"-14.4375, -146.0708333",Manihi Airport,nan,,7,9752,,nan,Manihi Airport
+"-14.4375, -146.0708333",Manihi Airport,,,7,9752,,,Manihi Airport
 "48.96, 2.435",Paris–Le Bourget Airport,France,Ile-de-France,103,147571,,FR,Paris–Le Bourget Airport
 "48.17, 17.21277778",M. R. Štefánik Airport,Slovakia,Bratislavský kraj,984,1406284,,SK,M. R. Štefánik Airport
-"49.65083333, -1.475277777",Cherbourg – Maupertus Airport,France,Basse-Normandie ,2,3402,,FR,Cherbourg – Maupertus Airport
+"49.65083333, -1.475277777",Cherbourg – Maupertus Airport,France,Basse-Normandie,2,3402,,FR,Cherbourg – Maupertus Airport
 "68.36444444, 23.4275",Enontekiö Airport,Finland,Pohjois- ja Itä-Suomi,0,0,,FI,Enontekiö Airport
 "63.04527778, 21.76416667",Vaasa Airport,Finland,Länsi-Suomi,79,113244,,FI,Vaasa Airport
-"57.784, 23.266",Ruhnu Airfield,nan,,1,1641,,nan,Ruhnu Airfield
+"57.784, 23.266",Ruhnu Airfield,,,1,1641,,,Ruhnu Airfield
 "71.02972222, 27.82666667",Mehamn Airport,Norway,Nord-Norge,18,26154,,NO,Mehamn Airport
 "58.40833333, 15.67277778",Linköping/Saab Airport,Sweden,Östra Mellansverige,57,80735,,SE,Linköping/Saab Airport
 "58.3075, 26.68694444",Tartu Airport,Estonia,Eesti,6,8653,,EE,Tartu Airport
 "48.32166667, 4.016666666",Troyes – Barberey Airport,France,Champagne-Ardenne,2,2354,,FR,Troyes – Barberey Airport
 "43.30194444, -8.377222222",A Coruña Airport,Spain,Galicia,675,963957,,ES,A Coruña Airport
 "50.11, 22.01888889",Rzeszów-Jasionka Airport,Poland,Podkarpackie,512,731141,,PL,Rzeszów-Jasionka Airport
-"36.79333611, 27.09166667","Kos International Airport ""Hippocrates""",nan,,1953,2790629,,nan,"Kos International Airport ""Hippocrates"""
+"36.79333611, 27.09166667","Kos International Airport ""Hippocrates""",,,1953,2790629,,,"Kos International Airport ""Hippocrates"""
 "55.91194444, 14.08333333",Kristianstad Airport,Sweden,Sydsverige,11,15116,,SE,Kristianstad Airport
 "51.51831389, 7.612241666",Dortmund Airport,Germany,Arnsberg,1810,2586238,,DE,Dortmund Airport
-"36.96333333, 26.94055556",Kalymnos Island National Airport,EL,Notio Aigaio,10,14956,,EL,Kalymnos Island National Airport
+"36.96333333, 26.94055556",Kalymnos Island National Airport,Greece,South Aegean,10,14956,,Greece,Kalymnos Island National Airport
 "51.60241389, 6.142172222",Niederrhein Airport,Germany,Düsseldorf,726,1036882,,DE,Niederrhein Airport
 "61.94277778, 28.945",Savonlinna Airport,Finland,Pohjois- ja Itä-Suomi,2,3111,,FI,Savonlinna Airport
-"36.57988611, 26.37582222",Astypalaia National Airport,nan,,16,22633,,nan,Astypalaia National Airport
-"38.18194444, 13.09944444",Falcone–Borsellino Airport,nan,,4982,7117822,,nan,Falcone–Borsellino Airport
+"36.57988611, 26.37582222",Astypalaia National Airport,,,16,22633,,,Astypalaia National Airport
+"38.18194444, 13.09944444",Falcone–Borsellino Airport,,,4982,7117822,,,Falcone–Borsellino Airport
 "70.06527778, 29.84472222",Vadsø Airport,Norway,Nord-Norge,70,100645,,NO,Vadsø Airport
-"39.177222, 23.503611","Skiathos National Airport ""Alexandros Papadiamantis""",EL,Thessalia,358,511611,,EL,"Skiathos National Airport ""Alexandros Papadiamantis"""
-"-22.01638889, 166.2161111",La Tontouta International Airport,nan,,224,320333,,nan,La Tontouta International Airport
-"-18.29555556, -137.0169444",Pukarua Airport,nan,,1,1910,,nan,Pukarua Airport
+"39.177222, 23.503611","Skiathos National Airport ""Alexandros Papadiamantis""",Greece,Thessaly,358,511611,,Greece,"Skiathos National Airport ""Alexandros Papadiamantis"""
+"-22.01638889, 166.2161111",La Tontouta International Airport,,,224,320333,,,La Tontouta International Airport
+"-18.29555556, -137.0169444",Pukarua Airport,,,1,1910,,,Pukarua Airport
 "44.89361111, 13.92222222",Pula Airport,Croatia,Jadranska Hrvatska,278,396724,,HR,Pula Airport
 "54.91163611, 8.342386111",Sylt Airport,Germany,Schleswig-Holstein,84,119763,,DE,Sylt Airport
-"-21.32166667, 55.42555556",Pierrefonds Airport,France,La Réunion ,8,10837,,FR,Pierrefonds Airport
-"40.44638889, 21.28222222","Kastoria National Airport ""Aristotelis""",EL,Dytiki Makedonia,4,5048,,EL,"Kastoria National Airport ""Aristotelis"""
+"-21.32166667, 55.42555556",Pierrefonds Airport,France,La Réunion,8,10837,,FR,Pierrefonds Airport
+"40.44638889, 21.28222222","Kastoria National Airport ""Aristotelis""",Greece,Western Macedonia,4,5048,,Greece,"Kastoria National Airport ""Aristotelis"""
 "60.154722, 12.994444",Torsby Airport,Sweden,Norra Mellansverige,1,1642,,SE,Torsby Airport
 "50.97981111, 10.95810556",Erfurt-Weimar Airport,Germany,Thüringen,96,137779,,DE,Erfurt-Weimar Airport
 "64.47222222, 11.57861111",Namsos Airport,Norway,Trøndelag/Trööndelage,26,37656,,NO,Namsos Airport
-"50.78, -1.8425",Bournemouth Airport,nan,,514,734344,,nan,Bournemouth Airport
+"50.78, -1.8425",Bournemouth Airport,,,514,734344,,,Bournemouth Airport
 "50.10083333, 14.26",Václav Havel Airport Prague,Czechia,Praha,7514,10734880,,CZ,Václav Havel Airport Prague
-"-21.05333333, 164.8377778",Koné Airport,nan,,4,5474,,nan,Koné Airport
+"-21.05333333, 164.8377778",Koné Airport,,,4,5474,,,Koné Airport
 "62.57888889, 11.345",Røros Airport,Norway,Trøndelag/Trööndelage,10,13950,,NO,Røros Airport
 "43.57887222, 3.959286111",Montpellier – Méditerranée Airport,France,Languedoc-Roussillon,1233,1761087,,FR,Montpellier – Méditerranée Airport
 "56.291112, 12.855",Ängelholm-Helsingborg Airport,Sweden,Sydsverige,134,191815,,SE,Ängelholm-Helsingborg Airport
 "28.945556, -13.605278",César Manrique Lanzarote Airport,Spain,Canarias,5145,7350451,,ES,César Manrique Lanzarote Airport
-"-18.07472222, -140.9458333",Hao Airport,nan,,12,17172,,nan,Hao Airport
+"-18.07472222, -140.9458333",Hao Airport,,,12,17172,,,Hao Airport
 "65.78361111, 13.21527778",Mosjøen Airport,Norway,Nord-Norge,46,65569,,NO,Mosjøen Airport
 "58.99055556, 22.83055556",Kärdla Airport,Estonia,Eesti,8,12004,,EE,Kärdla Airport
-"-9.768611111, -139.0130556",Atuona Airport,nan,,27,38726,,nan,Atuona Airport
+"-9.768611111, -139.0130556",Atuona Airport,,,27,38726,,,Atuona Airport
 "56.68527778, 16.2875",Kalmar Airport,Sweden,Småland med öarna,74,106136,,SE,Kalmar Airport
-"46.71861111, -2.391111111",Île d'Yeu Aerodrome,nan,,1,832,,nan,Île d'Yeu Aerodrome
-"-14.71, -145.2463889",Takapoto Airport,nan,,3,4012,,nan,Takapoto Airport
-"35.53174722, 24.14967778",Chania International Airport,EL,Kriti,2303,3289547,,EL,Chania International Airport
-"54.615486, -5.871233",George Best Belfast City Airport,nan,,1159,1655156,,nan,George Best Belfast City Airport
-"-8.7951, -140.2223",Nuku Hiva Airport,nan,,32,45857,,nan,Nuku Hiva Airport
+"46.71861111, -2.391111111",Île d'Yeu Aerodrome,,,1,832,,,Île d'Yeu Aerodrome
+"-14.71, -145.2463889",Takapoto Airport,,,3,4012,,,Takapoto Airport
+"35.53174722, 24.14967778",Chania International Airport,Greece,Crete,2303,3289547,,Greece,Chania International Airport
+"54.615486, -5.871233",George Best Belfast City Airport,,,1159,1655156,,,George Best Belfast City Airport
+"-8.7951, -140.2223",Nuku Hiva Airport,,,32,45857,,,Nuku Hiva Airport
 "64.62472222, 21.07694444",Skellefteå Airport,Sweden,Övre Norrland,187,267262,,SE,Skellefteå Airport
 "46.5875, 0.306666666",Poitiers – Biard Airport,France,Poitou-Charentes,62,89058,,FR,Poitiers – Biard Airport
-"-14.9564, -147.6591",Rangiroa Airport,nan,,79,112407,,nan,Rangiroa Airport
+"-14.9564, -147.6591",Rangiroa Airport,,,79,112407,,,Rangiroa Airport
 "36.99166667, 14.60694444",Comiso Airport,Italy,Sicilia,255,364735,,IT,Comiso Airport
 "44.82444444, 0.520555555",Bergerac Dordogne Périgord Airport,France,Aquitaine,156,222566,,FR,Bergerac Dordogne Périgord Airport
 "52.31936111, 10.55888889",Braunschweig-Wolfsburg Airport,Germany,Braunschweig,30,43315,,DE,Braunschweig-Wolfsburg Airport
-"-17.48944444, -149.7622222",Moorea Airport,nan,,39,55050,,nan,Moorea Airport
+"-17.48944444, -149.7622222",Moorea Airport,,,39,55050,,,Moorea Airport
 "36.84388889, -2.37",Almería Airport,Spain,Andalucía,492,703386,,ES,Almería Airport
 "44.53544444, 11.28866667",Bologna Guglielmo Marconi Airport,Italy,Emilia-Romagna,5940,8485290,,IT,Bologna Guglielmo Marconi Airport
 "39.59888889, 2.702777777",Son Bonet Aerodrome,Spain,Illes Balears,6,9081,,ES,Son Bonet Aerodrome
 "40.89866111, 9.517627777",Olbia Costa Smeralda Airport,Italy,Sardegna,2217,3167368,,IT,Olbia Costa Smeralda Airport
-"70.87138889, 29.03416667",Berlevåg Airport,nan,,10,13843,,nan,Berlevåg Airport
-"-15.9921999, -140.1649933",Fakahina Airport,nan,,1,1470,,nan,Fakahina Airport
-"36.14166944, 29.57637778",Kastellorizo Airport,nan,,4,6203,,nan,Kastellorizo Airport
+"70.87138889, 29.03416667",Berlevåg Airport,,,10,13843,,,Berlevåg Airport
+"-15.9921999, -140.1649933",Fakahina Airport,,,1,1470,,,Fakahina Airport
+"36.14166944, 29.57637778",Kastellorizo Airport,,,4,6203,,,Kastellorizo Airport
 "3.6575, -54.03722222",Maripasoula Airport,France,Guyane,12,17346,,FR,Maripasoula Airport
 "42.75972222, 11.07166667",Grosseto Airport,Italy,Toscana,4,5511,,IT,Grosseto Airport
-"37.75083333, 20.88416667",Zakynthos International Airport,EL,Ionia Nisia,1332,1902806,,EL,Zakynthos International Airport
-"59.88138889, -1.293888888",Sumburgh Airport,nan,,172,246390,,nan,Sumburgh Airport
-"-16.723, -151.466",Raiatea Airport,nan,,178,253927,,nan,Raiatea Airport
-"55.50944444, -4.594444444",Glasgow Prestwick Airport,nan,,311,444433,,nan,Glasgow Prestwick Airport
+"37.75083333, 20.88416667",Zakynthos International Airport,Greece,Ionian Islands,1332,1902806,,Greece,Zakynthos International Airport
+"59.88138889, -1.293888888",Sumburgh Airport,,,172,246390,,,Sumburgh Airport
+"-16.723, -151.466",Raiatea Airport,,,178,253927,,,Raiatea Airport
+"55.50944444, -4.594444444",Glasgow Prestwick Airport,,,311,444433,,,Glasgow Prestwick Airport
 "63.04833333, 17.76861111",Kramfors-Sollefteå Airport,Sweden,Mellersta Norrland,5,6706,,SE,Kramfors-Sollefteå Airport
 "52.13464167, 7.684830555",Münster/Osnabrück Airport,Germany,Münster,582,830772,,DE,Münster/Osnabrück Airport
 "54.96444444, 9.791730555",Sønderborg Airport,Denmark,Syddanmark,32,46322,,DK,Sønderborg Airport
 "42.695, 23.40833333",Sofia Airport,Bulgaria,Yugozapaden,4203,6003653,,BG,Sofia Airport
 "58.87666667, 5.637777777",Stavanger Airport,Norway,Vestlandet,2504,3576772,,NO,Stavanger Airport
-"49.533889, 0.088056",Le Havre – Octeville Airport,France,Haute-Normandie ,5,7039,,FR,Le Havre – Octeville Airport
-"14.59222222, -60.99638889",Martinique Aimé Césaire International Airport,France,Martinique ,1227,1752955,,FR,Martinique Aimé Césaire International Airport
+"49.533889, 0.088056",Le Havre – Octeville Airport,France,Haute-Normandie,5,7039,,FR,Le Havre – Octeville Airport
+"14.59222222, -60.99638889",Martinique Aimé Césaire International Airport,France,Martinique,1227,1752955,,FR,Martinique Aimé Césaire International Airport
 "46.22444444, 14.45611111",Ljubljana Jože Pučnik Airport,Slovenia,Zahodna Slovenija,679,970152,,SI,Ljubljana Jože Pučnik Airport
 "67.52777778, 12.10333333",Røst Airport,Norway,Nord-Norge,8,12087,,NO,Røst Airport
 "45.363055, 5.332778",Grenoble-Isère Airport,France,Rhône-Alpes,134,191195,,FR,Grenoble-Isère Airport
-"-14.17666667, -141.2669444",Napuka Airport,nan,,1,1727,,nan,Napuka Airport
-"38.15111111, 21.42555556",Araxos Airport,EL,Dytiki Elláda,71,101845,,EL,Araxos Airport
+"-14.17666667, -141.2669444",Napuka Airport,,,1,1727,,,Napuka Airport
+"38.15111111, 21.42555556",Araxos Airport,Greece,Western Greece,71,101845,,Greece,Araxos Airport
 "48.32472222, 6.066944444",Épinal – Mirecourt Airport,France,Lorraine,0,109,,FR,Épinal – Mirecourt Airport
-"-22.586893, 167.451169",Île des Pins Airport,nan,,59,84591,,nan,Île des Pins Airport
+"-22.586893, 167.451169",Île des Pins Airport,,,59,84591,,,Île des Pins Airport
 "61.85638889, 24.78916667",Halli Airport,Finland,Länsi-Suomi,0,6,,FI,Halli Airport
 "61.159, 12.84",Sälen/Scandinavian Mountains Airport,Sweden,Norra Mellansverige,13,17961,,SE,Sälen/Scandinavian Mountains Airport
 "51.61408889, 8.616316666",Paderborn/Lippstadt Airport,Germany,Detmold,352,502621,,DE,Paderborn/Lippstadt Airport
-"46.17916667, -1.195277777",La Rochelle – Île de Ré Airport,nan,,127,180993,,nan,La Rochelle – Île de Ré Airport
+"46.17916667, -1.195277777",La Rochelle – Île de Ré Airport,,,127,180993,,,La Rochelle – Île de Ré Airport
 "58.78861111, 16.91222222",Stockholm Skavsta Airport,Sweden,Östra Mellansverige,389,555622,,SE,Stockholm Skavsta Airport
-"-20.89, 55.51638889",Roland Garros Airport,nan,,1642,2345161,,nan,Roland Garros Airport
+"-20.89, 55.51638889",Roland Garros Airport,,,1642,2345161,,,Roland Garros Airport
 "51.42399167, 12.23638333",Leipzig/Halle Airport,Germany,Leipzig,1091,1558602,,DE,Leipzig/Halle Airport
-"62.5625, 6.119722222","Ålesund Airport, Vigra",nan,,647,923734,,nan,"Ålesund Airport, Vigra"
+"62.5625, 6.119722222","Ålesund Airport, Vigra",,,647,923734,,,"Ålesund Airport, Vigra"
 "64.28416667, 27.6875",Kajaani Airport,Finland,Pohjois- ja Itä-Suomi,18,25400,,FI,Kajaani Airport
-"56.4525, -3.0175",Dundee Airport,nan,,26,36882,,nan,Dundee Airport
-"54.08333333, -4.623888888",Isle of Man Airport,nan,,394,562490,,nan,Isle of Man Airport
-"39.8625, 4.218611",Menorca Airport,nan,,2731,3900935,,nan,Menorca Airport
+"56.4525, -3.0175",Dundee Airport,,,26,36882,,,Dundee Airport
+"54.08333333, -4.623888888",Isle of Man Airport,,,394,562490,,,Isle of Man Airport
+"39.8625, 4.218611",Menorca Airport,,,2731,3900935,,,Menorca Airport
 "51.42079167, 9.392158333",Kassel Airport,Germany,Kassel,81,115597,,DE,Kassel Airport
 "40.95194444, -5.501944444",Salamanca Airport,Spain,Castilla y León,9,13021,,ES,Salamanca Airport
 "56.92888889, 14.72777778",Växjö/Kronoberg Airport,Sweden,Småland med öarna,104,149269,,SE,Växjö/Kronoberg Airport
-"-14.4577, -145.0266",Takaroa Airport,nan,,3,4192,,nan,Takaroa Airport
+"-14.4577, -145.0266",Takaroa Airport,,,3,4192,,,Takaroa Airport
 "44.40777778, 2.482777777",Rodez-Aveyron Airport,France,Midi-Pyrénées,49,69937,,FR,Rodez-Aveyron Airport
 "55.58555556, 12.13138889",Roskilde Airport,Denmark,Sjælland,19,27641,,DK,Roskilde Airport
-"54.50916667, -1.429444444",Teesside International Airport,nan,,121,173006,,nan,Teesside International Airport
+"54.50916667, -1.429444444",Teesside International Airport,,,121,173006,,,Teesside International Airport
 "64.57888889, 16.83333333",Vilhelmina Airport,Sweden,Övre Norrland,7,10397,,SE,Vilhelmina Airport
 "60.124852, 19.907834",Mariehamn Airport,Finland,Åland,19,26639,,FI,Mariehamn Airport
 "44.828333, -0.715556",Bordeaux–Mérignac Airport,France,Aquitaine,3993,5704455,,FR,Bordeaux–Mérignac Airport
@@ -573,7 +573,7 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "52.70194444, -8.924722222",Shannon Airport,Ireland,Southern,993,1418084,,IE,Shannon Airport
 "45.72944444, 4.938888888",Lyon-Bron Airport,France,Rhône-Alpes,7,9889,,FR,Lyon-Bron Airport
 "45.65083333, 12.19777778",Treviso Airport,Italy,Veneto,1845,2635172,,IT,Treviso Airport
-"-18.78, -138.853",Vahitahi Airport,nan,,1,1104,,nan,Vahitahi Airport
+"-18.78, -138.853",Vahitahi Airport,,,1,1104,,,Vahitahi Airport
 "61.41527778, 23.58777778",Tampere-Pirkkala Airport,Finland,Länsi-Suomi,118,168328,,FI,Tampere-Pirkkala Airport
 "47.71916667, -2.723333333",Vannes - Golfe du Morbihan Airport,France,Bretagne,1,832,,FR,Vannes - Golfe du Morbihan Airport
 "45.46277778, 18.81027778",Osijek Airport,Croatia,Panonska Hrvatska,11,15875,,HR,Osijek Airport
@@ -584,173 +584,173 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "42.067778, 24.850833",Plovdiv Airport,Bulgaria,Yuzhen tsentralen,155,221721,,BG,Plovdiv Airport
 "47.9492, 0.201788",Airport Le Mans-Arnage,France,Pays de la Loire,4,5207,,FR,Airport Le Mans-Arnage
 "59.44472222, 13.3375",Karlstad Airport,Sweden,Norra Mellansverige,14,19840,,SE,Karlstad Airport
-"-16.11906, -146.36802",Niau Airport,nan,,2,2346,,nan,Niau Airport
+"-16.11906, -146.36802",Niau Airport,,,2,2346,,,Niau Airport
 "41.7995, 12.5914",Rome Ciampino Airport,Italy,Lazio,2433,3475902,,IT,Rome Ciampino Airport
 "47.45805556, 8.548055555",Zurich Airport,Switzerland,Zürich,15793,22561132,,CH,Zurich Airport
-"-8.9352, -139.5551",Ua Huka Airport,nan,,2,2449,,nan,Ua Huka Airport
+"-8.9352, -139.5551",Ua Huka Airport,,,2,2449,,,Ua Huka Airport
 "41.66611111, -1.041666666",Zaragoza Airport,Spain,Aragón,439,627837,,ES,Zaragoza Airport
 "49.21455278, 7.109508333",Saarbrücken Airport,Germany,Saarland,210,300034,,DE,Saarbrücken Airport
-"54.96388889, 24.08472222",Kaunas Airport,Lithuania,Vidurio ir vakarų Lietuvos regionas ,811,1159184,,LT,Kaunas Airport
+"54.96388889, 24.08472222",Kaunas Airport,Lithuania,Vidurio ir vakarų Lietuvos regionas,811,1159184,,LT,Kaunas Airport
 "43.20536111, 6.481602777",La Môle – Saint-Tropez Airport,France,Provence-Alpes-Côte d’Azur,7,9699,,FR,La Môle – Saint-Tropez Airport
 "41.1475, 1.167222222",Reus Airport,Spain,Cataluña,638,911827,,ES,Reus Airport
 "52.18083333, -9.523888888",Kerry Airport,Ireland,Southern,0,500,,IE,Kerry Airport
-"53.50166667, 50.155",Kurumoch International Airport,nan,,2095,2993142,,nan,Kurumoch International Airport
-"63.18333333, 75.27",Noyabrsk Airport,nan,,161,229998,,nan,Noyabrsk Airport
-"52.02666667, 113.305",Kadala Airport,nan,,360,514623,,nan,Kadala Airport
-"17.64555556, -63.22055556",Juancho E. Yrausquin Airport,nan,,11,15260,,nan,Juancho E. Yrausquin Airport
-"56.17166667, 92.49333333",Krasnoyarsk International Airport,nan,,1886,2694817,,nan,Krasnoyarsk International Airport
-"65.23861111, 160.5439861",Omolon Airport,nan,,1,1485,,nan,Omolon Airport
-"53.15388889, 140.655",Nikolayevsk-on-Amur Airport,nan,,36,51301,,nan,Nikolayevsk-on-Amur Airport
-"45.00208333, 37.34730556",Anapa Airport,nan,,2052,2931057,,nan,Anapa Airport
-"64.37833333, -173.2433333",Provideniya Bay Airport,nan,,4,5967,,nan,Provideniya Bay Airport
+"53.50166667, 50.155",Kurumoch International Airport,,,2095,2993142,,,Kurumoch International Airport
+"63.18333333, 75.27",Noyabrsk Airport,,,161,229998,,,Noyabrsk Airport
+"52.02666667, 113.305",Kadala Airport,,,360,514623,,,Kadala Airport
+"17.64555556, -63.22055556",Juancho E. Yrausquin Airport,,,11,15260,,,Juancho E. Yrausquin Airport
+"56.17166667, 92.49333333",Krasnoyarsk International Airport,,,1886,2694817,,,Krasnoyarsk International Airport
+"65.23861111, 160.5439861",Omolon Airport,,,1,1485,,,Omolon Airport
+"53.15388889, 140.655",Nikolayevsk-on-Amur Airport,,,36,51301,,,Nikolayevsk-on-Amur Airport
+"45.00208333, 37.34730556",Anapa Airport,,,2052,2931057,,,Anapa Airport
+"64.37833333, -173.2433333",Provideniya Bay Airport,,,4,5967,,,Provideniya Bay Airport
 "42.03609722, 20.41585833",Kukës International Airport Zayed,AL,Veri,3,4742,,AL,Kukës International Airport Zayed
-"48.78166667, 44.34666667",Volgograd International Airport,nan,,1008,1440697,,nan,Volgograd International Airport
-"44.225, 43.08333333",Mineralnye Vody Airport,nan,,2243,3204709,,nan,Mineralnye Vody Airport
-"61.34388889, 73.40222222",Surgut International Airport,nan,,1290,1843224,,nan,Surgut International Airport
-"12.13111111, -68.26861111",Flamingo International Airport,nan,,182,259880,,nan,Flamingo International Airport
-"50.34472222, 30.89333333",Boryspil International Airport,nan,,6603,9433000,,nan,Boryspil International Airport
-"50.64333333, 36.59",Belgorod International Airport,nan,,408,582534,,nan,Belgorod International Airport
-"55.40861111, 37.90611111",Domodedovo International Airport,nan,,17546,25065087,,nan,Domodedovo International Airport
-"54.96666667, 73.30833333",Omsk Tsentralny Airport,nan,,1044,1492032,,nan,Omsk Tsentralny Airport
-"50.60722222, 26.14166667",Rivne International Airport,nan,,0,618,,nan,Rivne International Airport
-"45.05222222, 33.97527778",Simferopol International Airport,nan,,4781,6830000,,nan,Simferopol International Airport
+"48.78166667, 44.34666667",Volgograd International Airport,,,1008,1440697,,,Volgograd International Airport
+"44.225, 43.08333333",Mineralnye Vody Airport,,,2243,3204709,,,Mineralnye Vody Airport
+"61.34388889, 73.40222222",Surgut International Airport,,,1290,1843224,,,Surgut International Airport
+"12.13111111, -68.26861111",Flamingo International Airport,,,182,259880,,,Flamingo International Airport
+"50.34472222, 30.89333333",Boryspil International Airport,,,6603,9433000,,,Boryspil International Airport
+"50.64333333, 36.59",Belgorod International Airport,,,408,582534,,,Belgorod International Airport
+"55.40861111, 37.90611111",Domodedovo International Airport,,,17546,25065087,,,Domodedovo International Airport
+"54.96666667, 73.30833333",Omsk Tsentralny Airport,,,1044,1492032,,,Omsk Tsentralny Airport
+"50.60722222, 26.14166667",Rivne International Airport,,,0,618,,,Rivne International Airport
+"45.05222222, 33.97527778",Simferopol International Airport,,,4781,6830000,,,Simferopol International Airport
 "49.07361111, 20.24111111",Poprad-Tatry Airport,Slovakia,Východné Slovensko,11,15481,,SK,Poprad-Tatry Airport
-"53.1677, 158.4536",Petropavlovsk-Kamchatsky Airport,nan,,541,772717,,nan,Petropavlovsk-Kamchatsky Airport
-"53.81, 86.87833333",Spichenkovo Airport,nan,,278,397730,,nan,Spichenkovo Airport
-"43.45, 39.95666667",Sochi International Airport,nan,,7754,11076621,,nan,Sochi International Airport
-"50.425, 127.4133333",Ignatyevo Airport,nan,,498,710956,,nan,Ignatyevo Airport
-"53.74327778, 91.38586111",Abakan International Airport,nan,,177,253108,,nan,Abakan International Airport
-"45.11, 42.11333333",Stavropol Shpakovskoye Airport,nan,,404,577007,,nan,Stavropol Shpakovskoye Airport
-"57.56066667, 40.15736944",Tunoshna Airport,nan,,69,98557,,nan,Tunoshna Airport
-"62.45777778, 155.7383333",Omsukchan Airport,nan,,6,7886,,nan,Omsukchan Airport
-"56.94166667, 40.93333333",Ivanovo Yuzhny Airport,nan,,48,68125,,nan,Ivanovo Yuzhny Airport
+"53.1677, 158.4536",Petropavlovsk-Kamchatsky Airport,,,541,772717,,,Petropavlovsk-Kamchatsky Airport
+"53.81, 86.87833333",Spichenkovo Airport,,,278,397730,,,Spichenkovo Airport
+"43.45, 39.95666667",Sochi International Airport,,,7754,11076621,,,Sochi International Airport
+"50.425, 127.4133333",Ignatyevo Airport,,,498,710956,,,Ignatyevo Airport
+"53.74327778, 91.38586111",Abakan International Airport,,,177,253108,,,Abakan International Airport
+"45.11, 42.11333333",Stavropol Shpakovskoye Airport,,,404,577007,,,Stavropol Shpakovskoye Airport
+"57.56066667, 40.15736944",Tunoshna Airport,,,69,98557,,,Tunoshna Airport
+"62.45777778, 155.7383333",Omsukchan Airport,,,6,7886,,,Omsukchan Airport
+"56.94166667, 40.93333333",Ivanovo Yuzhny Airport,,,48,68125,,,Ivanovo Yuzhny Airport
 "49.69611111, 18.11083333",Leoš Janáček Airport Ostrava,Czechia,Moravskoslezsko,96,137609,,CZ,Leoš Janáček Airport Ostrava
-"53.3822, 92.0486",Shushenskoye Airport,nan,,0,124,,nan,Shushenskoye Airport
-"54.26833333, 48.22666667",Ulyanovsk Baratayevka Airport,nan,,388,554758,,nan,Ulyanovsk Baratayevka Airport
+"53.3822, 92.0486",Shushenskoye Airport,,,0,124,,,Shushenskoye Airport
+"54.26833333, 48.22666667",Ulyanovsk Baratayevka Airport,,,388,554758,,,Ulyanovsk Baratayevka Airport
 "43.15144444, 25.71288889",Gorna Oryahovitsa Airport,Bulgaria,Severen tsentralen,0,68,,BG,Gorna Oryahovitsa Airport
-"54.68527778, 135.2833333",Chumikan Airport,nan,,3,3838,,nan,Chumikan Airport
-"48.63416667, 22.26333333",Uzhhorod International Airport,nan,,5,7600,,nan,Uzhhorod International Airport
-"49.8125, 23.95611111",Lviv Danylo Halytskyi International Airport,nan,,1284,1834000,,nan,Lviv Danylo Halytskyi International Airport
-"53.51777778, 142.8800917",Okha Airport,nan,,23,33500,,nan,Okha Airport
-"56.09, 47.34722222",Cheboksary Airport,nan,,322,460261,,nan,Cheboksary Airport
-"55.27166667, 86.11",Kemerovo International Airport,nan,,395,564033,,nan,Kemerovo International Airport
+"54.68527778, 135.2833333",Chumikan Airport,,,3,3838,,,Chumikan Airport
+"48.63416667, 22.26333333",Uzhhorod International Airport,,,5,7600,,,Uzhhorod International Airport
+"49.8125, 23.95611111",Lviv Danylo Halytskyi International Airport,,,1284,1834000,,,Lviv Danylo Halytskyi International Airport
+"53.51777778, 142.8800917",Okha Airport,,,23,33500,,,Okha Airport
+"56.09, 47.34722222",Cheboksary Airport,,,322,460261,,,Cheboksary Airport
+"55.27166667, 86.11",Kemerovo International Airport,,,395,564033,,,Kemerovo International Airport
 "46.91222222, 7.499444444",Bern Airport,Switzerland,Espace Mittelland,8,11236,,CH,Bern Airport
-"51.815, 39.23",Voronezh International Airport,nan,,565,807500,,nan,Voronezh International Airport
-"61.02833333, 69.08666667",Khanty-Mansiysk Airport,nan,,272,389281,,nan,Khanty-Mansiysk Airport
-"-20.79, 165.259445",Touho Airport,nan,,1,977,,nan,Touho Airport
-"53.11666667, 45.01666667",Penza Airport,nan,,152,216478,,nan,Penza Airport
-"46.28333333, 48.00627778",Narimanovo Airport,nan,,605,864522,,nan,Narimanovo Airport
-"58.50333333, 49.34833333",Pobedilovo Airport,nan,,236,336651,,nan,Pobedilovo Airport
+"51.815, 39.23",Voronezh International Airport,,,565,807500,,,Voronezh International Airport
+"61.02833333, 69.08666667",Khanty-Mansiysk Airport,,,272,389281,,,Khanty-Mansiysk Airport
+"-20.79, 165.259445",Touho Airport,,,1,977,,,Touho Airport
+"53.11666667, 45.01666667",Penza Airport,,,152,216478,,,Penza Airport
+"46.28333333, 48.00627778",Narimanovo Airport,,,605,864522,,,Narimanovo Airport
+"58.50333333, 49.34833333",Pobedilovo Airport,,,236,336651,,,Pobedilovo Airport
 "53.09666667, 17.97777778",Bydgoszcz Ignacy Jan Paderewski Airport,Poland,Kujawsko-pomorskie,2,2392,,PL,Bydgoszcz Ignacy Jan Paderewski Airport
-"57.16833333, 65.31666667",Roshchino International Airport,nan,,1570,2242326,,nan,Roshchino International Airport
-"17.49638889, -62.97944444",F.D. Roosevelt Airport,nan,,11,15250,,nan,F.D. Roosevelt Airport
-"52.272887, 104.353371",Irkutsk International Airport,nan,,1454,2077769,,nan,Irkutsk International Airport
-"49.57388889, 34.39861111",Poltava Airport,nan,,0,0,,nan,Poltava Airport
-"56.83333333, 53.45666667",Izhevsk Airport,nan,,381,544751,,nan,Izhevsk Airport
-"50.40166667, 30.45166667",Kyiv Zhuliany International Airport,nan,,993,1418153,,nan,Kyiv Zhuliany International Airport
-"49.924722, 36.29",Kharkiv International Airport,nan,,812,1159889,,nan,Kharkiv International Airport
-"45.03472222, 39.17055556",Krasnodar International Airport,nan,,3516,5022243,,nan,Krasnodar International Airport
-"54.40111111, 48.80277778",Ulyanovsk Vostochny Airport,nan,,1,946,,nan,Ulyanovsk Vostochny Airport
-"51.75166667, 36.29666667",Kursk Vostochny Airport,nan,,72,103222,,nan,Kursk Vostochny Airport
-"47.47155556, 39.92397222",Platov International Airport,nan,,2029,2897938,,nan,Platov International Airport
-"71.6975, 128.9027778",Tiksi Airport,nan,,13,18947,,nan,Tiksi Airport
-"55.0125, 82.650556",Tolmachevo Airport,nan,,4663,6662128,,nan,Tolmachevo Airport
-"50.40833333, 136.9333333",Komsomolsk-on-Amur Airport,nan,,7,9862,,nan,Komsomolsk-on-Amur Airport
-"48.52417, 135.16922",Khabarovsk Novy Airport,nan,,1246,1780605,,nan,Khabarovsk Novy Airport
-"55.89388889, 23.39472222",Šiauliai International Airport,Lithuania,Vidurio ir vakarų Lietuvos regionas ,0,517,,LT,Šiauliai International Airport
-"51.89416667, -2.167222222",Gloucestershire Airport,nan,,0,0,,nan,Gloucestershire Airport
-"53.33, 69.59666667",Kokshetau International Airport,nan,,12,17000,,nan,Kokshetau International Airport
-"71.96833333, 102.4866667",Khatanga Airport,nan,,15,21156,,nan,Khatanga Airport
+"57.16833333, 65.31666667",Roshchino International Airport,,,1570,2242326,,,Roshchino International Airport
+"17.49638889, -62.97944444",F.D. Roosevelt Airport,,,11,15250,,,F.D. Roosevelt Airport
+"52.272887, 104.353371",Irkutsk International Airport,,,1454,2077769,,,Irkutsk International Airport
+"49.57388889, 34.39861111",Poltava Airport,,,0,0,,,Poltava Airport
+"56.83333333, 53.45666667",Izhevsk Airport,,,381,544751,,,Izhevsk Airport
+"50.40166667, 30.45166667",Kyiv Zhuliany International Airport,,,993,1418153,,,Kyiv Zhuliany International Airport
+"49.924722, 36.29",Kharkiv International Airport,,,812,1159889,,,Kharkiv International Airport
+"45.03472222, 39.17055556",Krasnodar International Airport,,,3516,5022243,,,Krasnodar International Airport
+"54.40111111, 48.80277778",Ulyanovsk Vostochny Airport,,,1,946,,,Ulyanovsk Vostochny Airport
+"51.75166667, 36.29666667",Kursk Vostochny Airport,,,72,103222,,,Kursk Vostochny Airport
+"47.47155556, 39.92397222",Platov International Airport,,,2029,2897938,,,Platov International Airport
+"71.6975, 128.9027778",Tiksi Airport,,,13,18947,,,Tiksi Airport
+"55.0125, 82.650556",Tolmachevo Airport,,,4663,6662128,,,Tolmachevo Airport
+"50.40833333, 136.9333333",Komsomolsk-on-Amur Airport,,,7,9862,,,Komsomolsk-on-Amur Airport
+"48.52417, 135.16922",Khabarovsk Novy Airport,,,1246,1780605,,,Khabarovsk Novy Airport
+"55.89388889, 23.39472222",Šiauliai International Airport,Lithuania,Vidurio ir vakarų Lietuvos regionas,0,517,,LT,Šiauliai International Airport
+"51.89416667, -2.167222222",Gloucestershire Airport,,,0,0,,,Gloucestershire Airport
+"53.33, 69.59666667",Kokshetau International Airport,,,12,17000,,,Kokshetau International Airport
+"71.96833333, 102.4866667",Khatanga Airport,,,15,21156,,,Khatanga Airport
 "46.00361111, 8.910277777",Lugano Airport,Switzerland,Ticino,0,647,,CH,Lugano Airport
-"54.125, 45.215",Saransk Airport,nan,,73,103718,,nan,Saransk Airport
-"59.91111111, 150.7205556",Sokol Airport,nan,,330,471164,,nan,Sokol Airport
-"49.20805556, -2.195277777",Jersey Airport,nan,,469,670693,,nan,Jersey Airport
-"68.7838, 32.75594722",Murmansk Airport,nan,,949,1355612,,nan,Murmansk Airport
-"69.31054417, 87.3210325",Alykel Airport,nan,,423,604977,,nan,Alykel Airport
-"67.68833333, 12.68166667",Værøy Airport,nan,,5,7231,,nan,Værøy Airport
-"56.7431, 60.8027",Koltsovo Airport,nan,,4181,5973142,,nan,Koltsovo Airport
-"54.546667, 36.368889","""Kaluga"" (Grabtsevo) Airport",nan,,140,200133,,nan,"""Kaluga"" (Grabtsevo) Airport"
-"51.71277778, 46.17111111",Gagarin International Airport,nan,,688,983011,,nan,Gagarin International Airport
-"52.969, 138.8167",Herpuchi,nan,,1,1760,,nan,Herpuchi
-"62.19, 74.535",Kogalym International Airport,nan,,66,94076,,nan,Kogalym International Airport
-"60.95, 76.48333333",Nizhnevartovsk Airport,nan,,447,638925,,nan,Nizhnevartovsk Airport
-"64.66527778, 170.4141667",Markovo Airport,nan,,2,2636,,nan,Markovo Airport
-"61.64166667, 50.83833333",Syktyvkar Airport,nan,,383,546954,,nan,Syktyvkar Airport
-"67.98666667, 75.1",Yamburg Airport,nan,,29,41536,,nan,Yamburg Airport
-"65.58, -170.9966667",Lavrentiya Airport,nan,,5,7836,,nan,Lavrentiya Airport
-"53.36333333, 83.54166667",Barnaul Airport,nan,,360,514693,,nan,Barnaul Airport
-"51.79578611, 55.45674444",Orenburg Tsentralny Airport,nan,,696,993574,,nan,Orenburg Tsentralny Airport
-"51.67607222, 94.40515",Kyzyl Airport,nan,,62,88806,,nan,Kyzyl Airport
-"63.02472222, 179.2961111",Beringovski Airport,nan,,2,3049,,nan,Beringovski Airport
-"46.42694444, 30.67805556",Odesa International Airport,nan,,930,1328326,,nan,Odesa International Airport
-"42.81682222, 47.65229444",Uytash Airport,nan,,1421,2030044,,nan,Uytash Airport
-"49.23972222, 28.61388889",Havryshivka Vinnytsia International Airport,nan,,0,489,,nan,Havryshivka Vinnytsia International Airport
-"51.96666667, 85.83333333",Gorno-Altaysk Airport,nan,,218,311902,,nan,Gorno-Altaysk Airport
-"47.86694444, 35.31583333",Zaporizhzhia International Airport,nan,,432,617518,,nan,Zaporizhzhia International Airport
-"47.05805556, 31.92083333",Mykolaiv Airport,nan,,21,29696,,nan,Mykolaiv Airport
-"64.735, 177.7416667",Ugolny Airport,nan,,77,110113,,nan,Ugolny Airport
-"62.53416667, 114.0363889",Mirny Airport,nan,,189,269391,,nan,Mirny Airport
-"55.56333333, 52.095",Begishevo Airport,nan,,451,643977,,nan,Begishevo Airport
-"67.48833333, 63.99",Vorkuta Airport,nan,,10,13862,,nan,Vorkuta Airport
-"56.38333333, 85.21166667",Bogashevo Airport,nan,,341,486965,,nan,Bogashevo Airport
-"55.297886, 61.512207",Chelyabinsk Airport,nan,,1270,1813638,,nan,Chelyabinsk Airport
-"48.88416667, 24.68611111",Ivano-Frankivsk International Airport,nan,,22,31831,,nan,Ivano-Frankivsk International Airport
-"53.0708, 132.95",Ekimchan,nan,,3,4493,,nan,Ekimchan
-"49.190735, 142.077703",Shakhtyorsk Airport,nan,,6,8347,,nan,Shakhtyorsk Airport
-"57.785, 28.39833333",Pskov Airport,nan,,75,107000,,nan,Pskov Airport
+"54.125, 45.215",Saransk Airport,,,73,103718,,,Saransk Airport
+"59.91111111, 150.7205556",Sokol Airport,,,330,471164,,,Sokol Airport
+"49.20805556, -2.195277777",Jersey Airport,,,469,670693,,,Jersey Airport
+"68.7838, 32.75594722",Murmansk Airport,,,949,1355612,,,Murmansk Airport
+"69.31054417, 87.3210325",Alykel Airport,,,423,604977,,,Alykel Airport
+"67.68833333, 12.68166667",Værøy Airport,,,5,7231,,,Værøy Airport
+"56.7431, 60.8027",Koltsovo Airport,,,4181,5973142,,,Koltsovo Airport
+"54.546667, 36.368889","""Kaluga"" (Grabtsevo) Airport",,,140,200133,,,"""Kaluga"" (Grabtsevo) Airport"
+"51.71277778, 46.17111111",Gagarin International Airport,,,688,983011,,,Gagarin International Airport
+"52.969, 138.8167",Herpuchi,,,1,1760,,,Herpuchi
+"62.19, 74.535",Kogalym International Airport,,,66,94076,,,Kogalym International Airport
+"60.95, 76.48333333",Nizhnevartovsk Airport,,,447,638925,,,Nizhnevartovsk Airport
+"64.66527778, 170.4141667",Markovo Airport,,,2,2636,,,Markovo Airport
+"61.64166667, 50.83833333",Syktyvkar Airport,,,383,546954,,,Syktyvkar Airport
+"67.98666667, 75.1",Yamburg Airport,,,29,41536,,,Yamburg Airport
+"65.58, -170.9966667",Lavrentiya Airport,,,5,7836,,,Lavrentiya Airport
+"53.36333333, 83.54166667",Barnaul Airport,,,360,514693,,,Barnaul Airport
+"51.79578611, 55.45674444",Orenburg Tsentralny Airport,,,696,993574,,,Orenburg Tsentralny Airport
+"51.67607222, 94.40515",Kyzyl Airport,,,62,88806,,,Kyzyl Airport
+"63.02472222, 179.2961111",Beringovski Airport,,,2,3049,,,Beringovski Airport
+"46.42694444, 30.67805556",Odesa International Airport,,,930,1328326,,,Odesa International Airport
+"42.81682222, 47.65229444",Uytash Airport,,,1421,2030044,,,Uytash Airport
+"49.23972222, 28.61388889",Havryshivka Vinnytsia International Airport,,,0,489,,,Havryshivka Vinnytsia International Airport
+"51.96666667, 85.83333333",Gorno-Altaysk Airport,,,218,311902,,,Gorno-Altaysk Airport
+"47.86694444, 35.31583333",Zaporizhzhia International Airport,,,432,617518,,,Zaporizhzhia International Airport
+"47.05805556, 31.92083333",Mykolaiv Airport,,,21,29696,,,Mykolaiv Airport
+"64.735, 177.7416667",Ugolny Airport,,,77,110113,,,Ugolny Airport
+"62.53416667, 114.0363889",Mirny Airport,,,189,269391,,,Mirny Airport
+"55.56333333, 52.095",Begishevo Airport,,,451,643977,,,Begishevo Airport
+"67.48833333, 63.99",Vorkuta Airport,,,10,13862,,,Vorkuta Airport
+"56.38333333, 85.21166667",Bogashevo Airport,,,341,486965,,,Bogashevo Airport
+"55.297886, 61.512207",Chelyabinsk Airport,,,1270,1813638,,,Chelyabinsk Airport
+"48.88416667, 24.68611111",Ivano-Frankivsk International Airport,,,22,31831,,,Ivano-Frankivsk International Airport
+"53.0708, 132.95",Ekimchan,,,3,4493,,,Ekimchan
+"49.190735, 142.077703",Shakhtyorsk Airport,,,6,8347,,,Shakhtyorsk Airport
+"57.785, 28.39833333",Pskov Airport,,,75,107000,,,Pskov Airport
 "50.01333333, 15.73861111",Pardubice Airport,Czechia,Severovýchod,57,80796,,CZ,Pardubice Airport
-"52.80583333, 41.48277778",Tambov Donskoye Airport,nan,,22,31826,,nan,Tambov Donskoye Airport
-"48.04305556, 33.20694444",Kryvyi Rih International Airport,nan,,2,2196,,nan,Kryvyi Rih International Airport
-"63.68305556, 66.68305556",Beloyarsk Airport,nan,,50,70879,,nan,Beloyarsk Airport
-"69.78333333, 170.5966667",Pevek Airport,nan,,17,24391,,nan,Pevek Airport
-"46.8869, 142.7237",Yuzhno-Sakhalinsk Airport,nan,,749,1069627,,nan,Yuzhno-Sakhalinsk Airport
-"48.25888889, 25.98111111",Chernivtsi International Airport,nan,,4,6379,,nan,Chernivtsi International Airport
-"66.35972222, -179.1094444",Zaliv Kresta Airport,nan,,6,9222,,nan,Zaliv Kresta Airport
-"51.78388889, 143.1416667",Nogliki Airport,nan,,17,24575,,nan,Nogliki Airport
-"48.36763333, 35.09365278",Dnipro International Airport,nan,,187,267829,,nan,Dnipro International Airport
-"60.72055556, 114.8258333",Lensk Airport,nan,,23,32872,,nan,Lensk Airport
+"52.80583333, 41.48277778",Tambov Donskoye Airport,,,22,31826,,,Tambov Donskoye Airport
+"48.04305556, 33.20694444",Kryvyi Rih International Airport,,,2,2196,,,Kryvyi Rih International Airport
+"63.68305556, 66.68305556",Beloyarsk Airport,,,50,70879,,,Beloyarsk Airport
+"69.78333333, 170.5966667",Pevek Airport,,,17,24391,,,Pevek Airport
+"46.8869, 142.7237",Yuzhno-Sakhalinsk Airport,,,749,1069627,,,Yuzhno-Sakhalinsk Airport
+"48.25888889, 25.98111111",Chernivtsi International Airport,,,4,6379,,,Chernivtsi International Airport
+"66.35972222, -179.1094444",Zaliv Kresta Airport,,,6,9222,,,Zaliv Kresta Airport
+"51.78388889, 143.1416667",Nogliki Airport,,,17,24575,,,Nogliki Airport
+"48.36763333, 35.09365278",Dnipro International Airport,,,187,267829,,,Dnipro International Airport
+"60.72055556, 114.8258333",Lensk Airport,,,23,32872,,,Lensk Airport
 "56.5175, 21.09694444",Liepāja International Airport,Latvia,Latvija,0,100,,LV,Liepāja International Airport
-"60.43277778, -1.296111111",Scatsta Airport,nan,,0,0,,nan,Scatsta Airport
-"53.690606, 127.090728",Zeya aerodrome,nan,,9,12810,,nan,Zeya aerodrome
+"60.43277778, -1.296111111",Scatsta Airport,,,0,0,,,Scatsta Airport
+"53.690606, 127.090728",Zeya aerodrome,,,9,12810,,,Zeya aerodrome
 "45.4276, 10.3306",Brescia Airport,Italy,Lombardia,4,5454,,IT,Brescia Airport
-"56.4271, 138.0418",Munuk Airport,nan,,2,2774,,nan,Munuk Airport
-"36.81388889, 11.96555556",Pantelleria Airport,nan,,118,169015,,nan,Pantelleria Airport
-"65.48, 72.70333333",Nadym Airport,nan,,128,182572,,nan,Nadym Airport
-"56.17583333, 92.54277778",Krasnoyarsk Cheremshanka Airport,nan,,33,47597,,nan,Krasnoyarsk Cheremshanka Airport
-"48.5185, 135.15",Khabarovsk airstrip,nan,,0,609,,nan,Khabarovsk airstrip
-"60.71, 77.66",Strezhevoy Airport,nan,,12,17804,,nan,Strezhevoy Airport
-"43.205, 44.60666667",Vladikavkaz International Airport,nan,,494,705783,,nan,Vladikavkaz International Airport
-"54.64, 52.80166667",Bugulma Airport,nan,,30,42972,,nan,Bugulma Airport
-"46.66805556, 32.50222222",Kherson International Airport,nan,,58,83553,,nan,Kherson International Airport
-"55.28333333, 124.7783333",Tynda Airport,nan,,7,10561,,nan,Tynda Airport
-"56.705, 47.895",Yoshkar-Ola Airport,nan,,16,22649,,nan,Yoshkar-Ola Airport
-"66.40194444, 112.0352778",Polyarny Airport,nan,,48,69141,,nan,Polyarny Airport
+"56.4271, 138.0418",Munuk Airport,,,2,2774,,,Munuk Airport
+"36.81388889, 11.96555556",Pantelleria Airport,,,118,169015,,,Pantelleria Airport
+"65.48, 72.70333333",Nadym Airport,,,128,182572,,,Nadym Airport
+"56.17583333, 92.54277778",Krasnoyarsk Cheremshanka Airport,,,33,47597,,,Krasnoyarsk Cheremshanka Airport
+"48.5185, 135.15",Khabarovsk airstrip,,,0,609,,,Khabarovsk airstrip
+"60.71, 77.66",Strezhevoy Airport,,,12,17804,,,Strezhevoy Airport
+"43.205, 44.60666667",Vladikavkaz International Airport,,,494,705783,,,Vladikavkaz International Airport
+"54.64, 52.80166667",Bugulma Airport,,,30,42972,,,Bugulma Airport
+"46.66805556, 32.50222222",Kherson International Airport,,,58,83553,,,Kherson International Airport
+"55.28333333, 124.7783333",Tynda Airport,,,7,10561,,,Tynda Airport
+"56.705, 47.895",Yoshkar-Ola Airport,,,16,22649,,,Yoshkar-Ola Airport
+"66.40194444, 112.0352778",Polyarny Airport,,,48,69141,,,Polyarny Airport
 "36.97338104, -25.16531754",Santa Maria Airport,Portugal,Região Autónoma dos Açores,2,3529,,PT,Santa Maria Airport
 "52.378611, 13.520556",Berlin Schönefeld Airport,Germany,Berlin,127,181692,,DE,Berlin Schönefeld Airport
-"19.2925, -81.35916667",Owen Roberts International Airport,nan,,255,363811,,nan,Owen Roberts International Airport
-"53.10694444, -9.653888888",Inishmore Aerodrome,nan,,4,5020,,nan,Inishmore Aerodrome
-"53.23055556, -9.46777778",Connemara Airport,nan,,6,8890,,nan,Connemara Airport
+"19.2925, -81.35916667",Owen Roberts International Airport,,,255,363811,,,Owen Roberts International Airport
+"53.10694444, -9.653888888",Inishmore Aerodrome,,,4,5020,,,Inishmore Aerodrome
+"53.23055556, -9.46777778",Connemara Airport,,,6,8890,,,Connemara Airport
 "51.23194444, 22.69027778",Lublin Airport,Poland,Lubelskie,87,124199,,PL,Lublin Airport
 "53.48194444, 20.93777778",Szczytno-Szymany International Airport,Poland,Warmińsko-mazurskie,44,62395,,PL,Szczytno-Szymany International Airport
-"50.83555556, -0.297222222",Brighton City Airport,nan,,0,0,,nan,Brighton City Airport
-"51.565, 46.04666667",Saratov Tsentralny Airport,nan,,0,0,,nan,Saratov Tsentralny Airport
+"50.83555556, -0.297222222",Brighton City Airport,,,0,0,,,Brighton City Airport
+"51.565, 46.04666667",Saratov Tsentralny Airport,,,0,0,,,Saratov Tsentralny Airport
 "65.655833, -16.918055",Mývatn Airport,Iceland,Ísland,0,22,,IS,Mývatn Airport
-"-19.720555, 163.661112",Île Art – Waala Airport,nan,,1,1124,,nan,Île Art – Waala Airport
-"65.99330833, -21.32962222",Gjögur Airport,nan,,0,116,,nan,Gjögur Airport
+"-19.720555, 163.661112",Île Art – Waala Airport,,,1,1124,,,Île Art – Waala Airport
+"65.99330833, -21.32962222",Gjögur Airport,,,0,116,,,Gjögur Airport
 "45.47335278, 13.61497778",Portorož Airport,Slovenia,Zahodna Slovenija,20,28881,,SI,Portorož Airport
 "66.05805556, -23.13527778",Ísafjörður Airport,Iceland,Ísland,23,32332,,IS,Ísafjörður Airport
-"46.92777778, 28.93083333",Chișinău International Airport,nan,,2097,2995530,,nan,Chișinău International Airport
+"46.92777778, 28.93083333",Chișinău International Airport,,,2097,2995530,,,Chișinău International Airport
 "50.3247, 3.46556",Valenciennes-Denain Airport,France,Nord-Pas de Calais,1,1120,,FR,Valenciennes-Denain Airport
 "63.425, -20.27916667",Vestmannaeyjar Airport,Iceland,Ísland,8,11690,,IS,Vestmannaeyjar Airport
 "48.69222222, 6.22611111",Nancy-Essey Airport,France,Lorraine,1,1091,,FR,Nancy-Essey Airport
-"42.365, 69.47611111",Shymkent International Airport,nan,,669,955412,,nan,Shymkent International Airport
-"43.86, 51.09194444",Aktau Airport,nan,,721,1029685,,nan,Aktau Airport
-"47.12222222, 51.82944444",Atyrau Airport,nan,,656,937032,,nan,Atyrau Airport
+"42.365, 69.47611111",Shymkent International Airport,,,669,955412,,,Shymkent International Airport
+"43.86, 51.09194444",Aktau Airport,,,721,1029685,,,Aktau Airport
+"47.12222222, 51.82944444",Atyrau Airport,,,656,937032,,,Atyrau Airport
 "64.29555556, -15.22722222",Hornafjörður Airport,Iceland,Ísland,7,10005,,IS,Hornafjörður Airport
 "65.95222222, -17.42583333",Húsavík Airport,Iceland,Ísland,8,11633,,IS,Húsavík Airport
-"66.54666667, -18.01861111",Grímsey Airport,nan,,1,2133,,nan,Grímsey Airport
+"66.54666667, -18.01861111",Grímsey Airport,,,1,2133,,,Grímsey Airport
 "65.72055556, -14.85055556",Vopnafjörður Airport,Iceland,Ísland,1,1042,,IS,Vopnafjörður Airport
-"49.39083333, 1.183888888",Rouen Airport,France,Haute-Normandie ,8,11284,,FR,Rouen Airport
+"49.39083333, 1.183888888",Rouen Airport,France,Haute-Normandie,8,11284,,FR,Rouen Airport
 "65.73166667, -19.57277778",Sauðárkrókur Airport,Iceland,Ísland,0,33,,IS,Sauðárkrókur Airport
 "65.64138889, -23.54611111",Bíldudalur Airport,Iceland,Ísland,2,2983,,IS,Bíldudalur Airport
 "66.21833333, -15.33555556",Þórshöfn Airport,Iceland,Ísland,1,835,,IS,Þórshöfn Airport
@@ -758,162 +758,162 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "63.55611111, -20.1375",Bakki Airport,Iceland,Ísland,0,0,,IS,Bakki Airport
 "48.63805556, 19.13416667",Sliač Airport,Slovakia,Stredné Slovensko,0,237,,SK,Sliač Airport
 "59.185, 9.566944444","Skien Airport, Geiteryggen",Norway,Agder og Sør-Østlandet,0,0,,NO,"Skien Airport, Geiteryggen"
-"63.69916667, 9.603888888",Ørland Airport,nan,,1,1379,,nan,Ørland Airport
-"57.91666667, 56.02666667",Perm International Airport,nan,,79,112579,,nan,Perm International Airport
+"63.69916667, 9.603888888",Ørland Airport,,,1,1379,,,Ørland Airport
+"57.91666667, 56.02666667",Perm International Airport,,,79,112579,,,Perm International Airport
 "59.56555556, 9.212222222",Notodden Airport,Norway,Agder og Sør-Østlandet,0,80,,NO,Notodden Airport
 "59.79277778, 5.339722222",Stord Airport,Norway,Vestlandet,2,2885,,NO,Stord Airport
 "61.01555556, 9.288055555","Fagernes Airport, Leirin",Norway,Innlandet,0,0,,NO,"Fagernes Airport, Leirin"
 "48.75444444, -3.471944444",Lannion – Côte de Granit Rose Airport,France,Bretagne,1,850,,FR,Lannion – Côte de Granit Rose Airport
-"56.37, 101.6983333",Bratsk Airport,nan,,81,115548,,nan,Bratsk Airport
-"67.64, 53.125",Naryan-Mar Airport,nan,,128,183127,,nan,Naryan-Mar Airport
-"43.38833333, 45.69972222",Grozny Airport,nan,,198,283202,,nan,Grozny Airport
-"71.21916667, 72.05222222",Sabetta International Airport,nan,,259,369819,,nan,Sabetta International Airport
-"43.51333333, 43.63833333",Nalchik Airport,nan,,166,236865,,nan,Nalchik Airport
-"51.8075, 107.4375",Baikal International Airport,nan,,264,376774,,nan,Baikal International Airport
-"55.475, 65.41527778",Kurgan Airport,nan,,61,87691,,nan,Kurgan Airport
-"56.91333333, 124.9116667",Chulman Airport,nan,,81,115336,,nan,Chulman Airport
-"47.70888889, 67.73916667",Zhezkazgan Airport,nan,,24,33898,,nan,Zhezkazgan Airport
-"53.20694444, 63.55027778",Kostanay Airport,nan,,134,190855,,nan,Kostanay Airport
-"16.79138889, -62.19333333",John A. Osborne Airport,nan,,11,15374,,nan,John A. Osborne Airport
-"66.59013889, 66.58663889",Salekhard Airport,nan,,209,298104,,nan,Salekhard Airport
+"56.37, 101.6983333",Bratsk Airport,,,81,115548,,,Bratsk Airport
+"67.64, 53.125",Naryan-Mar Airport,,,128,183127,,,Naryan-Mar Airport
+"43.38833333, 45.69972222",Grozny Airport,,,198,283202,,,Grozny Airport
+"71.21916667, 72.05222222",Sabetta International Airport,,,259,369819,,,Sabetta International Airport
+"43.51333333, 43.63833333",Nalchik Airport,,,166,236865,,,Nalchik Airport
+"51.8075, 107.4375",Baikal International Airport,,,264,376774,,,Baikal International Airport
+"55.475, 65.41527778",Kurgan Airport,,,61,87691,,,Kurgan Airport
+"56.91333333, 124.9116667",Chulman Airport,,,81,115336,,,Chulman Airport
+"47.70888889, 67.73916667",Zhezkazgan Airport,,,24,33898,,,Zhezkazgan Airport
+"53.20694444, 63.55027778",Kostanay Airport,,,134,190855,,,Kostanay Airport
+"16.79138889, -62.19333333",John A. Osborne Airport,,,11,15374,,,John A. Osborne Airport
+"66.59013889, 66.58663889",Salekhard Airport,,,209,298104,,,Salekhard Airport
 "49.233333, 18.613612",Žilina Airport,Slovakia,Stredné Slovensko,0,523,,SK,Žilina Airport
-"53.39333333, 58.75666667",Magnitogorsk International Airport,nan,,135,193175,,nan,Magnitogorsk International Airport
-"43.3193, 45.013",Magas Airport,nan,,162,231633,,nan,Magas Airport
-"52.195, 77.07388889",Pavlodar Airport,nan,,126,180204,,nan,Pavlodar Airport
-"49.67166667, 73.33527778",Sary-Arka Airport,nan,,190,271411,,nan,Sary-Arka Airport
+"53.39333333, 58.75666667",Magnitogorsk International Airport,,,135,193175,,,Magnitogorsk International Airport
+"43.3193, 45.013",Magas Airport,,,162,231633,,,Magas Airport
+"52.195, 77.07388889",Pavlodar Airport,,,126,180204,,,Pavlodar Airport
+"49.67166667, 73.33527778",Sary-Arka Airport,,,190,271411,,,Sary-Arka Airport
 "52.1872, -7.086963",Waterford Airport,Ireland,Southern,0,0,,IE,Waterford Airport
 "48.625, 17.82861111",Piešťany Airport,Slovakia,Západné Slovensko,0,384,,SK,Piešťany Airport
-"47.25833333, 39.81833333",Rostov-on-Don Airport,nan,,0,0,,nan,Rostov-on-Don Airport
-"59.27666667, 38.02833333",Cherepovets Airport,nan,,104,149068,,nan,Cherepovets Airport
+"47.25833333, 39.81833333",Rostov-on-Don Airport,,,0,0,,,Rostov-on-Don Airport
+"59.27666667, 38.02833333",Cherepovets Airport,,,104,149068,,,Cherepovets Airport
 "45.197488, 0.815217",Périgueux Bassillac Airport,France,Aquitaine,2,2878,,FR,Périgueux Bassillac Airport
-"50.03611111, 82.49416667",Oskemen Airport,nan,,275,393034,,nan,Oskemen Airport
-"50.35138889, 80.23444444",Semey Airport,nan,,19,27098,,nan,Semey Airport
-"67.43666667, 86.62166667",Igarka Airport,nan,,195,278039,,nan,Igarka Airport
-"66.0, 57.36666667",Usinsk Airport,nan,,111,158657,,nan,Usinsk Airport
+"50.03611111, 82.49416667",Oskemen Airport,,,275,393034,,,Oskemen Airport
+"50.35138889, 80.23444444",Semey Airport,,,19,27098,,,Semey Airport
+"67.43666667, 86.62166667",Igarka Airport,,,195,278039,,,Igarka Airport
+"66.0, 57.36666667",Usinsk Airport,,,111,158657,,,Usinsk Airport
 "68.436945, 17.386667","Narvik Airport, Framnes",Norway,Nord-Norge,0,0,,NO,"Narvik Airport, Framnes"
-"51.15083333, 51.54305556",Oral Ak Zhol Airport,nan,,191,273095,,nan,Oral Ak Zhol Airport
+"51.15083333, 51.54305556",Oral Ak Zhol Airport,,,191,273095,,,Oral Ak Zhol Airport
 "59.37888889, 10.78555556",Oslo Rygge,Norway,Oslo og Viken,0,0,,NO,Oslo Rygge
-"50.245, 57.203333",Aktobe International Airport,nan,,288,411248,,nan,Aktobe International Airport
-"44.5725, 38.00944444",Gelendzhik Airport,nan,,206,294533,,nan,Gelendzhik Airport
+"50.245, 57.203333",Aktobe International Airport,,,288,411248,,,Aktobe International Airport
+"44.5725, 38.00944444",Gelendzhik Airport,,,206,294533,,,Gelendzhik Airport
 "53.87870556, 14.15234722",Heringsdorf Airport,Germany,Mecklenburg-Vorpommern,22,31038,,DE,Heringsdorf Airport
-"44.70694444, 65.5925",Kyzylorda Airport,nan,,142,203386,,nan,Kyzylorda Airport
-"52.10833333, 23.89805556",Brest Airport,nan,,3,4197,,nan,Brest Airport
-"54.77444444, 69.185",Petropavl Airport,nan,,13,18410,,nan,Petropavl Airport
+"44.70694444, 65.5925",Kyzylorda Airport,,,142,203386,,,Kyzylorda Airport
+"52.10833333, 23.89805556",Brest Airport,,,3,4197,,,Brest Airport
+"54.77444444, 69.185",Petropavl Airport,,,13,18410,,,Petropavl Airport
 "50.51472222, 1.6275",Le Touquet – Élisabeth II Airport,France,Nord-Pas de Calais,1,1124,,FR,Le Touquet – Élisabeth II Airport
-"42.85361111, 71.30361111",Taraz Airport,nan,,44,63261,,nan,Taraz Airport
-"70.319756, 68.336553",Bovanenkovo Airport,nan,,90,128812,,nan,Bovanenkovo Airport
-"53.60194444, 24.05388889",Hrodna Airport,nan,,126,180145,,nan,Hrodna Airport
-"56.85666667, 105.73",Ust-Kut Airport,nan,,63,90026,,nan,Ust-Kut Airport
-"59.8764, 111.044",Talakan Airport,nan,,220,313737,,nan,Talakan Airport
-"48.9183, 140.0359",Sovetskaya Gavan - May-Gatka,nan,,3,3953,,nan,Sovetskaya Gavan - May-Gatka
+"42.85361111, 71.30361111",Taraz Airport,,,44,63261,,,Taraz Airport
+"70.319756, 68.336553",Bovanenkovo Airport,,,90,128812,,,Bovanenkovo Airport
+"53.60194444, 24.05388889",Hrodna Airport,,,126,180145,,,Hrodna Airport
+"56.85666667, 105.73",Ust-Kut Airport,,,63,90026,,,Ust-Kut Airport
+"59.8764, 111.044",Talakan Airport,,,220,313737,,,Talakan Airport
+"48.9183, 140.0359",Sovetskaya Gavan - May-Gatka,,,3,3953,,,Sovetskaya Gavan - May-Gatka
 "47.26583333, 5.095",Dijon-Bourgogne Airport,France,Bourgogne,2,2938,,FR,Dijon-Bourgogne Airport
-"70.0111, 135.647",Ust-Kuyga Airport,nan,,3,4039,,nan,Ust-Kuyga Airport
-"64.33333333, 100.4333333",Tura Airport,nan,,1,2066,,nan,Tura Airport
-"55.17833333, 166.0483333",Nikolskoye Airport,nan,,1,1863,,nan,Nikolskoye Airport
+"70.0111, 135.647",Ust-Kuyga Airport,,,3,4039,,,Ust-Kuyga Airport
+"64.33333333, 100.4333333",Tura Airport,,,1,2066,,,Tura Airport
+"55.17833333, 166.0483333",Nikolskoye Airport,,,1,1863,,,Nikolskoye Airport
 "37.1475, -8.579722222",Portimão Airport,Portugal,Algarve,0,36,,PT,Portimão Airport
-"62.7861, 136.842",Teply Klyuch Airport,nan,,1,1889,,nan,Teply Klyuch Airport
-"57.14333333, 65.46833333",Plekhanovo Airport,nan,,2,3264,,nan,Plekhanovo Airport
-"67.4797, 153.735",Srednekolymsk Airport,nan,,15,21468,,nan,Srednekolymsk Airport
-"62.10833333, 129.5633333",Magan Airport,nan,,7,10672,,nan,Magan Airport
-"60.355, 102.31",Vanavara Airport,nan,,1,1466,,nan,Vanavara Airport
-"70.625, 147.8966667",Chokurdakh Airport,nan,,5,6592,,nan,Chokurdakh Airport
-"62.11, 65.615",Nyagan Airport,nan,,10,14199,,nan,Nyagan Airport
-"64.5494, 143.111",Ust-Nera Airport,nan,,9,12484,,nan,Ust-Nera Airport
-"50.66833333, 142.76",Zonalnoye Airport,nan,,0,6,,nan,Zonalnoye Airport
-"53.21416667, 34.17638889",Bryansk International Airport,nan,,14,20444,,nan,Bryansk International Airport
-"68.8478, 58.1986",Varandey Airport,nan,,11,15569,,nan,Varandey Airport
-"57.86638889, 114.2425",Bodaybo Airport,nan,,36,51910,,nan,Bodaybo Airport
-"60.38333333, 166.025",Tilichiki Airport,nan,,23,32928,,nan,Tilichiki Airport
-"69.76333333, 61.56333333",Amderma Airport,nan,,1,1476,,nan,Amderma Airport
-"68.86833333, -179.3755556",Mys Shmidta Airport,nan,,0,0,,nan,Mys Shmidta Airport
-"67.44305556, 58.04694444",Jorei-Ver Airport,nan,,1,1969,,nan,Jorei-Ver Airport
-"68.466944, 73.597222",Mys Kamenny,nan,,8,11135,,nan,Mys Kamenny
-"61.23666667, 46.69666667",Kotlas Airport,nan,,7,9833,,nan,Kotlas Airport
-"58.47333333, 92.11333333",Yeniseysk Airport,nan,,0,0,,nan,Yeniseysk Airport
-"66.60166667, 44.63666667",Nyes Airport,nan,,2,2529,,nan,Nyes Airport
-"68.74333333, 161.3366667",Chersky Airport,nan,,5,6829,,nan,Chersky Airport
-"61.325, 63.605",Sovetsky Airport,nan,,34,48338,,nan,Sovetsky Airport
-"43.96111111, 145.6844444",Yuzhno-Kurilsk Mendeleyevo Airport,nan,,17,24348,,nan,Yuzhno-Kurilsk Mendeleyevo Airport
+"62.7861, 136.842",Teply Klyuch Airport,,,1,1889,,,Teply Klyuch Airport
+"57.14333333, 65.46833333",Plekhanovo Airport,,,2,3264,,,Plekhanovo Airport
+"67.4797, 153.735",Srednekolymsk Airport,,,15,21468,,,Srednekolymsk Airport
+"62.10833333, 129.5633333",Magan Airport,,,7,10672,,,Magan Airport
+"60.355, 102.31",Vanavara Airport,,,1,1466,,,Vanavara Airport
+"70.625, 147.8966667",Chokurdakh Airport,,,5,6592,,,Chokurdakh Airport
+"62.11, 65.615",Nyagan Airport,,,10,14199,,,Nyagan Airport
+"64.5494, 143.111",Ust-Nera Airport,,,9,12484,,,Ust-Nera Airport
+"50.66833333, 142.76",Zonalnoye Airport,,,0,6,,,Zonalnoye Airport
+"53.21416667, 34.17638889",Bryansk International Airport,,,14,20444,,,Bryansk International Airport
+"68.8478, 58.1986",Varandey Airport,,,11,15569,,,Varandey Airport
+"57.86638889, 114.2425",Bodaybo Airport,,,36,51910,,,Bodaybo Airport
+"60.38333333, 166.025",Tilichiki Airport,,,23,32928,,,Tilichiki Airport
+"69.76333333, 61.56333333",Amderma Airport,,,1,1476,,,Amderma Airport
+"68.86833333, -179.3755556",Mys Shmidta Airport,,,0,0,,,Mys Shmidta Airport
+"67.44305556, 58.04694444",Jorei-Ver Airport,,,1,1969,,,Jorei-Ver Airport
+"68.466944, 73.597222",Mys Kamenny,,,8,11135,,,Mys Kamenny
+"61.23666667, 46.69666667",Kotlas Airport,,,7,9833,,,Kotlas Airport
+"58.47333333, 92.11333333",Yeniseysk Airport,,,0,0,,,Yeniseysk Airport
+"66.60166667, 44.63666667",Nyes Airport,,,2,2529,,,Nyes Airport
+"68.74333333, 161.3366667",Chersky Airport,,,5,6829,,,Chersky Airport
+"61.325, 63.605",Sovetsky Airport,,,34,48338,,,Sovetsky Airport
+"43.96111111, 145.6844444",Yuzhno-Kurilsk Mendeleyevo Airport,,,17,24348,,,Yuzhno-Kurilsk Mendeleyevo Airport
 "41.2775, -7.719722222",Vila Real Aerodrome,Portugal,Norte,5,6782,,PT,Vila Real Aerodrome
-"55.80166667, 109.5866667",Nizhneangarsk Airport,nan,,11,16379,,nan,Nizhneangarsk Airport
-"55.51166667, 37.50722222",Ostafyevo International Airport,nan,,5,7700,,nan,Ostafyevo International Airport
-"66.05555556, 60.11138889",Inta Airport,nan,,2,3469,,nan,Inta Airport
+"55.80166667, 109.5866667",Nizhneangarsk Airport,,,11,16379,,,Nizhneangarsk Airport
+"55.51166667, 37.50722222",Ostafyevo International Airport,,,5,7700,,,Ostafyevo International Airport
+"66.05555556, 60.11138889",Inta Airport,,,2,3469,,,Inta Airport
 "38.72555556, -9.355277777",Cascais Municipal Aerodrome,Portugal,Grande Lisboa,7,9602,,PT,Cascais Municipal Aerodrome
-"54.89388889, 99.06972222",Nizhneudinsk Airport,nan,,4,5175,,nan,Nizhneudinsk Airport
-"56.36166667, 114.93",Taksimo Airport,nan,,9,12474,,nan,Taksimo Airport
-"66.45, 143.2633333",Moma Airport,nan,,7,10143,,nan,Moma Airport
-"63.4592, 120.276",Verkhnevilyuysk Airport,nan,,2,3014,,nan,Verkhnevilyuysk Airport
-"64.89583333, 45.72277778",Leshukonskoye Airport,nan,,4,6026,,nan,Leshukonskoye Airport
-"65.03, 35.73333333",Solovki Airport,nan,,7,9873,,nan,Solovki Airport
-"67.46305556, 33.58805556",Kirovsk-Apatity Airport,nan,,42,60119,,nan,Kirovsk-Apatity Airport
-"71.92888889, 114.0822222",Saskylakh Airport,nan,,10,13704,,nan,Saskylakh Airport
-"61.885, 34.15666667",Petrozavodsk Airport,nan,,21,30301,,nan,Petrozavodsk Airport
+"54.89388889, 99.06972222",Nizhneudinsk Airport,,,4,5175,,,Nizhneudinsk Airport
+"56.36166667, 114.93",Taksimo Airport,,,9,12474,,,Taksimo Airport
+"66.45, 143.2633333",Moma Airport,,,7,10143,,,Moma Airport
+"63.4592, 120.276",Verkhnevilyuysk Airport,,,2,3014,,,Verkhnevilyuysk Airport
+"64.89583333, 45.72277778",Leshukonskoye Airport,,,4,6026,,,Leshukonskoye Airport
+"65.03, 35.73333333",Solovki Airport,,,7,9873,,,Solovki Airport
+"67.46305556, 33.58805556",Kirovsk-Apatity Airport,,,42,60119,,,Kirovsk-Apatity Airport
+"71.92888889, 114.0822222",Saskylakh Airport,,,10,13704,,,Saskylakh Airport
+"61.885, 34.15666667",Petrozavodsk Airport,,,21,30301,,,Petrozavodsk Airport
 "50.20305556, 12.915",Karlovy Vary Airport,Czechia,Severozápad,14,19908,,CZ,Karlovy Vary Airport
-"57.79666667, 41.02",Kostroma–Sokerkino Airport,nan,,5,7357,,nan,Kostroma–Sokerkino Airport
-"51.07166667, 58.59666667",Orsk Airport,nan,,18,26310,,nan,Orsk Airport
+"57.79666667, 41.02",Kostroma–Sokerkino Airport,,,5,7357,,,Kostroma–Sokerkino Airport
+"51.07166667, 58.59666667",Orsk Airport,,,18,26310,,,Orsk Airport
 "41.8578, -6.707125",Bragança Airport,Portugal,Norte,2,3154,,PT,Bragança Airport
-"61.59, 89.97333333",Podkamennaya Tunguska Airport,nan,,7,10560,,nan,Podkamennaya Tunguska Airport
-"52.205, 0.175",Cambridge City Airport,nan,,0,0,,nan,Cambridge City Airport
-"45.25638889, 147.9558333",Iturup Airport,nan,,17,24443,,nan,Iturup Airport
-"56.91333333, 118.27",Chara Airport,nan,,6,9035,,nan,Chara Airport
-"65.12166667, 57.13",Pechora Airport,nan,,4,5088,,nan,Pechora Airport
+"61.59, 89.97333333",Podkamennaya Tunguska Airport,,,7,10560,,,Podkamennaya Tunguska Airport
+"52.205, 0.175",Cambridge City Airport,,,0,0,,,Cambridge City Airport
+"45.25638889, 147.9558333",Iturup Airport,,,17,24443,,,Iturup Airport
+"56.91333333, 118.27",Chara Airport,,,6,9035,,,Chara Airport
+"65.12166667, 57.13",Pechora Airport,,,4,5088,,,Pechora Airport
 "38.07888889, -7.9325",Beja Airport,Portugal,Alentejo,1,1210,,PT,Beja Airport
-"52.70333333, 39.53833333",Lipetsk Airport,nan,,45,63821,,nan,Lipetsk Airport
-"51.33, 37.76833333",Stary Oskol Airport,nan,,5,6600,,nan,Stary Oskol Airport
-"61.92166667, 159.23",Severo-Evensk Airport,nan,,5,7745,,nan,Severo-Evensk Airport
-"61.275, 108.03",Erbogachen Airport,nan,,6,7865,,nan,Erbogachen Airport
-"66.79416667, 123.3625",Zhigansk Airport,nan,,8,10908,,nan,Zhigansk Airport
-"65.03166667, 53.97",Izhma Airport,nan,,3,4312,,nan,Izhma Airport
-"63.29722222, 118.3469444",Nyurba Airport,nan,,14,20460,,nan,Nyurba Airport
-"62.920809, 152.415961",Seymchan Airport,nan,,1,2008,,nan,Seymchan Airport
-"68.51555556, 112.4791667",Olenyok Airport,nan,,7,10388,,nan,Olenyok Airport
-"47.1983, 38.8483",Taganrog Yuzhny Airport,nan,,0,12,,nan,Taganrog Yuzhny Airport
-"57.77277778, 108.0608333",Kirensk Airport,nan,,20,29012,,nan,Kirensk Airport
-"58.6, 125.4",Aldan Airport,nan,,2,3340,,nan,Aldan Airport
-"62.185, 117.635",Suntar Airport,nan,,8,11303,,nan,Suntar Airport
-"66.84, 88.40333333",Svetlogorsk Airport,nan,,2,3534,,nan,Svetlogorsk Airport
+"52.70333333, 39.53833333",Lipetsk Airport,,,45,63821,,,Lipetsk Airport
+"51.33, 37.76833333",Stary Oskol Airport,,,5,6600,,,Stary Oskol Airport
+"61.92166667, 159.23",Severo-Evensk Airport,,,5,7745,,,Severo-Evensk Airport
+"61.275, 108.03",Erbogachen Airport,,,6,7865,,,Erbogachen Airport
+"66.79416667, 123.3625",Zhigansk Airport,,,8,10908,,,Zhigansk Airport
+"65.03166667, 53.97",Izhma Airport,,,3,4312,,,Izhma Airport
+"63.29722222, 118.3469444",Nyurba Airport,,,14,20460,,,Nyurba Airport
+"62.920809, 152.415961",Seymchan Airport,,,1,2008,,,Seymchan Airport
+"68.51555556, 112.4791667",Olenyok Airport,,,7,10388,,,Olenyok Airport
+"47.1983, 38.8483",Taganrog Yuzhny Airport,,,0,12,,,Taganrog Yuzhny Airport
+"57.77277778, 108.0608333",Kirensk Airport,,,20,29012,,,Kirensk Airport
+"58.6, 125.4",Aldan Airport,,,2,3340,,,Aldan Airport
+"62.185, 117.635",Suntar Airport,,,8,11303,,,Suntar Airport
+"66.84, 88.40333333",Svetlogorsk Airport,,,2,3534,,,Svetlogorsk Airport
 "40.72777778, -7.889166666",Viseu Airport,Portugal,Centro (PT),6,8497,,PT,Viseu Airport
-"59.28166667, 39.94666667",Vologda Airport,nan,,4,5315,,nan,Vologda Airport
-"65.43333333, 52.19888889",Ust-Tsylma Airport,nan,,8,11948,,nan,Ust-Tsylma Airport
-"60.3639, 134.449",Ust-Maya Airport,nan,,7,10676,,nan,Ust-Maya Airport
-"54.67833333, 158.545",Milkovo Airport,nan,,0,30,,nan,Milkovo Airport
-"66.81666667, 59.65",Haruta Airport,nan,,1,1609,,nan,Haruta Airport
-"58.13623889, 68.22157778",Tobolsk Airport,nan,,26,37063,,nan,Tobolsk Airport
-"60.39916667, 120.4641667",Olyokminsk Airport,nan,,24,33653,,nan,Olyokminsk Airport
-"63.56666667, 53.80333333",Ukhta Airport,nan,,58,82462,,nan,Ukhta Airport
-"64.44166667, 40.42166667",Vaskovo Airport,nan,,15,22086,,nan,Vaskovo Airport
-"60.11666667, 64.83333333",Uray Airport,nan,,10,13704,,nan,Uray Airport
-"65.8, 87.93",Turukhansk Airport,nan,,14,19684,,nan,Turukhansk Airport
-"58.38, 97.47333333",Boguchany Airport,nan,,0,0,,nan,Boguchany Airport
-"65.87833333, 44.215",Mezen Airport,nan,,4,6051,,nan,Mezen Airport
-"46.37388889, 44.33083333",Elista Airport,nan,,8,10898,,nan,Elista Airport
-"57.78277778, 158.7316667",Tigil aerodrome,nan,,3,4047,,nan,Tigil aerodrome
-"58.476, 99.0987",Kezhemsky,nan,,2,3423,,nan,Kezhemsky
-"60.55666667, 169.11",Ust-Pakhachi Airport,nan,,1,1429,,nan,Ust-Pakhachi Airport
-"65.95916667, 111.5463889",Aykhal Airport,nan,,1,1489,,nan,Aykhal Airport
-"69.3925, 139.9019444",Deputatsky Airport,nan,,10,14213,,nan,Deputatsky Airport
-"63.75666667, 121.6933333",Vilyuisk Airport,nan,,3,4639,,nan,Vilyuisk Airport
-"57.95166667, 56.195",Bakharevka Airport,nan,,0,0,,nan,Bakharevka Airport
-"67.79194444, 130.3908333",Sakkyryr Airport,nan,,4,6251,,nan,Sakkyryr Airport
-"56.12666667, 40.315",Semyazino Airport,nan,,1,804,,nan,Semyazino Airport
-"68.55694444, 146.2347222",Belaya Gora Airport,nan,,8,11884,,nan,Belaya Gora Airport
-"57.0948, 156.7371",Ust-Khayryuzovo,nan,,3,3696,,nan,Ust-Khayryuzovo
-"59.08166667, 159.8883333",Palana Airport,nan,,7,9570,,nan,Palana Airport
-"56.23833333, 162.6883333",Ust-Kamchatsk Airport,nan,,1,1248,,nan,Ust-Kamchatsk Airport
-"73.51666667, 80.38166667",Dikson Airport,nan,,0,0,,nan,Dikson Airport
-"65.7167, 82.4551",Krasnoselkup,nan,,10,13714,,nan,Krasnoselkup
-"58.31333333, 112.89",Mama Airport,nan,,6,7928,,nan,Mama Airport
-"61.67666667, 96.355",Baykit Airport,nan,,22,31268,,nan,Baykit Airport
-"67.64888889, 134.695",Batagay Airport,nan,,21,29314,,nan,Batagay Airport
+"59.28166667, 39.94666667",Vologda Airport,,,4,5315,,,Vologda Airport
+"65.43333333, 52.19888889",Ust-Tsylma Airport,,,8,11948,,,Ust-Tsylma Airport
+"60.3639, 134.449",Ust-Maya Airport,,,7,10676,,,Ust-Maya Airport
+"54.67833333, 158.545",Milkovo Airport,,,0,30,,,Milkovo Airport
+"66.81666667, 59.65",Haruta Airport,,,1,1609,,,Haruta Airport
+"58.13623889, 68.22157778",Tobolsk Airport,,,26,37063,,,Tobolsk Airport
+"60.39916667, 120.4641667",Olyokminsk Airport,,,24,33653,,,Olyokminsk Airport
+"63.56666667, 53.80333333",Ukhta Airport,,,58,82462,,,Ukhta Airport
+"64.44166667, 40.42166667",Vaskovo Airport,,,15,22086,,,Vaskovo Airport
+"60.11666667, 64.83333333",Uray Airport,,,10,13704,,,Uray Airport
+"65.8, 87.93",Turukhansk Airport,,,14,19684,,,Turukhansk Airport
+"58.38, 97.47333333",Boguchany Airport,,,0,0,,,Boguchany Airport
+"65.87833333, 44.215",Mezen Airport,,,4,6051,,,Mezen Airport
+"46.37388889, 44.33083333",Elista Airport,,,8,10898,,,Elista Airport
+"57.78277778, 158.7316667",Tigil aerodrome,,,3,4047,,,Tigil aerodrome
+"58.476, 99.0987",Kezhemsky,,,2,3423,,,Kezhemsky
+"60.55666667, 169.11",Ust-Pakhachi Airport,,,1,1429,,,Ust-Pakhachi Airport
+"65.95916667, 111.5463889",Aykhal Airport,,,1,1489,,,Aykhal Airport
+"69.3925, 139.9019444",Deputatsky Airport,,,10,14213,,,Deputatsky Airport
+"63.75666667, 121.6933333",Vilyuisk Airport,,,3,4639,,,Vilyuisk Airport
+"57.95166667, 56.195",Bakharevka Airport,,,0,0,,,Bakharevka Airport
+"67.79194444, 130.3908333",Sakkyryr Airport,,,4,6251,,,Sakkyryr Airport
+"56.12666667, 40.315",Semyazino Airport,,,1,804,,,Semyazino Airport
+"68.55694444, 146.2347222",Belaya Gora Airport,,,8,11884,,,Belaya Gora Airport
+"57.0948, 156.7371",Ust-Khayryuzovo,,,3,3696,,,Ust-Khayryuzovo
+"59.08166667, 159.8883333",Palana Airport,,,7,9570,,,Palana Airport
+"56.23833333, 162.6883333",Ust-Kamchatsk Airport,,,1,1248,,,Ust-Kamchatsk Airport
+"73.51666667, 80.38166667",Dikson Airport,,,0,0,,,Dikson Airport
+"65.7167, 82.4551",Krasnoselkup,,,10,13714,,,Krasnoselkup
+"58.31333333, 112.89",Mama Airport,,,6,7928,,,Mama Airport
+"61.67666667, 96.355",Baykit Airport,,,22,31268,,,Baykit Airport
+"67.64888889, 134.695",Batagay Airport,,,21,29314,,,Batagay Airport
 "57.775556, 11.870556",Gothenburg City Airport,Sweden,Västsverige,0,53,,SE,Gothenburg City Airport
 "45.72944444, 0.219166666",Angoulême – Brie – Champniers Airport,France,Poitou-Charentes,1,1707,,FR,Angoulême – Brie – Champniers Airport
 "47.0042, 3.11089",Nevers-Fourchambault Airport,France,Bourgogne,1,1070,,FR,Nevers-Fourchambault Airport
 "60.25388889, 25.04416667",Helsinki-Malmi Airport,Finland,Helsinki-Uusimaa,0,52,,FI,Helsinki-Malmi Airport
 "55.47666667, 10.33083333",Hans Christian Andersen Airport,Denmark,Syddanmark,16,23183,,DK,Hans Christian Andersen Airport
 "46.7025, -1.38167",La Roche-sur-Yon - Les Ajoncs Airport,France,Pays de la Loire,1,1697,,FR,La Roche-sur-Yon - Les Ajoncs Airport
-"37.0112, 25.128",Paros National Airport,nan,,30,43182,,nan,Paros National Airport
+"37.0112, 25.128",Paros National Airport,,,30,43182,,,Paros National Airport
 "61.04583333, 28.14861111",Lappeenranta Airport,Finland,Etelä-Suomi,25,35792,,FI,Lappeenranta Airport
-"51.34222222, 1.346111111",Manston Airport,nan,,0,0,,nan,Manston Airport
+"51.34222222, 1.346111111",Manston Airport,,,0,0,,,Manston Airport
 "57.35055556, 16.49638889",Oskarshamn Airport,Sweden,Småland med öarna,0,60,,SE,Oskarshamn Airport
 "47.48666667, 6.79138889",Montbéliard – Courcelles Aerodrome,France,Franche-Comté,1,1037,,FR,Montbéliard – Courcelles Aerodrome
 "43.252222, 5.786112",Le Castellet airport,France,Provence-Alpes-Côte d’Azur,1,1745,,FR,Le Castellet airport
@@ -921,10 +921,10 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "43.25638889, 11.255",Siena-Ampugnano Airport,Italy,Toscana,0,258,,IT,Siena-Ampugnano Airport
 "44.045688, 8.12533",Albenga Airport-Riviera Airport,Italy,Liguria,0,0,,IT,Albenga Airport-Riviera Airport
 "40.49666667, -3.445833333",Madrid-Torrejón Airport,Spain,Comunidad de Madrid,1,1970,,ES,Madrid-Torrejón Airport
-"48.418, 39.374",Luhansk International Airport,nan,,36,51100,,nan,Luhansk International Airport
+"48.418, 39.374",Luhansk International Airport,,,36,51100,,,Luhansk International Airport
 "48.032222, -0.742778",Laval - Entrammes Airport,France,Pays de la Loire,1,1073,,FR,Laval - Entrammes Airport
 "3.89333333, -51.80555556",Saint-Georges-de-l'Oyapock Airport,France,Guyane,2,2295,,FR,Saint-Georges-de-l'Oyapock Airport
-"50.42277778, -4.105833333",Plymouth City Airport,nan,,20,28834,,nan,Plymouth City Airport
+"50.42277778, -4.105833333",Plymouth City Airport,,,20,28834,,,Plymouth City Airport
 "64.95555556, 17.7",Storuman Airport,Sweden,Övre Norrland,0,231,,SE,Storuman Airport
 "45.14972222, 1.47444444",Brive – Laroche Airport,France,Limousin,9,12301,,FR,Brive – Laroche Airport
 "49.096628, 2.040722",Pontoise – Cormeilles Aerodrome,France,Ile-de-France,1,749,,FR,Pontoise – Cormeilles Aerodrome
@@ -932,27 +932,27 @@ location,name,country,province,kg_n_per_year,passengers,year,country_code,name_e
 "46.82611111, 4.8175",Chalon – Champforgeuil Airport,France,Bourgogne,0,149,,FR,Chalon – Champforgeuil Airport
 "46.40666667, 4.021111111",Saint-Yan Airport,France,Bourgogne,0,137,,FR,Saint-Yan Airport
 "44.91555556, 4.968611111",Valence-Chabeuil Airport,France,Rhône-Alpes,1,1665,,FR,Valence-Chabeuil Airport
-"52.3725, -1.479722222",Coventry Airport,nan,,0,167,,nan,Coventry Airport
+"52.3725, -1.479722222",Coventry Airport,,,0,167,,,Coventry Airport
 "57.52139167, 15.83373889",Hultsfred Airport,Sweden,Småland med öarna,0,52,,SE,Hultsfred Airport
 "52.47361111, 13.40166667",Berlin-Tempelhof Airport,Germany,Berlin,195,278555,,DE,Berlin-Tempelhof Airport
-"16.2969, -61.0844",La Désirade Airport,nan,,0,56,,nan,La Désirade Airport
+"16.2969, -61.0844",La Désirade Airport,,,0,56,,,La Désirade Airport
 "44.45388889, 6.03666667",Gap – Tallard aerodrome,France,Provence-Alpes-Côte d’Azur,1,723,,FR,Gap – Tallard aerodrome
 "60.41666667, 8.512777777",Geilo Airport,Norway,Oslo og Viken,0,0,,NO,Geilo Airport
 "39.91666667, 9.683333333",Tortolì-Arbatax Airport,Italy,Sardegna,18,26083,,IT,Tortolì-Arbatax Airport
 "16.0133, -61.7422",Baillif Airport,France,Guadeloupe,0,41,,FR,Baillif Airport
 "45.571667, 11.526945",Vicenza Airport,Italy,Veneto,0,526,,IT,Vicenza Airport
-"16.255, -61.265",Saint-François Airport,nan,,0,35,,nan,Saint-François Airport
-"58.10027778, 6.625",Farsund Airport,nan,,0,0,,nan,Farsund Airport
-"54.9375, -2.809166666",Carlisle Lake District Airport,nan,,0,75,,nan,Carlisle Lake District Airport
-"53.17805556, -2.977777777",Hawarden Airport,nan,,2,2751,,nan,Hawarden Airport
-"51.60527778, -4.067777777",Swansea Airport,nan,,13,18037,,nan,Swansea Airport
-"53.3942, -1.38861",Sheffield City Airport & Heliport,nan,,9,13104,,nan,Sheffield City Airport & Heliport
-"54.12861111, -3.267222222",Walney Aerodrome,nan,,0,54,,nan,Walney Aerodrome
+"16.255, -61.265",Saint-François Airport,,,0,35,,,Saint-François Airport
+"58.10027778, 6.625",Farsund Airport,,,0,0,,,Farsund Airport
+"54.9375, -2.809166666",Carlisle Lake District Airport,,,0,75,,,Carlisle Lake District Airport
+"53.17805556, -2.977777777",Hawarden Airport,,,2,2751,,,Hawarden Airport
+"51.60527778, -4.067777777",Swansea Airport,,,13,18037,,,Swansea Airport
+"53.3942, -1.38861",Sheffield City Airport & Heliport,,,9,13104,,,Sheffield City Airport & Heliport
+"54.12861111, -3.267222222",Walney Aerodrome,,,0,54,,,Walney Aerodrome
 "41.953055, 12.501945",Rome Urbe Airport,Italy,Lazio,0,60,,IT,Rome Urbe Airport
-"32.36416667, -64.67861111",L.F. Wade International Airport,nan,,640,914457,,nan,L.F. Wade International Airport
+"32.36416667, -64.67861111",L.F. Wade International Airport,,,640,914457,,,L.F. Wade International Airport
 "45.39583333, 11.84805556",Padua Airport,Italy,Veneto,0,39,,IT,Padua Airport
-"50.82833333, -1.05","Portsmouth Airport, Hampshire",nan,,13,19001,,nan,"Portsmouth Airport, Hampshire"
-"51.08333333, 1.016666666",Lympne Airport,nan,,87,123803,,nan,Lympne Airport
-"53.71972222, -0.566388888",Brough Aerodrome,nan,,3,4586,,nan,Brough Aerodrome
+"50.82833333, -1.05","Portsmouth Airport, Hampshire",,,13,19001,,,"Portsmouth Airport, Hampshire"
+"51.08333333, 1.016666666",Lympne Airport,,,87,123803,,,Lympne Airport
+"53.71972222, -0.566388888",Brough Aerodrome,,,3,4586,,,Brough Aerodrome
 "43.5419, 1.36522",Francazal Airport,France,Midi-Pyrénées,5,6675,,FR,Francazal Airport
-"51.35636111, -0.116822222",Croydon Airport,nan,,84,120390,,nan,Croydon Airport
+"51.35636111, -0.116822222",Croydon Airport,,,84,120390,,,Croydon Airport

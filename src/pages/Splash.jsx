@@ -1,13 +1,19 @@
 // src/pages/Splash.jsx
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { WTP_ALL_CSV } from "../utils/data";
+import { WTP_ALL_CSV, EXTRA_DATASETS } from "../utils/data";
 import { useCountryProvinceIndex } from "../hooks/useLocationsData";
 import "../App.css";
 
 export default function Splash() {
   const nav = useNavigate();
-  const { loading, error, countries, byCountry } = useCountryProvinceIndex(WTP_ALL_CSV);
+
+  // ✅ NEW hook returns: { loading, error, countries, provincesByCountry }
+  // include EXTRA_DATASETS so provinces list is consistent with all datasets
+  const { loading, error, countries, provincesByCountry } = useCountryProvinceIndex(
+    WTP_ALL_CSV,
+    EXTRA_DATASETS
+  );
 
   const [country, setCountry] = useState("");
   const [countryFilter, setCountryFilter] = useState("");
@@ -15,17 +21,17 @@ export default function Splash() {
 
   const filteredCountries = useMemo(() => {
     const q = countryFilter.trim().toLowerCase();
-    if (!q) return countries;
-    return countries.filter((c) => c.toLowerCase().includes(q));
+    if (!q) return countries || [];
+    return (countries || []).filter((c) => String(c).toLowerCase().includes(q));
   }, [countries, countryFilter]);
 
   const provinces = useMemo(() => {
     if (!country) return [];
-    const list = byCountry.get(country) || [];
+    const list = (provincesByCountry && provincesByCountry[country]) || [];
     const q = provFilter.trim().toLowerCase();
     if (!q) return list;
-    return list.filter((p) => p.toLowerCase().includes(q));
-  }, [byCountry, country, provFilter]);
+    return list.filter((p) => String(p).toLowerCase().includes(q));
+  }, [provincesByCountry, country, provFilter]);
 
   return (
     <div className="splash">
@@ -54,7 +60,12 @@ export default function Splash() {
                   value={countryFilter}
                   onChange={(e) => setCountryFilter(e.target.value)}
                   placeholder="Search country…"
-                  style={{ flex: 1, padding: "8px 10px", borderRadius: 8, border: "1px solid rgba(0,0,0,0.15)" }}
+                  style={{
+                    flex: 1,
+                    padding: "8px 10px",
+                    borderRadius: 8,
+                    border: "1px solid rgba(0,0,0,0.15)",
+                  }}
                 />
               </div>
 
@@ -130,9 +141,7 @@ export default function Splash() {
                     <button
                       key={p}
                       type="button"
-                      onClick={() =>
-                        nav(`/map/${encodeURIComponent(country)}/${encodeURIComponent(p)}`)
-                      }
+                      onClick={() => nav(`/map/${encodeURIComponent(country)}/${encodeURIComponent(p)}`)}
                       style={{
                         width: "100%",
                         textAlign: "left",

@@ -2,18 +2,18 @@ location,name,country,province,kg_n_per_year,capacity,country_code,name_en
 "44.4186, 0.721214",Centrale pénitentiaire d'Eysses,France,Aquitaine,488.0,294.0,FR,Centrale pénitentiaire d'Eysses
 "43.4847, 1.32351",Q2945298,France,Midi-Pyrénées,1060.0,638.0,FR,Q2945298
 "46.053882, 4.100583",Centre de détention de Roanne,France,Rhône-Alpes,996.0,600.0,FR,Centre de détention de Roanne
-"49.284, 1.22148",Centre de détention de Val-de-Reuil,France,Haute-Normandie ,1360.0,819.0,FR,Centre de détention de Val-de-Reuil
-"-20.9497, 55.3122",Q2946002,France,La Réunion ,953.0,574.0,FR,Q2946002
+"49.284, 1.22148",Centre de détention de Val-de-Reuil,France,Haute-Normandie,1360.0,819.0,FR,Centre de détention de Val-de-Reuil
+"-20.9497, 55.3122",Q2946002,France,La Réunion,953.0,574.0,FR,Q2946002
 "41.925991, 8.736865",Q3279220,France,Corse,88.0,53.0,FR,Q3279220
 "47.2364, 6.00713",Maison d’arrêt de Besançon,France,Franche-Comté,458.0,276.0,FR,Maison d’arrêt de Besançon
 "45.6794, 4.9314",prison of Lyon-Corbas,France,Rhône-Alpes,1146.0,690.0,FR,prison of Lyon-Corbas
-"49.4332, 1.07687",Rouen remand center,France,Haute-Normandie ,1081.0,651.0,FR,Rouen remand center
+"49.4332, 1.07687",Rouen remand center,France,Haute-Normandie,1081.0,651.0,FR,Rouen remand center
 "47.6331, 6.14012",Maison d'arrêt de Vesoul,France,Franche-Comté,95.0,57.0,FR,Maison d'arrêt de Vesoul
-"42.0731, 9.51417",Casabianda-Aléria detention center,nan,,316.0,190.0,nan,Casabianda-Aléria detention center
+"42.0731, 9.51417",Casabianda-Aléria detention center,,,316.0,190.0,,Casabianda-Aléria detention center
 "47.86523889, 7.352351944",Maison centrale d'Ensisheim,France,Alsace,340.0,205.0,FR,Maison centrale d'Ensisheim
 "48.534986, 2.661101",Maison centrale de Melun,France,Ile-de-France,512.0,308.0,FR,Maison centrale de Melun
 "44.850346, 0.790673",Q21858378,France,Aquitaine,551.0,332.0,FR,Q21858378
-"48.723028, 0.009306",Q22247963,France,Basse-Normandie ,1063.0,640.0,FR,Q22247963
+"48.723028, 0.009306",Q22247963,France,Basse-Normandie,1063.0,640.0,FR,Q22247963
 "50.10417, 2.865056",Bapaume detention center,France,Nord-Pas de Calais,995.0,599.0,FR,Bapaume detention center
 "45.20161104, -0.339507669",Q22248036,France,Poitou-Charentes,321.0,193.0,FR,Q22248036
 "48.068373, 1.358302",Q22248224,France,Centre — Val de Loire,998.0,601.0,FR,Q22248224
@@ -33,7 +33,7 @@ location,name,country,province,kg_n_per_year,capacity,country_code,name_en
 "49.069825, 2.093697",Osny-Pontoise penitentiary center,France,Ile-de-France,963.0,580.0,FR,Osny-Pontoise penitentiary center
 "47.09578679, 2.39926263",Q55598454,France,Centre — Val de Loire,196.0,118.0,FR,Q55598454
 "47.597027, 1.338399",Q59249895,France,Centre — Val de Loire,191.0,115.0,FR,Q59249895
-"-17.73733631, -149.338894",Q59491197,nan,,681.0,410.0,nan,Q59491197
+"-17.73733631, -149.338894",Q59491197,,,681.0,410.0,,Q59491197
 "48.566705, 7.730622",prison of Strasbourg,France,Alsace,704.0,424.0,FR,prison of Strasbourg
 "48.70752577, 6.150862737",Nancy-Maxéville remand center,France,Lorraine,1151.0,693.0,FR,Nancy-Maxéville remand center
 "43.70714295, 1.805013084",établissement pénitentiaire pour mineurs de Lavaur,France,Midi-Pyrénées,98.0,59.0,FR,établissement pénitentiaire pour mineurs de Lavaur
@@ -41,23 +41,23 @@ location,name,country,province,kg_n_per_year,capacity,country_code,name_en
 "47.8031844, 3.5660073",Maison d’arrêt d’Auxerre,France,Bourgogne,168.0,101.0,FR,Maison d’arrêt d’Auxerre
 "48.768388, 5.160332",Maison d'arrêt de Bar-le-Duc,France,Lorraine,133.0,80.0,FR,Maison d'arrêt de Bar-le-Duc
 "46.08051206, 6.4012583",Q59771897,France,Rhône-Alpes,311.0,187.0,FR,Q59771897
-"49.18189, -0.39178",Maison d'arrêt de Caen,France,Basse-Normandie ,447.0,269.0,FR,Maison d'arrêt de Caen
+"49.18189, -0.39178",Maison d'arrêt de Caen,France,Basse-Normandie,447.0,269.0,FR,Maison d'arrêt de Caen
 "49.77270221, 4.722561715",Maison d'arrêt de Charleville-Mézières,France,Champagne-Ardenne,98.0,59.0,FR,Maison d'arrêt de Charleville-Mézières
 "48.1066924, 5.132462104",Maison d'arrêt de Chaumont,France,Champagne-Ardenne,130.0,78.0,FR,Maison d'arrêt de Chaumont
 "46.46868233, -0.8128809",Q59771912,France,Pays de la Loire,48.0,29.0,FR,Q59771912
 "46.67575038, -1.426108351",Q59771916,France,Pays de la Loire,66.0,40.0,FR,Q59771916
 "44.7357, 4.5947",Maison d'arrêt de Privas,France,Rhône-Alpes,95.0,57.0,FR,Maison d'arrêt de Privas
 "49.270536, 4.027327",Maison d'arrêt de Reims,France,Champagne-Ardenne,256.0,154.0,FR,Maison d'arrêt de Reims
-"49.01572842, 1.166899528",Evreux remand center,France,Haute-Normandie ,269.0,162.0,FR,Evreux remand center
+"49.01572842, 1.166899528",Evreux remand center,France,Haute-Normandie,269.0,162.0,FR,Evreux remand center
 "46.79416448, 1.633713384",Saint-Maur prison,France,Centre — Val de Loire,432.0,260.0,FR,Saint-Maur prison
 "47.37774211, 0.691090646",Q60849572,France,Centre — Val de Loire,233.0,140.0,FR,Q60849572
 "43.50313844, 6.421202515",Maison d'arrêt de Draguignan,France,Provence-Alpes-Côte d’Azur,1236.0,744.0,FR,Maison d'arrêt de Draguignan
 "48.92793633, 2.03912495",Maison centrale de Poissy,France,Ile-de-France,382.0,230.0,FR,Maison centrale de Poissy
-"-21.00084066, 164.8716753",Q116698192,nan,,199.0,120.0,nan,Q116698192
-"46.20220541, -1.3605937",Maison centrale de Saint-Martin-de-Ré,nan,,794.0,478.0,nan,Maison centrale de Saint-Martin-de-Ré
+"-21.00084066, 164.8716753",Q116698192,,,199.0,120.0,,Q116698192
+"46.20220541, -1.3605937",Maison centrale de Saint-Martin-de-Ré,,,794.0,478.0,,Maison centrale de Saint-Martin-de-Ré
 "41.385897, 2.129383",Presó de Dones de Barcelona,Spain,Cataluña,166.0,100.0,ES,Presó de Dones de Barcelona
-"43.459725, -3.456875",Penal de El Dueso,nan,,558.0,336.0,nan,Penal de El Dueso
-"55.17504885, -6.947858832",HM Prison Magilligan,nan,,943.0,568.0,nan,HM Prison Magilligan
+"43.459725, -3.456875",Penal de El Dueso,,,558.0,336.0,,Penal de El Dueso
+"55.17504885, -6.947858832",HM Prison Magilligan,,,943.0,568.0,,HM Prison Magilligan
 "46.9874, 7.0601",Witzwil Prison,Switzerland,Espace Mittelland,276.0,166.0,CH,Witzwil Prison
 "46.9874, 7.0601",Witzwil Prison,Switzerland,Espace Mittelland,306.0,184.0,CH,Witzwil Prison
 "46.9874, 7.0601",Witzwil Prison,Switzerland,Espace Mittelland,731.0,440.0,CH,Witzwil Prison
@@ -92,9 +92,9 @@ location,name,country,province,kg_n_per_year,capacity,country_code,name_en
 "49.7233, 13.3592",Plzeň prison,Czechia,Jihozápad,1767.0,1064.0,CZ,Plzeň prison
 "55.1811, 8.8874",Renbæk Prison,Denmark,Syddanmark,266.0,160.0,DK,Renbæk Prison
 "55.66175062, 12.53724563",Vestre Prison,Denmark,Hovedstaden,902.0,543.0,DK,Vestre Prison
-"54.495, -1.33972",HM Prison Kirklevington Grange,nan,,470.0,283.0,nan,HM Prison Kirklevington Grange
-"54.514, -6.186",HM Prison Maghaberry,nan,,1611.0,970.0,nan,HM Prison Maghaberry
-"51.063, -1.328",HM Prison Winchester,nan,,1172.0,706.0,nan,HM Prison Winchester
+"54.495, -1.33972",HM Prison Kirklevington Grange,,,470.0,283.0,,HM Prison Kirklevington Grange
+"54.514, -6.186",HM Prison Maghaberry,,,1611.0,970.0,,HM Prison Maghaberry
+"51.063, -1.328",HM Prison Winchester,,,1172.0,706.0,,HM Prison Winchester
 "63.8601666, -21.1270096",Litla-Hraun,Iceland,Ísland,75.0,45.0,IS,Litla-Hraun
 "48.9715508, 14.4730617",Q8312165,Czechia,Jihozápad,480.0,289.0,CZ,Q8312165
 "41.623629, 0.608316",Centre Penitenciari de Ponent,Spain,Cataluña,1759.0,1059.0,ES,Centre Penitenciari de Ponent
@@ -182,24 +182,24 @@ location,name,country,province,kg_n_per_year,capacity,country_code,name_en
 "45.713295, 5.072894",CRA Lyon Saint-Exupéry,France,Rhône-Alpes,203.0,122.0,FR,CRA Lyon Saint-Exupéry
 "48.44938889, 1.48545",Maison d'arrêt de Chartres,France,Centre — Val de Loire,176.0,106.0,FR,Maison d'arrêt de Chartres
 "47.65999, -2.76331",Q59771945,France,Bretagne,75.0,45.0,FR,Q59771945
-"51.45015, -0.17765",HM Prison Wandsworth,nan,,2352.0,1416.0,nan,HM Prison Wandsworth
-"53.03530278, -2.92662778",HM Prison Berwyn,nan,,3488.0,2100.0,nan,HM Prison Berwyn
+"51.45015, -0.17765",HM Prison Wandsworth,,,2352.0,1416.0,,HM Prison Wandsworth
+"53.03530278, -2.92662778",HM Prison Berwyn,,,3488.0,2100.0,,HM Prison Berwyn
 "41.8881, -8.8529",Q19949772,Spain,Galicia,1442.0,868.0,ES,Q19949772
 "42.00127778, 24.84397222",Sveti Kirik,Bulgaria,Yuzhen tsentralen,208.0,125.0,BG,Sveti Kirik
-"51.15555556, 54.99305556",Black Dolphin Prison,nan,,2657.0,1600.0,nan,Black Dolphin Prison
-"54.419, 42.857","Corrective colony No. 2, Mordovia",nan,,1362.0,820.0,nan,"Corrective colony No. 2, Mordovia"
-"66.81861111, 65.79555556","FKU IK-3, Kharp",nan,,1802.0,1085.0,nan,"FKU IK-3, Kharp"
+"51.15555556, 54.99305556",Black Dolphin Prison,,,2657.0,1600.0,,Black Dolphin Prison
+"54.419, 42.857","Corrective colony No. 2, Mordovia",,,1362.0,820.0,,"Corrective colony No. 2, Mordovia"
+"66.81861111, 65.79555556","FKU IK-3, Kharp",,,1802.0,1085.0,,"FKU IK-3, Kharp"
 "50.05861111, 14.43888889",Pankrác Prison,Czechia,Praha,1835.0,1105.0,CZ,Pankrác Prison
 "48.9715508, 14.4730617",Q8312165,Czechia,Jihozápad,480.0,289.0,CZ,Q8312165
 "49.1744, 16.5797",věznice Brno,Czechia,Jihovýchod,963.0,580.0,CZ,věznice Brno
 "50.5364, 14.1356",Q11878013,Czechia,Severozápad,595.0,358.0,CZ,Q11878013
 "50.082, 14.3136",Ruzyně prison,Czechia,Praha,1511.0,910.0,CZ,Ruzyně prison
 "42.74855556, -8.655444444",Q131850498,Spain,Galicia,2823.0,1700.0,ES,Q131850498
-"42.0731, 9.51417",Casabianda-Aléria detention center,nan,,316.0,190.0,nan,Casabianda-Aléria detention center
+"42.0731, 9.51417",Casabianda-Aléria detention center,,,316.0,190.0,,Casabianda-Aléria detention center
 "48.83388889, 2.339722222",La Santé Prison,France,Ile-de-France,1176.0,708.0,FR,La Santé Prison
 "48.83388889, 2.339722222",La Santé Prison,France,Ile-de-France,1176.0,708.0,FR,La Santé Prison
 "43.23372222, 5.41341389",Penitential Center of Marseille,France,Provence-Alpes-Côte d’Azur,1179.0,710.0,FR,Penitential Center of Marseille
-"49.1857, -0.401741",Prison Beaulieu,France,Basse-Normandie ,727.0,438.0,FR,Prison Beaulieu
+"49.1857, -0.401741",Prison Beaulieu,France,Basse-Normandie,727.0,438.0,FR,Prison Beaulieu
 "49.049595, 3.39786",Chateau-Thierry penitentiary center,France,Picardie,188.0,113.0,FR,Chateau-Thierry penitentiary center
 "48.043737, 0.218053",Q3279219,France,Pays de la Loire,663.0,399.0,FR,Q3279219
 "48.6378, 2.37528",Fleury-Mérogis Prison,France,Ile-de-France,5657.0,3406.0,FR,Fleury-Mérogis Prison
@@ -207,7 +207,7 @@ location,name,country,province,kg_n_per_year,capacity,country_code,name_en
 "45.998524, 4.72504",Centre pénitentiaire de Villefranche-sur-Saône,France,Rhône-Alpes,1060.0,638.0,FR,Centre pénitentiaire de Villefranche-sur-Saône
 "50.618339, 2.965974",Centre pénitentiaire de Lille-Loos-Sequedin,France,Nord-Pas de Calais,1103.0,664.0,FR,Centre pénitentiaire de Lille-Loos-Sequedin
 "16.264, -61.573",Centre pénitentiaire de Baie-Mahault,France,Guadeloupe,837.0,504.0,FR,Centre pénitentiaire de Baie-Mahault
-"46.78635, -56.1705",Q24934006,nan,,18.0,11.0,nan,Q24934006
+"46.78635, -56.1705",Q24934006,,,18.0,11.0,,Q24934006
 "43.968994, 4.8620487",Avignon-Le Pontet Penitentiary Center,France,Provence-Alpes-Côte d’Azur,996.0,600.0,FR,Avignon-Le Pontet Penitentiary Center
 "43.3400319, 3.180109",Q24934127,France,Languedoc-Roussillon,1345.0,810.0,FR,Q24934127
 "42.56875078, 9.44250762",Penitentiary center of Borgo,France,Corse,400.0,241.0,FR,Penitentiary center of Borgo
@@ -216,20 +216,20 @@ location,name,country,province,kg_n_per_year,capacity,country_code,name_en
 "48.9649936, 2.5530864",Seine Saint-Denis Penitentiary Center,France,Ile-de-France,977.0,588.0,FR,Seine Saint-Denis Penitentiary Center
 "48.88127, 2.53352",Q48747715,France,Ile-de-France,80.0,48.0,FR,Q48747715
 "47.999991, 2.731028",Q55596072,France,Centre — Val de Loire,33.0,20.0,FR,Q55596072
-"-13.28209327, -176.1762909",centre pénitentiaire of Mata-Utu,nan,,8.0,5.0,nan,centre pénitentiaire of Mata-Utu
+"-13.28209327, -176.1762909",centre pénitentiaire of Mata-Utu,,,8.0,5.0,,centre pénitentiaire of Mata-Utu
 "46.53799193, 3.355346857",penitentiary center of Moulins-Yzeure,France,Auvergne,448.0,270.0,FR,penitentiary center of Moulins-Yzeure
 "50.45594, 2.820773",Centre pénitentiaire de Vendin-le-Vieil,France,Nord-Pas de Calais,395.0,238.0,FR,Centre pénitentiaire de Vendin-le-Vieil
 "48.33652224, 4.100235169",Q123910770,France,Champagne-Ardenne,791.0,476.0,FR,Q123910770
 "47.03305556, 7.542777777",Hindelbank correctional facility,Switzerland,Espace Mittelland,178.0,107.0,CH,Hindelbank correctional facility
 "47.03305556, 7.542777777",Hindelbank correctional facility,Switzerland,Espace Mittelland,326.0,196.0,CH,Hindelbank correctional facility
 "52.363333, 6.428056",Twilhaar Camp,Netherlands,Overijssel,166.0,100.0,NL,Twilhaar Camp
-"54.419, 42.857","Corrective colony No. 2, Mordovia",nan,,1362.0,820.0,nan,"Corrective colony No. 2, Mordovia"
+"54.419, 42.857","Corrective colony No. 2, Mordovia",,,1362.0,820.0,,"Corrective colony No. 2, Mordovia"
 "48.1232, 11.5834",Justizvollzugsanstalt München,Germany,Oberbayern,206.0,124.0,DE,Justizvollzugsanstalt München
 "47.96962952, 11.21817622",Justiz-Vollzugsanstalt (Rothenfeld),Germany,Oberbayern,181.0,109.0,DE,Justiz-Vollzugsanstalt (Rothenfeld)
 "48.805, 9.811416666",Justizvollzugsanstalt Schwäbisch Gmünd,Germany,Stuttgart,556.0,335.0,DE,Justizvollzugsanstalt Schwäbisch Gmünd
 "49.67076, 15.39156",Q42297716,Czechia,Jihovýchod,1569.0,945.0,CZ,Q42297716
-"49.14285, -0.3177",Q126365243,France,Basse-Normandie ,915.0,551.0,FR,Q126365243
-"37.984, 23.65",Korydallos Prison,EL,Attiki,,,EL,Korydallos Prison
-"38.22, 23.8",Avlona Special Juvenile Detention Establishment,EL,Attiki,830.0,500.0,EL,Avlona Special Juvenile Detention Establishment
+"49.14285, -0.3177",Q126365243,France,Basse-Normandie,915.0,551.0,FR,Q126365243
+"37.984, 23.65",Korydallos Prison,Greece,Attica,,,Greece,Korydallos Prison
+"38.22, 23.8",Avlona Special Juvenile Detention Establishment,Greece,Attica,830.0,500.0,Greece,Avlona Special Juvenile Detention Establishment
 "40.861, 14.276",Casa Circondariale di Napoli Poggioreale,Italy,Campania,,,IT,Casa Circondariale di Napoli Poggioreale
 "41.084, 14.247",Casa Circondariale di Santa Maria Capua Vetere,Italy,Campania,,,IT,Casa Circondariale di Santa Maria Capua Vetere

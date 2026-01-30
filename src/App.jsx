@@ -12,7 +12,7 @@ import { useLocationGroup, useManyGenericPoints } from "./hooks/useLocationsData
 
 import "./App.css";
 
-const landuseTypes = ["farmland", "plantation", "orchard", "vineyard", "greenhouse_horticulture"];
+const landuseTypes = ["farmland", "plantation", "orchard", "vineyard", "greenhouse_horticulture", "green_public_spaces"];
 
 function MapProvincePage() {
   const nav = useNavigate();
