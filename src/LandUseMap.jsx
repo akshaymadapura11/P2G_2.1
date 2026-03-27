@@ -5,7 +5,6 @@ import {
   TileLayer,
   Marker,
   Popup,
-  CircleMarker,
   LayerGroup,
   Circle,
   GeoJSON,
@@ -18,22 +17,22 @@ import area from "@turf/area";
 import "leaflet/dist/leaflet.css";
 
 /* ---------------- Icons ---------------- */
-function createColoredDotIcon(hex = "#1967d2") {
+function createColoredSquareIcon(hex = "#1967d2") {
   const svg = encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-      <circle cx="12" cy="12" r="6" fill="${hex}" stroke="white" stroke-width="2"/>
+    `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+      <circle cx="8" cy="8" r="6" fill="${hex}"/>
     </svg>`
   );
   return L.icon({
     iconUrl: `data:image/svg+xml;charset=UTF-8,${svg}`,
     iconRetinaUrl: `data:image/svg+xml;charset=UTF-8,${svg}`,
-    iconSize: [24, 24],
-    iconAnchor: [12, 12],
-    popupAnchor: [0, -10],
+    iconSize: [16, 16],
+    iconAnchor: [8, 8],
+    popupAnchor: [0, -8],
     className: "",
   });
 }
-const wtpIcon = createColoredDotIcon("#1967d2");
+const wtpIcon = createColoredSquareIcon("#1967d2");
 
 /* ---------------- Dataset colors ---------------- */
 const DATASET_COLORS = {
@@ -451,6 +450,27 @@ export default function LandUseMap({
     fillOpacity: 0.55,
   });
 
+  function onEachPlot(feature, layer) {
+    const p = feature.properties || {};
+    const lu = p.landuse || "unknown";
+    const areaHa = p.area != null ? (p.area / 10000).toFixed(2) : null;
+    const fertilizer = p.fertilizer != null ? Number(p.fertilizer).toLocaleString(undefined, { maximumFractionDigits: 1 }) : null;
+    const name = p.name || p["name:en"] || null;
+
+    const label = lu
+      .replace(/_/g, " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+
+    let html = `<div style="min-width:180px">`;
+    if (name) html += `<strong>${name}</strong><br/>`;
+    html += `<span style="color:#555">${label}</span>`;
+    if (areaHa) html += `<div style="margin-top:6px"><strong>Area:</strong> ${areaHa} ha</div>`;
+    if (fertilizer) html += `<div style="margin-top:4px"><strong>Fertilizer share:</strong> ${fertilizer} kg N/year</div>`;
+    html += `</div>`;
+
+    layer.bindPopup(html);
+  }
+
   return (
     <MapContainer center={initialCenter} zoom={12} style={{ height: "100vh", width: "100%" }}>
       <RecenterOnChange targetCenter={safeCenter} zoom={12} />
@@ -486,6 +506,7 @@ export default function LandUseMap({
           key={`plot-${i}`}
           data={f}
           style={stylePlot}
+          onEachFeature={onEachPlot}
         />
       ))}
 
@@ -540,11 +561,10 @@ export default function LandUseMap({
           const kg = asNum(p.kg_n_per_year) ?? 0;
 
           return (
-            <CircleMarker
+            <Marker
               key={`extra-${p.__type || "x"}-${i}`}
-              center={[lat, lon]}
-              radius={markerRadius}
-              pathOptions={{ color, fillColor: color, fillOpacity: 0.9, weight: 2 }}
+              position={[lat, lon]}
+              icon={createColoredSquareIcon(color)}
             >
               <Popup>
                 <div style={{ minWidth: 240 }}>
@@ -563,7 +583,7 @@ export default function LandUseMap({
                   </div>
                 </div>
               </Popup>
-            </CircleMarker>
+            </Marker>
           );
         })}
       </LayerGroup>

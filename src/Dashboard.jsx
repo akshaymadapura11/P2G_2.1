@@ -1,5 +1,12 @@
 // src/Dashboard.jsx
+import { useState } from "react";
 import "./App.css";
+
+const ABOUT_TEXT = `P2GreeN's overall objective is to foster a paradigm shift, from a linearly organised resource and nutrient system within the agri-food supply chain, towards a circular material flow system between urban and rural areas thereby restoring the coupling of the water-agri-food system using a holistic symbiotic resource management approach following the 3R principle "Reduce, Reuse, Recover".
+
+To achieve this, P2GreeN will develop new circular governance solutions for the transition from fork to farm to halt and eliminate N & P pollution by connecting blue urban with green rural infrastructure, focussing on circular nutrient flows of nitrogen (N) and phosphorus (P). This objective will be achieved through the implementation and exploration of innovative N & P recovery solutions for the utilisation of human excreta from urban settlements and its conversion into safe bio-based fertilisers for agricultural production in three pilot regions (P2GreeN pilot regions) on a north-south trajectory from the Baltic Sea region via North German Plain to the region of Axarquia in Southern Spain and by multiplying the impact via four follower regions in Hungary, Italy, France and Greece.
+
+The P2GreeN pilot regions will provide an operational environment to develop, adapt and demonstrate innovative circular systems for the utilisation of human excreta from urban settlements and its conversion into safe bio-based fertilisers for agricultural production and thus create innovative governance solutions at the water-agri-food nexus. P2GreeN will close nutrient cycles of N & P to foster the transition towards a circular and clean economy (green transition) as well as supporting sustainable food systems from farm to fork offering viable alternatives to reduce the current usage of mineral fertilisers with innovative Green bio-based fertilisers and thus minimise the pressure on the natural resources, specifically water and soil. P2GreeN will further enable policy makers to replicate P2GreeN's sustainable regional circular economy models in all regional settings across Europe.`;
 
 const LANDUSE_LABELS = {
   farmland: "Farmland",
@@ -94,6 +101,8 @@ export default function Dashboard({
   showWtp = true,
   onToggleWtp = () => {},
 }) {
+  const [aboutOpen, setAboutOpen] = useState(false);
+
   const totalAreaM2 = (features || []).reduce((s, f) => s + (f?.properties?.area || 0), 0);
   const totalAreaKm2 = totalAreaM2 / 1e6;
 
@@ -179,9 +188,20 @@ export default function Dashboard({
           </div>
         </div>
 
-        <button className="panel about" type="button">
-          ABOUT P2GREEN
-        </button>
+        <div className="panel about">
+          <button
+            type="button"
+            onClick={() => setAboutOpen((o) => !o)}
+            style={{ background: "none", border: "none", padding: 0, cursor: "pointer", font: "inherit", color: "inherit", width: "100%", textAlign: "left" }}
+          >
+            ABOUT P2GREEN {aboutOpen ? "▲" : "▼"}
+          </button>
+          {aboutOpen && (
+            <div style={{ marginTop: 12, fontSize: 11, lineHeight: 1.6, opacity: 0.9, whiteSpace: "pre-wrap" }}>
+              {ABOUT_TEXT}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="bottomMeta">

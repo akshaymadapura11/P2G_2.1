@@ -102,6 +102,14 @@ export function normalizeProvinceName(p) {
   return MAP[key] || s;
 }
 
+function computeWtpKgN(row) {
+  return toNum(pick(row, ["N kg/per year", "N kg/per year ", "kg_n_per_year", "n_kg_per_year"])) || 0;
+}
+
+function computeBuildingKgN(_datasetKey, row) {
+  return toNum(pick(row, ["kg_n_per_year", "n_kg_per_year", "output", "production"])) || 0;
+}
+
 function toNum(x) {
   if (x == null) return null;
 
@@ -310,6 +318,7 @@ export function useLocationGroup(csvUrl, _unusedRadiusKm = 2, opts = {}) {
               ...r,
               __lat: lat,
               __lon: lon,
+              kg_n_per_year: computeWtpKgN(r),
             };
           })
           .filter(Boolean);
@@ -332,26 +341,9 @@ export function useLocationGroup(csvUrl, _unusedRadiusKm = 2, opts = {}) {
     return [Number(rows[0].__lat), Number(rows[0].__lon)];
   }, [rows]);
 
-  // Production (kg N / year) sum; include WTP column "N kg/per year"
+  // Production (kg N / year) sum — uses formula-computed kg_n_per_year set during row mapping
   const totalProduction = useMemo(() => {
-    let sum = 0;
-    for (const r of rows) {
-      const v =
-        toNum(
-          pick(r, [
-            "kg_n_per_year",
-            "n_kg_per_year",
-            "n_kgper_year",
-            "production",
-            "output",
-            "N kg/per year",
-            "N kg/per year ",
-          ])
-        ) || 0;
-
-      sum += v;
-    }
-    return sum;
+    return rows.reduce((sum, r) => sum + (toNum(r.kg_n_per_year) || 0), 0);
   }, [rows]);
 
   return {
@@ -399,9 +391,8 @@ export function useManyGenericPoints(datasets = [], opts = {}) {
               const { lat, lon } = parseLatLon(r);
               if (lat == null || lon == null) return null;
 
-              // dataset supply value (your public datasets use kg_n_per_year)
-              const kg =
-                toNum(pick(r, ["kg_n_per_year", "n_kg_per_year", "output", "production"])) || 0;
+              // dataset supply value — computed from raw capacity using supply projection formulas
+              const kg = computeBuildingKgN(d.key, r);
 
               return {
                 ...r,
