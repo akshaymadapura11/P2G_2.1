@@ -22,6 +22,7 @@ function MapProvincePage() {
   const decodedProvince = useMemo(() => decodeURIComponent(province || ""), [province]);
 
   const [radiusKm, setRadiusKm] = useState(2);
+  const [landuseLoading, setLanduseLoading] = useState(false);
   
 
   const [toggles, setToggles] = useState(() =>
@@ -122,6 +123,7 @@ function MapProvincePage() {
 
         features={visibleFeatures}
         onDataUpdate={setFeatures}
+        onLoadingChange={setLanduseLoading}
         landuseToggles={toggles}
       />
 
@@ -146,6 +148,12 @@ function MapProvincePage() {
         extraToggles={extraToggles}
         onToggleExtra={(k) => setExtraToggles((p) => ({ ...p, [k]: !p[k] }))}
       />
+
+      {landuseLoading && (
+        <div className="landuseSpinner">
+          <div className="spinnerRing" />
+        </div>
+      )}
 
       {wtp.loading && (
         <div className="notice notice-loading overlayNotice">

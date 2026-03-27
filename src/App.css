@@ -334,7 +334,7 @@ html, body, #root {
 
 .panel.small{
   width: 260px;
-  height: 118px;
+  min-height: 118px;
   padding: 14px 14px;
 }
 
@@ -353,11 +353,50 @@ html, body, #root {
   margin-bottom: 6px;
 }
 
+.miniBar{
+  height: 20px;
+  background: rgba(31,51,255,0.12);
+  border-radius: 3px;
+  margin: 4px 0 6px;
+  overflow: hidden;
+}
+
+.miniBarFill{
+  height: 100%;
+  background: rgba(242,195,0,0.95);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
 .miniRow{
   display: flex;
   justify-content: space-between;
   gap: 10px;
   margin: 2px 0;
+}
+
+/* Landuse loading spinner */
+.landuseSpinner{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1400;
+  pointer-events: none;
+}
+
+.spinnerRing{
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(31,51,255,0.15);
+  border-top-color: var(--p2-blue);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin{
+  to { transform: rotate(360deg); }
 }
 
 /* Leaflet grayscale like Figma */

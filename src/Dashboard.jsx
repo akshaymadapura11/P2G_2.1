@@ -41,23 +41,32 @@ function swatchStyle(hex) {
     backgroundColor: hex,
     border: "1px solid rgba(0,0,0,0.25)",
     display: "inline-block",
+    flexShrink: 0,
   };
 }
 
+function fmt(kg) {
+  return kg.toLocaleString(undefined, { maximumFractionDigits: 1 });
+}
+
 function SupplyCard({ title, supplyKg, demandKg }) {
-  const pct = demandKg > 0 ? (supplyKg / demandKg) * 100 : 0;
+  const pct = demandKg > 0 ? Math.min((supplyKg / demandKg) * 100, 100) : 0;
+  const rawPct = demandKg > 0 ? (supplyKg / demandKg) * 100 : 0;
   return (
     <div className="panel small">
       <h4>{title}</h4>
       <div className="miniStat">
-        <div className="miniPct">{pct.toFixed(1)}%</div>
+        <div className="miniPct">{rawPct.toFixed(1)}%</div>
+        <div className="miniBar">
+          <div className="miniBarFill" style={{ width: `${pct}%` }} />
+        </div>
         <div className="miniRow">
           <span>Nitrogen fertilizer supply</span>
-          <span>{Math.round(supplyKg).toLocaleString()} kg</span>
+          <span>= {fmt(supplyKg)} kg</span>
         </div>
         <div className="miniRow">
           <span>Nitrogen fertilizer demand</span>
-          <span>{Math.round(demandKg).toLocaleString()} kg</span>
+          <span>= {fmt(demandKg)} kg</span>
         </div>
       </div>
     </div>
@@ -96,9 +105,11 @@ export default function Dashboard({
   return (
     <>
       <div className="rightPanels">
+
+        {/* Panel 1 — Supply sources */}
         <div className="panel">
           <h3>Define fertilizer supply!</h3>
-          <p className="panelSub">Choose wastewater treatment plants and/or public building datasets.</p>
+          <p className="panelSub">Choose water treatment plants and/or public buildings to define potential fertilizer supply.</p>
 
           <label className="panelRow">
             <input type="checkbox" checked={showWtp} onChange={onToggleWtp} />
@@ -124,15 +135,16 @@ export default function Dashboard({
               </label>
             );
           })}
+        </div>
 
-          <div className="divider" />
-
-          <div className="panelSub" style={{ marginBottom: 6 }}>
-            Define area of fertilizer demand!
-          </div>
+        {/* Panel 2 — Demand radius + Agricultural land */}
+        <div className="panel">
+          <h3>Define area of fertilizer demand!</h3>
+          <p className="panelSub">Input a radius to select which area you want to supply and calculate the required demand of nitrogen.</p>
 
           <label className="panelRow" style={{ alignItems: "center" }}>
-            <span style={{ width: 140 }}>Radius in km</span>
+            <span style={swatchStyle(SUPPLY_COLORS.wtp)} />
+            <span style={{ flex: 1, marginLeft: 8 }}>Radius in km</span>
             <input
               className="panelInput"
               type="number"
@@ -142,10 +154,10 @@ export default function Dashboard({
               onChange={(e) => onRadiusKmChange(Number(e.target.value))}
             />
           </label>
-        </div>
 
-        <div className="panel">
-          <h3>Agricultural land</h3>
+          <div className="divider" />
+
+          <h3 style={{ marginTop: 4 }}>Agricultural land</h3>
           <p className="panelSub">Select one or more crop types to visualize and analyze agricultural areas.</p>
 
           <div className="panelGrid">

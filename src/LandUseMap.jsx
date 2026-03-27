@@ -73,9 +73,9 @@ const LANDUSE_COLORS = {
 };
 
 const OVERPASS_ENDPOINTS = [
-  "https://overpass.kumi.systems/api/interpreter",
   "https://overpass-api.de/api/interpreter",
   "https://z.overpass-api.de/api/interpreter",
+  "https://overpass.kumi.systems/api/interpreter", // no CORS from localhost — last resort
 ];
 
 const overpassCache = new Map();
@@ -276,6 +276,7 @@ export default function LandUseMap({
   landuseToggles = {},
   features = [],
   onDataUpdate = () => {},
+  onLoadingChange = () => {},
   totalProduction = 0,
 }) {
   const abortRef = useRef(null);
@@ -338,21 +339,31 @@ export default function LandUseMap({
       return;
     }
 
-    const tags = enabled.join("|");
+    // green_public_spaces is not a real OSM landuse tag — handled via leisure query below
+    const landuseTags = enabled.filter((k) => k !== "green_public_spaces");
+    const wantGreen = enabled.includes("green_public_spaces");
     const { south, west, north, east } = bbox;
 
-    const cacheKey = `bbox|centroid+bbox|${tags}|${south.toFixed(4)},${west.toFixed(
+    const cacheKey = `bbox|centroid+bbox|${enabled.join("|")}|${south.toFixed(4)},${west.toFixed(
       4
     )},${north.toFixed(4)},${east.toFixed(4)}|r:${Number(searchRadiusKm || 0).toFixed(2)}|n:${supplyCircleCenters.length}`;
 
-    const query = `
-      [out:json][timeout:90];
-      (
-        nwr["landuse"~"${tags}"](${south},${west},${north},${east});
-        nwr["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});
+    // Use way+relation only (nodes can never be polygons — no need to fetch them)
+    const queryParts = [];
+    if (landuseTags.length) {
+      queryParts.push(
+        `way["landuse"~"${landuseTags.join("|")}"](${south},${west},${north},${east});`,
+        `relation["landuse"~"${landuseTags.join("|")}"](${south},${west},${north},${east});`
       );
-      out geom;
-    `;
+    }
+    if (wantGreen) {
+      queryParts.push(
+        `way["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});`,
+        `relation["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});`
+      );
+    }
+
+    const query = `[out:json][timeout:30];\n(\n${queryParts.join("\n")}\n);\nout geom;`;
 
     
 
@@ -361,6 +372,7 @@ export default function LandUseMap({
     abortRef.current = controller;
 
     const run = async () => {
+      onLoadingChange(true);
       try {
         const gj = await fetchOverpassWithBackoff(query, controller.signal, cacheKey);
 
@@ -387,13 +399,11 @@ export default function LandUseMap({
 
           if (!lu || !landuseToggles[lu]) continue;
 
-
           const g = f.geometry;
           if (!g || (g.type !== "Polygon" && g.type !== "MultiPolygon")) continue;
 
           const tf = turf.feature(g, { landuse: lu });
 
-          // ✅ Keep only if centroid is inside ANY circle (bbox prefilter)
           if (!centroidInsideAnyCircle(tf, circleBoxes, searchRadiusKm)) continue;
 
           const a = area(tf);
@@ -409,11 +419,21 @@ export default function LandUseMap({
           p.properties.fertilizer = totalA > 0 ? (p.properties.area / totalA) * prod : 0;
         }
 
-        onDataUpdate(kept);
+        // Stream polygons in batches so the map fills in progressively
+        const BATCH = 15;
+        onDataUpdate([]);
+        for (let i = 0; i < kept.length; i += BATCH) {
+          if (controller.signal.aborted) return;
+          onDataUpdate(kept.slice(0, i + BATCH));
+          await new Promise((r) => setTimeout(r, 40));
+        }
+        if (!controller.signal.aborted) onDataUpdate(kept);
       } catch (e) {
         if (e?.name === "AbortError") return;
         console.error("Overpass landuse error:", e);
         onDataUpdate([]);
+      } finally {
+        onLoadingChange(false);
       }
     };
 
@@ -423,17 +443,6 @@ export default function LandUseMap({
       controller.abort();
     };
   }, [searchRadiusKm, supplyCircleCenters, landuseToggles, totalProduction, onDataUpdate, circleBoxes]);
-
-  const featuresKey = useMemo(() => {
-    if (!features?.length) return "features-none";
-    try {
-      const fc = turf.featureCollection(features);
-      const b = turf.bbox(fc).map((n) => n.toFixed(4)).join("|");
-      return `n:${features.length}|b:${b}`;
-    } catch {
-      return `n:${features.length}`;
-    }
-  }, [features]);
 
   const stylePlot = (feature) => ({
     fillColor: LANDUSE_COLORS[feature.properties.landuse] || "#ccc",
@@ -471,10 +480,14 @@ export default function LandUseMap({
           })}
       </LayerGroup>
 
-      {/* polygons (filtered) */}
-      {features?.length > 0 && (
-        <GeoJSON key={featuresKey} data={{ type: "FeatureCollection", features }} style={stylePlot} />
-      )}
+      {/* polygons — rendered individually so new ones appear without remounting existing */}
+      {(features || []).map((f, i) => (
+        <GeoJSON
+          key={`plot-${i}`}
+          data={f}
+          style={stylePlot}
+        />
+      ))}
 
       {/* WTP markers */}
       {(locationRows || []).map((pt, i) => {
