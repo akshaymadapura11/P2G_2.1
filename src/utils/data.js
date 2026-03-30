@@ -1,6 +1,16 @@
 // src/utils/data.js
 
-// ONE CSV for all regions:
+// Per-country WTP CSVs (split from wtp_all.csv for faster loading)
+const WTP_BY_COUNTRY = {
+  France:  "/data/wtp_france.csv",
+  Italy:   "/data/wtp_italy.csv",
+  Hungary: "/data/wtp_hungary.csv",
+  Greece:  "/data/wtp_greece.csv",
+};
+
+export function wtpCsvForCountry(country) {
+  return WTP_BY_COUNTRY[country] || "/data/wtp_all.csv";
+}
 
 export const WTP_ALL_CSV = "/data/wtp_all.csv";
 

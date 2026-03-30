@@ -12,7 +12,7 @@ import {
 } from "react-leaflet";
 import L from "leaflet";
 import osmtogeojson from "osmtogeojson";
-import * as turf from "@turf/turf";
+import { centroid, distance, feature as turfFeature } from "@turf/turf";
 import area from "@turf/area";
 import "leaflet/dist/leaflet.css";
 
@@ -242,7 +242,7 @@ function centroidInsideAnyCircle(polyFeature, circleBoxes, radiusKm) {
 
   let c;
   try {
-    c = turf.centroid(polyFeature);
+    c = centroid(polyFeature);
   } catch {
     return false;
   }
@@ -253,7 +253,7 @@ function centroidInsideAnyCircle(polyFeature, circleBoxes, radiusKm) {
   for (const b of circleBoxes || []) {
     if (cy < b.minLat || cy > b.maxLat || cx < b.minLon || cx > b.maxLon) continue;
 
-    const d = turf.distance([cx, cy], [b.lon, b.lat], { units: "kilometers" });
+    const d = distance([cx, cy], [b.lon, b.lat], { units: "kilometers" });
     if (d <= km) return true;
   }
   return false;
@@ -402,7 +402,7 @@ export default function LandUseMap({
           const g = f.geometry;
           if (!g || (g.type !== "Polygon" && g.type !== "MultiPolygon")) continue;
 
-          const tf = turf.feature(g, { landuse: lu });
+          const tf = turfFeature(g, { landuse: lu });
 
           if (!centroidInsideAnyCircle(tf, circleBoxes, searchRadiusKm)) continue;
 
@@ -437,7 +437,7 @@ export default function LandUseMap({
       }
     };
 
-    const t = setTimeout(run, 250);
+    const t = setTimeout(run, 800);
     return () => {
       clearTimeout(t);
       controller.abort();

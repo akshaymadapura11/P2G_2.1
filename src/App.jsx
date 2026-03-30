@@ -7,7 +7,7 @@ import Menu from "./pages/Menu";
 import LandUseMap from "./LandUseMap";
 import Dashboard from "./Dashboard";
 
-import { WTP_ALL_CSV, EXTRA_DATASETS } from "./utils/data";
+import { wtpCsvForCountry, EXTRA_DATASETS } from "./utils/data";
 import { useLocationGroup, useManyGenericPoints } from "./hooks/useLocationsData";
 
 import "./App.css";
@@ -43,7 +43,7 @@ function MapProvincePage() {
     setExtraToggles(EXTRA_DATASETS.reduce((o, d) => ({ ...o, [d.key]: true }), {}));
   }, [decodedCountry, decodedProvince]);
 
-  const wtp = useLocationGroup(WTP_ALL_CSV, 2, {
+  const wtp = useLocationGroup(wtpCsvForCountry(decodedCountry), 2, {
     country: decodedCountry,
     province: decodedProvince,
     globalRadiusKm: radiusKm,

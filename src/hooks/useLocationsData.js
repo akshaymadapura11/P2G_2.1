@@ -377,53 +377,42 @@ export function useManyGenericPoints(datasets = [], opts = {}) {
 
     (async () => {
       try {
-        const byKey = {};
+        const entries = await Promise.all(
+          (datasets || []).filter((d) => d?.url && d?.key).map(async (d) => {
+            const raw = await fetchCsv(d.url, controller.signal);
+            const normalized = raw.map(normalizeRowCountryProvince);
 
-        for (const d of datasets || []) {
-          if (!d?.url || !d?.key) continue;
+            const filtered = normalized
+              .filter((r) => matchesCountryProvince(r, { country, province }))
+              .map((r) => {
+                const { lat, lon } = parseLatLon(r);
+                if (lat == null || lon == null) return null;
 
-          const raw = await fetchCsv(d.url, controller.signal);
-          const normalized = raw.map(normalizeRowCountryProvince);
+                const kg = computeBuildingKgN(d.key, r);
 
-          const filtered = normalized
-            .filter((r) => matchesCountryProvince(r, { country, province }))
-            .map((r) => {
-              const { lat, lon } = parseLatLon(r);
-              if (lat == null || lon == null) return null;
+                return {
+                  ...r,
+                  lat,
+                  lon,
+                  __lat: lat,
+                  __lon: lon,
+                  __type: d.key,
+                  __label: d.label || d.key,
+                  kg_n_per_year: kg,
+                  name:
+                    pick(r, ["name", "Name", "facility_name", "Facility", "Airport", "University"]) ||
+                    r.name ||
+                    r.Name ||
+                    "",
+                };
+              })
+              .filter(Boolean);
 
-              // dataset supply value — computed from raw capacity using supply projection formulas
-              const kg = computeBuildingKgN(d.key, r);
+            return [d.key, filtered];
+          })
+        );
 
-              return {
-                ...r,
-
-                // ✅ LandUseMap uses these
-                lat,
-                lon,
-
-                // keep for compatibility
-                __lat: lat,
-                __lon: lon,
-
-                // required for legend/coloring
-                __type: d.key,
-                __label: d.label || d.key,
-
-                kg_n_per_year: kg,
-
-                // sensible name for popups across datasets
-                name:
-                  pick(r, ["name", "Name", "facility_name", "Facility", "Airport", "University"]) ||
-                  r.name ||
-                  r.Name ||
-                  "",
-              };
-            })
-            .filter(Boolean);
-
-          byKey[d.key] = filtered;
-        }
-
+        const byKey = Object.fromEntries(entries);
         setState({ loading: false, error: "", byKey });
       } catch (e) {
         if (controller.signal.aborted) return;
