@@ -32,18 +32,17 @@ function createColoredSquareIcon(hex = "#1967d2") {
     className: "",
   });
 }
-const wtpIcon = createColoredSquareIcon("#1967d2");
-
 /* ---------------- Dataset colors ---------------- */
 const DATASET_COLORS = {
-  airports: "#1a73e8",
-  prisons: "#f9ab00",
-  stadiums: "#2b412eff",
-  universities: "#a142f4",
-  chefExpress: "#d93025",
-  trainStations: "#00acc1",
-  festivals: "#fb8c00",
-  construction: "#6d4c41",
+  wtp: "#8bd212ff",
+  airports: "#f2ff00ff",
+  prisons: "#f9c300ff",
+  stadiums: "#ff8800ff",
+  universities: "#ff6200ff",
+  chefExpress: "#703d10ff",
+  trainStations: "#ed0b07ff",
+  festivals: "#79590bff",
+  construction: "#6b6209ff",
 };
 
 function normalizeDatasetKey(k) {
@@ -58,17 +57,19 @@ function normalizeDatasetKey(k) {
 function datasetColorFor(point) {
   const raw = point?.__type || point?.type || point?.dataset || "";
   const key = normalizeDatasetKey(raw);
-  return DATASET_COLORS[key] || "#444";
+  return DATASET_COLORS[key] || "#444444";
 }
+
+const wtpIcon = createColoredSquareIcon(DATASET_COLORS.wtp);
 
 /* ---------------- Landuse colors ---------------- */
 const LANDUSE_COLORS = {
-  farmland: "#FFD700",
-  plantation: "#8B4513",
-  orchard: "#355811ff",
-  vineyard: "#8B008B",
-  greenhouse_horticulture: "#00CED1",
-  green_public_spaces: "#00b800ff",
+  farmland: "#6dacffff",
+  plantation: "#27c6a9ff",
+  orchard: "#1a64a1ff",
+  vineyard: "#5f008bff",
+  greenhouse_horticulture: "#5525ceff",
+  green_public_spaces: "#c9267dff",
 };
 
 const OVERPASS_ENDPOINTS = [
@@ -444,8 +445,8 @@ export default function LandUseMap({
   }, [searchRadiusKm, supplyCircleCenters, landuseToggles, totalProduction, onDataUpdate, circleBoxes]);
 
   const stylePlot = (feature) => ({
-    fillColor: LANDUSE_COLORS[feature.properties.landuse] || "#ccc",
-    weight: 1,
+    fillColor: LANDUSE_COLORS[feature.properties.landuse] || "#cccccc57",
+    weight: 0.25,
     color: "#555",
     fillOpacity: 0.55,
   });
@@ -494,7 +495,7 @@ export default function LandUseMap({
                 key={`circ-${i}`}
                 center={[lat, lon]}
                 radius={radiusMeters}
-                pathOptions={{ color: "#111", weight: 1, opacity: 0.5, fillOpacity: 0 }}
+                pathOptions={{ color: "#5d5d5d72", weight: 1, opacity: 0.5, fillOpacity: 0 }}
               />
             );
           })}

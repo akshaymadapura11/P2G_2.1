@@ -18,26 +18,26 @@ const LANDUSE_LABELS = {
 };
 
 const LANDUSE_COLORS = {
-  farmland: "#FFD700",
-  plantation: "#8B4513",
-  orchard: "#355811ff",
-  vineyard: "#8B008B",
-  greenhouse_horticulture: "#00CED1",
-  green_public_spaces: "#00b800ff",
+  farmland: "#6dacffff",
+  plantation: "#27c6a9ff",
+  orchard: "#1a64a1ff",
+  vineyard: "#5f008bff",
+  greenhouse_horticulture: "#5525ceff",
+  green_public_spaces: "#c9267dff",
 };
 
 const REQUIRED_KG_PER_HA = 160;
 
 const SUPPLY_COLORS = {
-  wtp: "#1967d2",
-  airports: "#1a73e8",
-  prisons: "#f9ab00",
-  stadiums: "#2b412eff",
-  universities: "#a142f4",
-  chefExpress: "#d93025",
-  trainStations: "#00acc1",
-  festivals: "#fb8c00",
-  construction: "#6d4c41",
+  wtp: "#8bd212ff",
+  airports: "#f2ff00ff",
+  prisons: "#f9c300ff",
+  stadiums: "#ff8800ff",
+  universities: "#ff6200ff",
+  chefExpress: "#703d10ff",
+  trainStations: "#ed0b07ff",
+  festivals: "#79590bff",
+  construction: "#6b6209ff",
 };
 
 function swatchStyle(hex) {
