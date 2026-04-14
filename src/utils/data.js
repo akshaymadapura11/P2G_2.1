@@ -61,7 +61,7 @@ export const EXTRA_DATASETS = [
   { key: "prisons", label: "Prisons", url: "/data/Prisons_NUTS2_supply.csv" },
   { key: "stadiums", label: "Stadiums", url: "/data/Stadiums_NUTS2_supply.csv" },
   { key: "universities", label: "Universities", url: "/data/Universities_NUTS2_supply.csv" },
-  { key: "chefExpress", label: "CheffExpress", url: "/data/CheffExpress_NUTS2_supply.csv" },
+  { key: "chefExpress", label: "ChefExpress", url: "/data/CheffExpress_NUTS2_supply.csv" },
   {
   key: "trainStations",
   label: "Train stations",
