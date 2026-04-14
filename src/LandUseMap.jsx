@@ -49,7 +49,7 @@ function normalizeDatasetKey(k) {
   const s = String(k || "").trim();
   if (!s) return "";
   const lower = s.toLowerCase();
-  if (lower === "chefexpress" || lower === "cheffexpress") return "chefExpress";
+  if (lower === "chefexpress" || lower === "chefexpress") return "chefExpress";
   // keep camelCase keys like trainStations
   return s;
 }
