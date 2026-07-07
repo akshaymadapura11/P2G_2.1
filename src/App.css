@@ -367,6 +367,15 @@ html, body, #root {
   transition: width 0.3s ease;
 }
 
+/* Phosphorus variant — distinct from the nitrogen (amber) bar */
+.miniPct.isP{
+  background: rgba(46,139,192,0.95);
+  color: #f4f9ff;
+}
+.miniBarFill.isP{
+  background: rgba(46,139,192,0.95);
+}
+
 .miniRow{
   display: flex;
   justify-content: space-between;

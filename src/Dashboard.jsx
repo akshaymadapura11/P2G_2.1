@@ -27,6 +27,8 @@ const LANDUSE_COLORS = {
 };
 
 const REQUIRED_KG_PER_HA = 160;
+// Phosphorus (elemental P) demand per hectare. Adjust to your agronomic figure.
+const REQUIRED_KG_P_PER_HA = 30;
 
 const SUPPLY_COLORS = {
   wtp: "#8bd212ff",
@@ -56,9 +58,12 @@ function fmt(kg) {
   return kg.toLocaleString(undefined, { maximumFractionDigits: 1 });
 }
 
-function SupplyCard({ title, supplyKg, demandKg }) {
+function SupplyCard({ title, supplyKg, demandKg, supplyKgP = 0, demandKgP = 0 }) {
   const pct = demandKg > 0 ? Math.min((supplyKg / demandKg) * 100, 100) : 0;
   const rawPct = demandKg > 0 ? (supplyKg / demandKg) * 100 : 0;
+
+  const pctP = demandKgP > 0 ? Math.min((supplyKgP / demandKgP) * 100, 100) : 0;
+  const rawPctP = demandKgP > 0 ? (supplyKgP / demandKgP) * 100 : 0;
   return (
     <div className="panel small">
       <h4>{title}</h4>
@@ -74,6 +79,20 @@ function SupplyCard({ title, supplyKg, demandKg }) {
         <div className="miniRow">
           <span>Nitrogen fertilizer demand</span>
           <span>= {fmt(demandKg)} kg</span>
+        </div>
+      </div>
+      <div className="miniStat">
+        <div className="miniPct isP">{rawPctP.toFixed(1)}%</div>
+        <div className="miniBar">
+          <div className="miniBarFill isP" style={{ width: `${pctP}%` }} />
+        </div>
+        <div className="miniRow">
+          <span>Phosphorus fertilizer supply</span>
+          <span>= {fmt(supplyKgP)} kg</span>
+        </div>
+        <div className="miniRow">
+          <span>Phosphorus fertilizer demand</span>
+          <span>= {fmt(demandKgP)} kg</span>
         </div>
       </div>
     </div>
@@ -98,6 +117,10 @@ export default function Dashboard({
   publicSupplyKg = 0,
   totalSupplyKg = 0,
 
+  wtpSupplyKgP = 0,
+  publicSupplyKgP = 0,
+  totalSupplyKgP = 0,
+
   showWtp = true,
   onToggleWtp = () => {},
 }) {
@@ -109,6 +132,11 @@ export default function Dashboard({
   const demandKg = (features || []).reduce((sum, f) => {
     const areaHa = (f?.properties?.area || 0) / 10000;
     return sum + areaHa * REQUIRED_KG_PER_HA;
+  }, 0);
+
+  const demandKgP = (features || []).reduce((sum, f) => {
+    const areaHa = (f?.properties?.area || 0) / 10000;
+    return sum + areaHa * REQUIRED_KG_P_PER_HA;
   }, 0);
 
   return (
@@ -215,9 +243,23 @@ export default function Dashboard({
           title="Waste water treatment plants supply vs demand per year"
           supplyKg={wtpSupplyKg}
           demandKg={demandKg}
+          supplyKgP={wtpSupplyKgP}
+          demandKgP={demandKgP}
         />
-        <SupplyCard title="Public buildings supply vs demand per year" supplyKg={publicSupplyKg} demandKg={demandKg} />
-        <SupplyCard title="Total supply vs demand per year" supplyKg={totalSupplyKg} demandKg={demandKg} />
+        <SupplyCard
+          title="Public buildings supply vs demand per year"
+          supplyKg={publicSupplyKg}
+          demandKg={demandKg}
+          supplyKgP={publicSupplyKgP}
+          demandKgP={demandKgP}
+        />
+        <SupplyCard
+          title="Total supply vs demand per year"
+          supplyKg={totalSupplyKg}
+          demandKg={demandKg}
+          supplyKgP={totalSupplyKgP}
+          demandKgP={demandKgP}
+        />
       </div>
     </>
   );

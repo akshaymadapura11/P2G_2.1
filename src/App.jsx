@@ -104,6 +104,17 @@ function MapProvincePage() {
 
   const totalSupplyKg = wtpSupplyKg + publicSupplyKg;
 
+  // Phosphorus supplies (mirror the nitrogen supplies above)
+  const wtpSupplyKgP = showWtp ? Number(wtp.totalProductionP || 0) : 0;
+
+  const publicSupplyKgP = useMemo(() => {
+    let sum = 0;
+    for (const p of extraPointsToShow || []) sum += Number(p.kg_p_per_year || 0);
+    return sum;
+  }, [extraPointsToShow]);
+
+  const totalSupplyKgP = wtpSupplyKgP + publicSupplyKgP;
+
   return (
     <div className="mapShell">
       <LandUseMap
@@ -142,6 +153,9 @@ function MapProvincePage() {
         wtpSupplyKg={wtpSupplyKg}
         publicSupplyKg={publicSupplyKg}
         totalSupplyKg={totalSupplyKg}
+        wtpSupplyKgP={wtpSupplyKgP}
+        publicSupplyKgP={publicSupplyKgP}
+        totalSupplyKgP={totalSupplyKgP}
         showWtp={showWtp}
         onToggleWtp={() => setShowWtp((s) => !s)}
         extraDatasets={EXTRA_DATASETS}

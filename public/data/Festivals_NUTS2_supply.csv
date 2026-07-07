@@ -1,8 +1,22 @@
-name,name_en,lat,lon,kg_n_per_year,country_code,country,province,attendance,__type
-Supa Dupa Fly Santorini 2026,Supa Dupa Fly Santorini 2026,36.393156,25.461509,0.7,GR,Greece,South Aegean,500,festivals
-Release Athens Festival 2026,Release Athens Festival 2026,37.936518,23.688613,315.0,GR,Greece,Attica,225000,festivals
-EJEKT Festival 2026,EJEKT Festival 2026,37.936518,23.688613,77.0,GR,Greece,Attica,55000,festivals
-Free Earth Festival 2026,Free Earth Festival 2026,40.023815,23.834027,7.0,GR,Greece,Central Macedonia,5000,festivals
-Xanthi Carnival,Xanthi Carnival,41.139189,24.887929,22.4,GR,Greece,Eastern Macedonia and Thrace,16000,festivals
-Xanthi Old Town Festival,Xanthi Old Town Festival,41.144077,24.887603,70.0,GR,Greece,Eastern Macedonia and Thrace,50000,festivals
-International Portoheli Festival,International Portoheli Festival,37.322081,23.142876,70.0,GR,Greece,Peloponnese,50000,festivals
+name,name_en,lat,lon,kg_n_per_year,country_code,country,province,attendance,__type,kg_p_per_year
+Supa Dupa Fly Santorini 2026,Supa Dupa Fly Santorini 2026,36.393156,25.461509,0.7,GR,Greece,South Aegean,500,festivals,7.59
+Release Athens Festival 2026,Release Athens Festival 2026,37.936518,23.688613,315.0,GR,Greece,Attica,225000,festivals,3415.5
+EJEKT Festival 2026,EJEKT Festival 2026,37.936518,23.688613,77.0,GR,Greece,Attica,55000,festivals,3415.5
+Free Earth Festival 2026,Free Earth Festival 2026,40.023815,23.834027,7.0,GR,Greece,Central Macedonia,5000,festivals,75.9
+Xanthi Carnival,Xanthi Carnival,41.139189,24.887929,22.4,GR,Greece,Eastern Macedonia and Thrace,16000,festivals,242.88
+Xanthi Old Town Festival,Xanthi Old Town Festival,41.144077,24.887603,70.0,GR,Greece,Eastern Macedonia and Thrace,50000,festivals,759
+International Portoheli Festival,International Portoheli Festival,37.322081,23.142876,70.0,GR,Greece,Peloponnese,50000,festivals,759
+Athens & Epidaurus Festival,Athens & Epidaurus Festival,37.9715,23.7257,,GR,Greece,Attica,240000,festivals,3643.2
+Rockwave Festival,Rockwave Festival,38.2313,23.8066,,GR,Greece,Attica,90000,festivals,1366.2
+Athens Technopolis Jazz Festival,Athens Technopolis Jazz Festival,37.7775,23.704,,GR,Greece,Attica,42000,festivals,637.56
+Athens International Film Festival,Athens International Film Festival,37.9838,23.7275,,GR,Greece,Attica,60000,festivals,910.8
+Athens Open Air Film Festival,Athens Open Air Film Festival,37.9985,23.7331,,GR,Greece,Attica,20000,festivals,303.6
+This is Athens City Festival,This is Athens City Festival,37.9838,23.7275,,GR,Greece,Attica,350000,festivals,910.8
+Colour Day Festival,Colour Day Festival,37.9755,23.7336,,GR,Greece,Attica,246000,festivals,3734.28
+Aeschylia Festival (Elefsina),Aeschylia Festival (Elefsina),38.0317,23.5456,,GR,Greece,Attica,30000,festivals,455.4
+Athens Digital Arts Festival (ADAF),Athens Digital Arts Festival (ADAF),37.9838,23.7275,,GR,Greece,Attica,15000,festivals,910.8
+Thessalian Poetry Festival,Thessalian Poetry Festival,39.639,22.4191,,GR,Greece,Thessaly,500,festivals,7.59
+Me Thea to Aigaio,Me Thea to Aigaio,39.714,22.457,,GR,Greece,Thessaly,5000,festivals,75.9
+Dance Meeting of Cultures,Dance Meeting of Cultures,39.638,22.4191,,GR,Greece,Thessaly,3000,festivals,45.54
+Thessaly Hot Air Balloon Festival,Thessaly Hot Air Balloon Festival,39.6333,22.4179,,GR,Greece,Thessaly,10000,festivals,151.8
+Plastiras Lake Festival,Plastiras Lake Festival,39.6439,21.8434,,GR,Greece,Thessaly,7000,festivals,106.26

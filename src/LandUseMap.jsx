@@ -176,6 +176,15 @@ function pickWtpProduction(pt) {
   );
 }
 
+function pickWtpProductionP(pt) {
+  return (
+    asNum(pt?.kg_p_per_year) ||               // ✅ standardized by hook
+    asNum(pt?.["P kg/per year"]) ||           // ✅ WTP file
+    asNum(pt?.p_kg_per_year) ||
+    null
+  );
+}
+
 
 /* ✅ One bbox around all circle centers to fetch quickly */
 function bboxAroundCenters(centers, radiusKm) {
@@ -520,6 +529,7 @@ export default function LandUseMap({
         const displayName = pickWtpName(pt, `WTP ${i + 1}`);
         const pe = pickPeValue(pt);
         const prod = pickWtpProduction(pt);
+        const prodP = pickWtpProductionP(pt);
 
         return (
           <Marker key={`wtp-${i}`} position={[lat, lon]} icon={wtpIcon}>
@@ -538,7 +548,12 @@ export default function LandUseMap({
                 )}
                 {prod != null && (
                   <div style={{ marginTop: 4 }}>
-                    <strong>Output:</strong> {prod.toLocaleString()}
+                    <strong>Kg N/year:</strong> {prod.toLocaleString()}
+                  </div>
+                )}
+                {prodP != null && (
+                  <div style={{ marginTop: 4 }}>
+                    <strong>Kg P/year:</strong> {prodP.toLocaleString()}
                   </div>
                 )}
                 <div style={{ marginTop: 8, color: "#666" }}>
@@ -560,6 +575,7 @@ export default function LandUseMap({
           const color = datasetColorFor(p);
           const label = p.__label || p.label || p.__type || "Dataset";
           const kg = asNum(p.kg_n_per_year) ?? 0;
+          const kgP = asNum(p.kg_p_per_year) ?? 0;
 
           return (
             <Marker
@@ -578,6 +594,9 @@ export default function LandUseMap({
                   )}
                   <div style={{ marginTop: 8 }}>
                     <strong>Kg N/year:</strong> {kg.toLocaleString()}
+                  </div>
+                  <div style={{ marginTop: 4 }}>
+                    <strong>Kg P/year:</strong> {kgP.toLocaleString()}
                   </div>
                   <div style={{ marginTop: 8, color: "#666" }}>
                     Lat/Lon: {lat.toFixed(5)}, {lon.toFixed(5)}

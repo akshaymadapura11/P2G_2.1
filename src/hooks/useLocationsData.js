@@ -106,8 +106,16 @@ function computeWtpKgN(row) {
   return toNum(pick(row, ["N kg/per year", "N kg/per year ", "kg_n_per_year", "n_kg_per_year"])) || 0;
 }
 
+function computeWtpKgP(row) {
+  return toNum(pick(row, ["P kg/per year", "P kg/per year ", "kg_p_per_year", "p_kg_per_year"])) || 0;
+}
+
 function computeBuildingKgN(_datasetKey, row) {
   return toNum(pick(row, ["kg_n_per_year", "n_kg_per_year", "output", "production"])) || 0;
+}
+
+function computeBuildingKgP(_datasetKey, row) {
+  return toNum(pick(row, ["kg_p_per_year", "p_kg_per_year", "P kg/per year", "Kg P/year"])) || 0;
 }
 
 function toNum(x) {
@@ -319,6 +327,7 @@ export function useLocationGroup(csvUrl, _unusedRadiusKm = 2, opts = {}) {
               __lat: lat,
               __lon: lon,
               kg_n_per_year: computeWtpKgN(r),
+              kg_p_per_year: computeWtpKgP(r),
             };
           })
           .filter(Boolean);
@@ -346,6 +355,11 @@ export function useLocationGroup(csvUrl, _unusedRadiusKm = 2, opts = {}) {
     return rows.reduce((sum, r) => sum + (toNum(r.kg_n_per_year) || 0), 0);
   }, [rows]);
 
+  // Production (kg P / year) sum — mirrors totalProduction for phosphorus
+  const totalProductionP = useMemo(() => {
+    return rows.reduce((sum, r) => sum + (toNum(r.kg_p_per_year) || 0), 0);
+  }, [rows]);
+
   return {
     loading,
     error,
@@ -353,6 +367,7 @@ export function useLocationGroup(csvUrl, _unusedRadiusKm = 2, opts = {}) {
     effectiveRows: rows,
     firstPointCenter,
     totalProduction,
+    totalProductionP,
   };
 }
 
@@ -389,6 +404,7 @@ export function useManyGenericPoints(datasets = [], opts = {}) {
                 if (lat == null || lon == null) return null;
 
                 const kg = computeBuildingKgN(d.key, r);
+                const kgP = computeBuildingKgP(d.key, r);
 
                 return {
                   ...r,
@@ -399,6 +415,7 @@ export function useManyGenericPoints(datasets = [], opts = {}) {
                   __type: d.key,
                   __label: d.label || d.key,
                   kg_n_per_year: kg,
+                  kg_p_per_year: kgP,
                   name:
                     pick(r, ["name", "Name", "facility_name", "Facility", "Airport", "University"]) ||
                     r.name ||
