@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Map the app's /api/uploads calls to the Netlify Function.
+# (Must come BEFORE the SPA catch-all so it isn't rewritten to index.html.)
+[[redirects]]
+  from = "/api/uploads"
+  to = "/.netlify/functions/uploads"
+  status = 200
+
+# SPA fallback so react-router routes work on refresh / deep links.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
