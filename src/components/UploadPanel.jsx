@@ -2,8 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import {
   GH_CONFIG,
-  getToken,
-  setToken,
+  getPasscode,
+  setPasscode,
   uploadCsv,
   listUploads,
 } from "../utils/githubStorage";
@@ -17,9 +17,8 @@ function fmtSize(bytes) {
 
 export default function UploadPanel() {
   const [open, setOpen] = useState(false);
-  const [token, setTokenState] = useState(getToken());
-  const [editingToken, setEditingToken] = useState(!getToken());
-  const [tokenDraft, setTokenDraft] = useState("");
+  const [code, setCode] = useState(getPasscode());
+  const [showCode, setShowCode] = useState(false);
 
   const [files, setFiles] = useState([]); // selected File objects
   const [busy, setBusy] = useState(false);
@@ -28,13 +27,10 @@ export default function UploadPanel() {
   const [listErr, setListErr] = useState("");
   const inputRef = useRef(null);
 
-  const hasToken = !!token;
-
   async function refreshList() {
-    if (!token) return;
     setListErr("");
     try {
-      const items = await listUploads(token);
+      const items = await listUploads(code);
       setUploaded(items);
     } catch (e) {
       setListErr(e?.message || "Failed to list files");
@@ -42,25 +38,9 @@ export default function UploadPanel() {
   }
 
   useEffect(() => {
-    if (open && token) refreshList();
+    if (open) refreshList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, token]);
-
-  function saveToken() {
-    const t = tokenDraft.trim();
-    setToken(t);
-    setTokenState(t);
-    setEditingToken(false);
-    setTokenDraft("");
-    setStatus(null);
-  }
-
-  function clearToken() {
-    setToken("");
-    setTokenState("");
-    setUploaded([]);
-    setEditingToken(true);
-  }
+  }, [open]);
 
   function onPick(e) {
     const picked = Array.from(e.target.files || []).filter((f) =>
@@ -71,21 +51,18 @@ export default function UploadPanel() {
   }
 
   async function doUpload() {
-    if (!token) {
-      setStatus({ type: "err", text: "Set a GitHub token first." });
-      return;
-    }
     if (!files.length) {
       setStatus({ type: "err", text: "Choose one or more .csv files." });
       return;
     }
     setBusy(true);
     setStatus(null);
+    setPasscode(code); // remember any access code for next time
     const results = [];
     try {
       for (const f of files) {
         // eslint-disable-next-line no-await-in-loop
-        const r = await uploadCsv(f, token);
+        const r = await uploadCsv(f, code);
         results.push(r);
       }
       const overwrote = results.filter((r) => r.overwrote).length;
@@ -107,11 +84,7 @@ export default function UploadPanel() {
 
   return (
     <div className="panel upload">
-      <button
-        type="button"
-        className="uploadToggle"
-        onClick={() => setOpen((o) => !o)}
-      >
+      <button type="button" className="uploadToggle" onClick={() => setOpen((o) => !o)}>
         ⬆ UPLOAD DATASET (CSV) {open ? "▲" : "▼"}
       </button>
 
@@ -122,39 +95,6 @@ export default function UploadPanel() {
             <code>{GH_CONFIG.folder}/</code>. No processing.
           </p>
 
-          {/* Token */}
-          {editingToken ? (
-            <div className="uploadTokenRow">
-              <input
-                className="panelInput uploadTokenInput"
-                type="password"
-                placeholder="GitHub personal access token"
-                value={tokenDraft}
-                onChange={(e) => setTokenDraft(e.target.value)}
-                autoComplete="off"
-              />
-              <button type="button" className="uploadBtn" onClick={saveToken} disabled={!tokenDraft.trim()}>
-                Save
-              </button>
-            </div>
-          ) : (
-            <div className="uploadTokenRow">
-              <span className="uploadTokenOk">✓ Token saved</span>
-              <button type="button" className="uploadLinkBtn" onClick={() => setEditingToken(true)}>
-                Change
-              </button>
-              <button type="button" className="uploadLinkBtn" onClick={clearToken}>
-                Remove
-              </button>
-            </div>
-          )}
-          {editingToken && (
-            <p className="uploadHint">
-              Use a fine-grained token scoped to this repo with <strong>Contents: Read and write</strong>.
-              It is kept only in this browser.
-            </p>
-          )}
-
           {/* File pick + upload */}
           <div className="uploadPickRow">
             <input
@@ -163,13 +103,13 @@ export default function UploadPanel() {
               accept=".csv,text/csv"
               multiple
               onChange={onPick}
-              disabled={!hasToken || busy}
+              disabled={busy}
             />
             <button
               type="button"
               className="uploadBtn"
               onClick={doUpload}
-              disabled={!hasToken || busy || !files.length}
+              disabled={busy || !files.length}
             >
               {busy ? "Uploading…" : `Upload${files.length ? ` (${files.length})` : ""}`}
             </button>
@@ -179,29 +119,44 @@ export default function UploadPanel() {
             <div className={status.type === "ok" ? "uploadOk" : "uploadErr"}>{status.text}</div>
           )}
 
-          {/* Existing files */}
-          {hasToken && (
-            <div className="uploadList">
-              <div className="uploadListHead">
-                <span>Stored files</span>
-                <button type="button" className="uploadLinkBtn" onClick={refreshList} disabled={busy}>
-                  Refresh
-                </button>
-              </div>
-              {listErr && <div className="uploadErr">{listErr}</div>}
-              {!listErr && uploaded.length === 0 && (
-                <div className="uploadEmpty">No files uploaded yet.</div>
-              )}
-              {uploaded.map((f) => (
-                <div key={f.path} className="uploadItem">
-                  <a href={f.downloadUrl} target="_blank" rel="noreferrer" title="Download raw CSV">
-                    {f.name}
-                  </a>
-                  <span className="uploadItemSize">{fmtSize(f.size)}</span>
-                </div>
-              ))}
+          {/* Optional access code (only if the server requires one) */}
+          <button type="button" className="uploadLinkBtn" onClick={() => setShowCode((s) => !s)}>
+            {showCode ? "Hide access code" : "Access code (if required)"}
+          </button>
+          {showCode && (
+            <div className="uploadTokenRow">
+              <input
+                className="panelInput uploadTokenInput"
+                type="password"
+                placeholder="Access code"
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+                autoComplete="off"
+              />
             </div>
           )}
+
+          {/* Existing files */}
+          <div className="uploadList">
+            <div className="uploadListHead">
+              <span>Stored files</span>
+              <button type="button" className="uploadLinkBtn" onClick={refreshList} disabled={busy}>
+                Refresh
+              </button>
+            </div>
+            {listErr && <div className="uploadErr">{listErr}</div>}
+            {!listErr && uploaded.length === 0 && (
+              <div className="uploadEmpty">No files uploaded yet.</div>
+            )}
+            {uploaded.map((f) => (
+              <div key={f.path} className="uploadItem">
+                <a href={f.downloadUrl} target="_blank" rel="noreferrer" title="Download raw CSV">
+                  {f.name}
+                </a>
+                <span className="uploadItemSize">{fmtSize(f.size)}</span>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
