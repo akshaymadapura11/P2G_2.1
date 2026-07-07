@@ -115,6 +115,16 @@ function MapProvincePage() {
 
   const totalSupplyKgP = wtpSupplyKgP + publicSupplyKgP;
 
+  // Counts of each infrastructure type in the current province (for the legend)
+  const wtpCount = (wtp.effectiveRows || []).length;
+  const extraCounts = useMemo(() => {
+    const out = {};
+    for (const [key, rows] of Object.entries(extraData.byKey || {})) {
+      out[key] = (rows || []).length;
+    }
+    return out;
+  }, [extraData.byKey]);
+
   return (
     <div className="mapShell">
       <LandUseMap
@@ -158,6 +168,8 @@ function MapProvincePage() {
         totalSupplyKgP={totalSupplyKgP}
         showWtp={showWtp}
         onToggleWtp={() => setShowWtp((s) => !s)}
+        wtpCount={wtpCount}
+        extraCounts={extraCounts}
         extraDatasets={EXTRA_DATASETS}
         extraToggles={extraToggles}
         onToggleExtra={(k) => setExtraToggles((p) => ({ ...p, [k]: !p[k] }))}

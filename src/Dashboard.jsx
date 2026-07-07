@@ -1,6 +1,7 @@
 // src/Dashboard.jsx
 import { useState } from "react";
 import "./App.css";
+import UploadPanel from "./components/UploadPanel";
 
 const ABOUT_TEXT = `P2GreeN's overall objective is to foster a paradigm shift, from a linearly organised resource and nutrient system within the agri-food supply chain, towards a circular material flow system between urban and rural areas thereby restoring the coupling of the water-agri-food system using a holistic symbiotic resource management approach following the 3R principle "Reduce, Reuse, Recover".
 
@@ -123,6 +124,9 @@ export default function Dashboard({
 
   showWtp = true,
   onToggleWtp = () => {},
+
+  wtpCount = 0,
+  extraCounts = {},
 }) {
   const [aboutOpen, setAboutOpen] = useState(false);
 
@@ -154,6 +158,7 @@ export default function Dashboard({
               <span style={swatchStyle(SUPPLY_COLORS.wtp)} />
               Waste water treatment plants
             </span>
+            <span className="legendCount">{wtpCount.toLocaleString()}</span>
           </label>
 
           {(extraDatasets || []).map((d) => {
@@ -169,6 +174,7 @@ export default function Dashboard({
                   <span style={swatchStyle(color)} />
                   {d.label}
                 </span>
+                <span className="legendCount">{(extraCounts?.[d.key] || 0).toLocaleString()}</span>
               </label>
             );
           })}
@@ -230,6 +236,8 @@ export default function Dashboard({
             </div>
           )}
         </div>
+
+        <UploadPanel />
       </div>
 
       <div className="bottomMeta">
