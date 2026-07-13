@@ -91,8 +91,9 @@ export default function UploadPanel() {
       {open && (
         <div className="uploadBody">
           <p className="panelSub" style={{ marginTop: 8 }}>
-            {/* Stores CSV files as-is in <code>{GH_CONFIG.owner}/{GH_CONFIG.repo}</code> →{" "}
-            <code>{GH_CONFIG.folder}/</code>. No processing. */}
+            If you would like to contribute your data to this platform, please upload it in CSV
+            format. Make sure your file includes the following columns: longitude, latitude, and
+            capacity.
           </p>
 
           {/* File pick + upload */}
