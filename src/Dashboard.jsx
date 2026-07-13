@@ -150,7 +150,7 @@ export default function Dashboard({
         {/* Panel 1 — Supply sources */}
         <div className="panel">
           <h3>Define fertilizer supply!</h3>
-          <p className="panelSub">Choose water treatment plants and/or public buildings to define potential fertilizer supply.</p>
+          <p className="panelSub">Choose water treatment plants and/or source separation facilities to define potential fertilizer supply.</p>
 
           <label className="panelRow">
             <input type="checkbox" checked={showWtp} onChange={onToggleWtp} />
@@ -255,7 +255,7 @@ export default function Dashboard({
           demandKgP={demandKgP}
         />
         <SupplyCard
-          title="Public buildings supply vs demand per year"
+          title="Source separation supply vs demand per year"
           supplyKg={publicSupplyKg}
           demandKg={demandKg}
           supplyKgP={publicSupplyKgP}

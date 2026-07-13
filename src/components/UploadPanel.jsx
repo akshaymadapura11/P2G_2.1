@@ -91,8 +91,8 @@ export default function UploadPanel() {
       {open && (
         <div className="uploadBody">
           <p className="panelSub" style={{ marginTop: 8 }}>
-            Stores CSV files as-is in <code>{GH_CONFIG.owner}/{GH_CONFIG.repo}</code> →{" "}
-            <code>{GH_CONFIG.folder}/</code>. No processing.
+            {/* Stores CSV files as-is in <code>{GH_CONFIG.owner}/{GH_CONFIG.repo}</code> →{" "}
+            <code>{GH_CONFIG.folder}/</code>. No processing. */}
           </p>
 
           {/* File pick + upload */}
