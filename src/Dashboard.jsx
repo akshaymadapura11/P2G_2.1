@@ -27,9 +27,9 @@ const LANDUSE_COLORS = {
   green_public_spaces: "#c9267dff",
 };
 
-const REQUIRED_KG_PER_HA = 160;
-// Phosphorus (elemental P) demand per hectare. Adjust to your agronomic figure.
-const REQUIRED_KG_P_PER_HA = 30;
+// Non-organic fertilizer demand for wheat, per km² of demand area.
+const N_DEMAND_KG_PER_KM2 = 16000; // 160 kg/ha
+const P_DEMAND_KG_PER_KM2 = 8000;  //  80 kg/ha
 
 const SUPPLY_COLORS = {
   wtp: "#8bd212ff",
@@ -133,15 +133,11 @@ export default function Dashboard({
   const totalAreaM2 = (features || []).reduce((s, f) => s + (f?.properties?.area || 0), 0);
   const totalAreaKm2 = totalAreaM2 / 1e6;
 
-  const demandKg = (features || []).reduce((sum, f) => {
-    const areaHa = (f?.properties?.area || 0) / 10000;
-    return sum + areaHa * REQUIRED_KG_PER_HA;
-  }, 0);
-
-  const demandKgP = (features || []).reduce((sum, f) => {
-    const areaHa = (f?.properties?.area || 0) / 10000;
-    return sum + areaHa * REQUIRED_KG_P_PER_HA;
-  }, 0);
+  // Demand is based on the area of the demand circle (π r²), not the OSM
+  // farmland polygons. area (km²) × per-km² rate = fertilizer demand.
+  const demandAreaKm2 = Math.PI * radiusKm * radiusKm;
+  const demandKg = demandAreaKm2 * N_DEMAND_KG_PER_KM2;
+  const demandKgP = demandAreaKm2 * P_DEMAND_KG_PER_KM2;
 
   return (
     <>
