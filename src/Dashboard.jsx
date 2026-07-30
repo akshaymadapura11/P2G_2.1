@@ -1,5 +1,5 @@
 // src/Dashboard.jsx
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import "./App.css";
 import UploadPanel from "./components/UploadPanel";
 
@@ -26,6 +26,15 @@ const LANDUSE_COLORS = {
   greenhouse_horticulture: "#5525ceff",
   green_public_spaces: "#c9267dff",
 };
+
+// Format a landuse footprint (m²) for the legend: km² when large enough to
+// read, otherwise hectares so small selections don't collapse to "0.00 km²".
+function formatArea(m2) {
+  if (!m2 || m2 <= 0) return "";
+  const km2 = m2 / 1e6;
+  if (km2 >= 0.01) return `${km2.toFixed(2)} km²`;
+  return `${(m2 / 1e4).toFixed(2)} ha`;
+}
 
 // Non-organic fertilizer demand for wheat, per km² of demand area.
 const N_DEMAND_KG_PER_KM2 = 16000; // 160 kg/ha
@@ -133,6 +142,18 @@ export default function Dashboard({
   const totalAreaM2 = (features || []).reduce((s, f) => s + (f?.properties?.area || 0), 0);
   const totalAreaKm2 = totalAreaM2 / 1e6;
 
+  // Area (m²) selected per landuse type, so each legend row can show its own
+  // footprint next to the label (mirrors the location counts above).
+  const areaByType = useMemo(() => {
+    const m = {};
+    for (const f of features || []) {
+      const t = f?.properties?.landuse;
+      if (!t) continue;
+      m[t] = (m[t] || 0) + (f?.properties?.area || 0);
+    }
+    return m;
+  }, [features]);
+
   // Demand is based on the area of the demand circle (π r²), not the OSM
   // farmland polygons. area (km²) × per-km² rate = fertilizer demand.
   const demandAreaKm2 = Math.PI * radiusKm * radiusKm;
@@ -213,6 +234,9 @@ export default function Dashboard({
                   />
                   {LANDUSE_LABELS[t] ?? t.replaceAll("_", " ")}
                 </span>
+                {areaByType[t] > 0 && (
+                  <span className="legendCount">{formatArea(areaByType[t])}</span>
+                )}
               </label>
             ))}
           </div>
