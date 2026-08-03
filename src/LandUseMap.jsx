@@ -81,6 +81,8 @@ const OVERPASS_ENDPOINTS = [
 const overpassCache = new Map();
 const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
+const OVERPASS_ATTEMPT_TIMEOUT_MS = 12000;
+
 async function fetchOverpassWithBackoff(query, abortSignal, cacheKey) {
   if (overpassCache.has(cacheKey)) return overpassCache.get(cacheKey);
 
@@ -89,12 +91,24 @@ async function fetchOverpassWithBackoff(query, abortSignal, cacheKey) {
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
     const endpoint = OVERPASS_ENDPOINTS[endpointIdx % OVERPASS_ENDPOINTS.length];
+
+    // Per-attempt timeout: an unreachable mirror otherwise hangs on the
+    // browser's default connection timeout (ERR_CONNECTION_TIMED_OUT, ~1–2 min)
+    // before we fail over. Cap each try so a working mirror is reached fast.
+    const attemptCtrl = new AbortController();
+    const forwardAbort = () => attemptCtrl.abort();
+    if (abortSignal) {
+      if (abortSignal.aborted) attemptCtrl.abort();
+      else abortSignal.addEventListener("abort", forwardAbort, { once: true });
+    }
+    const timer = setTimeout(() => attemptCtrl.abort(), OVERPASS_ATTEMPT_TIMEOUT_MS);
+
     try {
       const resp = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
         body: "data=" + encodeURIComponent(query),
-        signal: abortSignal,
+        signal: attemptCtrl.signal,
       });
 
       if (!resp.ok) throw new Error(`Overpass HTTP ${resp.status}`);
@@ -103,10 +117,13 @@ async function fetchOverpassWithBackoff(query, abortSignal, cacheKey) {
       overpassCache.set(cacheKey, gj);
       return gj;
     } catch (err) {
-      if (abortSignal?.aborted) throw err;
+      if (abortSignal?.aborted) throw err; // genuine caller cancellation
       endpointIdx++;
       const backoff = Math.min(1500 * 2 ** attempt, 9000) + Math.random() * 400;
       await sleep(backoff);
+    } finally {
+      clearTimeout(timer);
+      if (abortSignal) abortSignal.removeEventListener("abort", forwardAbort);
     }
   }
 
