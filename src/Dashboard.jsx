@@ -154,11 +154,10 @@ export default function Dashboard({
     return m;
   }, [features]);
 
-  // Demand is based on the area of the demand circle (π r²), not the OSM
-  // farmland polygons. area (km²) × per-km² rate = fertilizer demand.
-  const demandAreaKm2 = Math.PI * radiusKm * radiusKm;
-  const demandKg = demandAreaKm2 * N_DEMAND_KG_PER_KM2;
-  const demandKgP = demandAreaKm2 * P_DEMAND_KG_PER_KM2;
+  // Demand is based on the total OSM landuse plot area (sum of the farmland
+  // polygons), not the demand circle. area (km²) × per-km² rate = demand.
+  const demandKg = totalAreaKm2 * N_DEMAND_KG_PER_KM2;
+  const demandKgP = totalAreaKm2 * P_DEMAND_KG_PER_KM2;
 
   return (
     <>
