@@ -72,10 +72,14 @@ const LANDUSE_COLORS = {
   green_public_spaces: "#c9267dff",
 };
 
+// Several independent mirrors (different providers/domains) so a block or
+// outage on one doesn't kill the landuse layer. All support CORS.
 const OVERPASS_ENDPOINTS = [
   "https://overpass-api.de/api/interpreter",
+  "https://overpass.kumi.systems/api/interpreter",
+  "https://overpass.private.coffee/api/interpreter",
+  "https://overpass.osm.ch/api/interpreter",
   "https://z.overpass-api.de/api/interpreter",
-  "https://overpass.kumi.systems/api/interpreter", // no CORS from localhost — last resort
 ];
 
 const overpassCache = new Map();
@@ -86,7 +90,7 @@ const OVERPASS_ATTEMPT_TIMEOUT_MS = 12000;
 async function fetchOverpassWithBackoff(query, abortSignal, cacheKey) {
   if (overpassCache.has(cacheKey)) return overpassCache.get(cacheKey);
 
-  const maxAttempts = 4;
+  const maxAttempts = OVERPASS_ENDPOINTS.length;
   let endpointIdx = 0;
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
