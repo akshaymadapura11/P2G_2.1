@@ -73,11 +73,13 @@ const LANDUSE_COLORS = {
 };
 
 // All mirrors here must send CORS headers, or the browser blocks the response.
-// (overpass.kumi.systems was dropped — it no longer allows browser CORS.)
+// osm.ch is first: it is healthy + CORS-enabled (Access-Control-Allow-Origin: *)
+// and reachable where overpass-api.de is currently blackholed (TCP timeout) from
+// some networks, so it must not sit at the front and stall the whole fetch.
 const OVERPASS_ENDPOINTS = [
-  "https://overpass-api.de/api/interpreter",
+  "https://overpass.osm.ch/api/interpreter",
   "https://overpass.private.coffee/api/interpreter",
-  "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+  "https://overpass-api.de/api/interpreter",
 ];
 
 const overpassCache = new Map();
