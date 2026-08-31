@@ -72,10 +72,12 @@ const LANDUSE_COLORS = {
   green_public_spaces: "#c9267dff",
 };
 
+// All mirrors here must send CORS headers, or the browser blocks the response.
+// (overpass.kumi.systems was dropped — it no longer allows browser CORS.)
 const OVERPASS_ENDPOINTS = [
   "https://overpass-api.de/api/interpreter",
-  "https://z.overpass-api.de/api/interpreter",
-  "https://overpass.kumi.systems/api/interpreter", // no CORS from localhost — last resort
+  "https://overpass.private.coffee/api/interpreter",
+  "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
 ];
 
 const overpassCache = new Map();
