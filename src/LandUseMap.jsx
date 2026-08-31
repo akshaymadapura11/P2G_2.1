@@ -434,17 +434,19 @@ export default function LandUseMap({
     const run = async () => {
       onLoadingChange(true);
       try {
-        // Prefer live Overpass (full-resolution geometry, fresh data); fall back
-        // to the pre-generated static file if it fails, times out, or is too
-        // large to parse — so farmland always renders.
-        let gj;
-        try {
-          gj = await fetchOverpassLive(query, controller.signal);
-        } catch (e) {
-          if (controller.signal.aborted) return;
-          gj = await fetchLanduseFile(slug, controller.signal);
-        }
+        // TEMP: static fallback disabled to force the live openstreetmap.fr path
+        // so we can confirm live works (and see any error in the console).
+        // Re-enable the try/catch below to restore the static fallback.
+        const gj = await fetchOverpassLive(query, controller.signal);
+        // let gj;
+        // try {
+        //   gj = await fetchOverpassLive(query, controller.signal);
+        // } catch (e) {
+        //   if (controller.signal.aborted) return;
+        //   gj = await fetchLanduseFile(slug, controller.signal);
+        // }
         if (controller.signal.aborted) return;
+        console.info(`landuse: live Overpass returned ${gj.features?.length ?? 0} features`);
 
         const kept = [];
         let totalA = 0;
