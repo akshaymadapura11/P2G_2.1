@@ -93,12 +93,25 @@ async function fetchOverpassWithBackoff(query, abortSignal, cacheKey) {
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
     const endpoint = OVERPASS_ENDPOINTS[endpointIdx % OVERPASS_ENDPOINTS.length];
+
+    // Per-endpoint timeout so a dead/unreachable mirror (e.g. a host that is
+    // TCP-blackholed) fails over in ~35s instead of hanging the map on the
+    // browser's much longer default connect timeout. 35s sits just above the
+    // server-side [timeout:30] so it never kills a slow-but-valid query.
+    const perAttempt = new AbortController();
+    const onParentAbort = () => perAttempt.abort();
+    if (abortSignal) {
+      if (abortSignal.aborted) perAttempt.abort();
+      else abortSignal.addEventListener("abort", onParentAbort, { once: true });
+    }
+    const timer = setTimeout(() => perAttempt.abort(), 35000);
+
     try {
       const resp = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
         body: "data=" + encodeURIComponent(query),
-        signal: abortSignal,
+        signal: perAttempt.signal,
       });
 
       if (!resp.ok) throw new Error(`Overpass HTTP ${resp.status}`);
@@ -107,10 +120,13 @@ async function fetchOverpassWithBackoff(query, abortSignal, cacheKey) {
       overpassCache.set(cacheKey, gj);
       return gj;
     } catch (err) {
-      if (abortSignal?.aborted) throw err;
+      if (abortSignal?.aborted) throw err; // real cancel from the component
       endpointIdx++;
       const backoff = Math.min(1500 * 2 ** attempt, 9000) + Math.random() * 400;
       await sleep(backoff);
+    } finally {
+      clearTimeout(timer);
+      abortSignal?.removeEventListener("abort", onParentAbort);
     }
   }
 
