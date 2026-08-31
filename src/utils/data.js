@@ -14,6 +14,16 @@ export function wtpCsvForCountry(country) {
 
 export const WTP_ALL_CSV = "/data/wtp_all.csv";
 
+// Filename key for a province's pre-generated landuse GeoJSON, served from
+// /data/landuse/<slug>.geojson. MUST stay in sync with landuseSlug() in
+// scripts/genLanduse.mjs so the client requests the file the generator wrote.
+export function landuseSlug(country, province) {
+  return `${country}__${province}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 // If you have public buildings CSVs per region keep them as-is;
 // otherwise you can do the same strategy later.
 export const LOCATION_GROUPS = [

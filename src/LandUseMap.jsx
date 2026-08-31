@@ -11,9 +11,9 @@ import {
   useMap,
 } from "react-leaflet";
 import L from "leaflet";
-import osmtogeojson from "osmtogeojson";
 import { centroid, distance, feature as turfFeature } from "@turf/turf";
 import area from "@turf/area";
+import { landuseSlug } from "./utils/data";
 import "leaflet/dist/leaflet.css";
 
 /* ---------------- Icons ---------------- */
@@ -72,67 +72,26 @@ const LANDUSE_COLORS = {
   green_public_spaces: "#c9267dff",
 };
 
-// Each mirror MUST satisfy all three: (1) up, (2) send CORS headers or the
-// browser blocks the response, and (3) hold GLOBAL data. Regional mirrors
-// (e.g. overpass.osm.ch = Switzerland only) return 200 with an empty result
-// outside their region, which silently renders no farmland — worse than an
-// error. overpass-api.de is the canonical global+CORS instance the app has
-// always used; the others are global+CORS fallbacks for when it is down.
-const OVERPASS_ENDPOINTS = [
-  "https://overpass-api.de/api/interpreter",
-  "https://overpass.private.coffee/api/interpreter",
-  "https://overpass.osm.jp/api/interpreter",
-];
+// Farmland/green polygons are pre-generated per province (scripts/genLanduse.mjs)
+// and served as static GeoJSON from /data/landuse/<slug>.geojson — same-origin,
+// so there is no runtime dependency on a live Overpass mirror (which were
+// unreliable: flapping, CORS-less, or region-limited). Each file is a
+// FeatureCollection of Polygon/MultiPolygon features tagged { landuse }.
+const landuseFileCache = new Map(); // slug -> Promise<FeatureCollection>
 
-const overpassCache = new Map();
-const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
-
-async function fetchOverpassWithBackoff(query, abortSignal, cacheKey) {
-  if (overpassCache.has(cacheKey)) return overpassCache.get(cacheKey);
-
-  const maxAttempts = 4;
-  let endpointIdx = 0;
-
-  for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    const endpoint = OVERPASS_ENDPOINTS[endpointIdx % OVERPASS_ENDPOINTS.length];
-
-    // Per-endpoint timeout so a dead/unreachable mirror (e.g. a host that is
-    // TCP-blackholed) fails over in ~35s instead of hanging the map on the
-    // browser's much longer default connect timeout. 35s sits just above the
-    // server-side [timeout:30] so it never kills a slow-but-valid query.
-    const perAttempt = new AbortController();
-    const onParentAbort = () => perAttempt.abort();
-    if (abortSignal) {
-      if (abortSignal.aborted) perAttempt.abort();
-      else abortSignal.addEventListener("abort", onParentAbort, { once: true });
-    }
-    const timer = setTimeout(() => perAttempt.abort(), 35000);
-
-    try {
-      const resp = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-        body: "data=" + encodeURIComponent(query),
-        signal: perAttempt.signal,
-      });
-
-      if (!resp.ok) throw new Error(`Overpass HTTP ${resp.status}`);
-      const json = await resp.json();
-      const gj = osmtogeojson(json);
-      overpassCache.set(cacheKey, gj);
-      return gj;
-    } catch (err) {
-      if (abortSignal?.aborted) throw err; // real cancel from the component
-      endpointIdx++;
-      const backoff = Math.min(1500 * 2 ** attempt, 9000) + Math.random() * 400;
-      await sleep(backoff);
-    } finally {
-      clearTimeout(timer);
-      abortSignal?.removeEventListener("abort", onParentAbort);
-    }
-  }
-
-  throw new Error("Overpass failed after multiple retries");
+function fetchLanduseFile(slug, abortSignal) {
+  if (landuseFileCache.has(slug)) return landuseFileCache.get(slug);
+  const p = (async () => {
+    const resp = await fetch(`/data/landuse/${slug}.geojson`, { signal: abortSignal });
+    if (resp.status === 404) return { type: "FeatureCollection", features: [] };
+    if (!resp.ok) throw new Error(`landuse file HTTP ${resp.status}`);
+    return resp.json();
+  })();
+  // Cache the promise so repeat visits to a province don't refetch; drop it on
+  // failure so a transient error can be retried.
+  landuseFileCache.set(slug, p);
+  p.catch(() => landuseFileCache.delete(slug));
+  return p;
 }
 
 /* ✅ Recenter helper */
@@ -294,6 +253,10 @@ export default function LandUseMap({
   center,
   searchRadiusKm,
 
+  // province identity (selects the pre-generated landuse file)
+  country = "",
+  province = "",
+
   // circles
   supplyCircleCenters = [],
   circleRadiusKm = 2,
@@ -370,33 +333,11 @@ export default function LandUseMap({
       return;
     }
 
-    // green_public_spaces is not a real OSM landuse tag — handled via leisure query below
-    const landuseTags = enabled.filter((k) => k !== "green_public_spaces");
-    const wantGreen = enabled.includes("green_public_spaces");
-    const { south, west, north, east } = bbox;
-
-    const cacheKey = `bbox|centroid+bbox|${enabled.join("|")}|${south.toFixed(4)},${west.toFixed(
-      4
-    )},${north.toFixed(4)},${east.toFixed(4)}|r:${Number(searchRadiusKm || 0).toFixed(2)}|n:${supplyCircleCenters.length}`;
-
-    // Use way+relation only (nodes can never be polygons — no need to fetch them)
-    const queryParts = [];
-    if (landuseTags.length) {
-      queryParts.push(
-        `way["landuse"~"${landuseTags.join("|")}"](${south},${west},${north},${east});`,
-        `relation["landuse"~"${landuseTags.join("|")}"](${south},${west},${north},${east});`
-      );
+    const slug = landuseSlug(country, province);
+    if (!slug) {
+      onDataUpdate([]);
+      return;
     }
-    if (wantGreen) {
-      queryParts.push(
-        `way["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});`,
-        `relation["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});`
-      );
-    }
-
-    const query = `[out:json][timeout:30];\n(\n${queryParts.join("\n")}\n);\nout geom;`;
-
-    
 
     if (abortRef.current) abortRef.current.abort();
     const controller = new AbortController();
@@ -405,29 +346,17 @@ export default function LandUseMap({
     const run = async () => {
       onLoadingChange(true);
       try {
-        const gj = await fetchOverpassWithBackoff(query, controller.signal, cacheKey);
+        // Pre-generated static polygons for this province (same-origin, no
+        // Overpass at runtime). The centroid/radius filter below still runs
+        // client-side so the radius control stays live.
+        const gj = await fetchLanduseFile(slug, controller.signal);
+        if (controller.signal.aborted) return;
 
         const kept = [];
         let totalA = 0;
 
         for (const f of gj.features || []) {
-          let lu =
-            f.properties?.landuse ??
-            f.properties?.tags?.landuse ??
-            f.properties?.["landuse"];
-
-          const leisure =
-            f.properties?.leisure ??
-            f.properties?.tags?.leisure;
-
-          if (!lu && leisure) {
-            if (
-              ["park", "garden", "nature_reserve", "recreation_ground"].includes(leisure)
-            ) {
-              lu = "green_public_spaces";
-            }
-          }
-
+          const lu = f.properties?.landuse;
           if (!lu || !landuseToggles[lu]) continue;
 
           const g = f.geometry;
@@ -461,19 +390,18 @@ export default function LandUseMap({
         if (!controller.signal.aborted) onDataUpdate(kept);
       } catch (e) {
         if (e?.name === "AbortError") return;
-        console.error("Overpass landuse error:", e);
+        console.error("Landuse load error:", e);
         onDataUpdate([]);
       } finally {
-        onLoadingChange(false);
+        if (!controller.signal.aborted) onLoadingChange(false);
       }
     };
 
-    const t = setTimeout(run, 800);
+    run();
     return () => {
-      clearTimeout(t);
       controller.abort();
     };
-  }, [searchRadiusKm, supplyCircleCenters, landuseToggles, totalProduction, onDataUpdate, circleBoxes]);
+  }, [country, province, searchRadiusKm, supplyCircleCenters, landuseToggles, totalProduction, onDataUpdate, circleBoxes]);
 
   const stylePlot = (feature) => ({
     fillColor: LANDUSE_COLORS[feature.properties.landuse] || "#cccccc57",

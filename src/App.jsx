@@ -131,6 +131,8 @@ function MapProvincePage() {
         key={`${decodedCountry}__${decodedProvince}`}
         center={initialMapCenter}
         searchRadiusKm={radiusKm}
+        country={decodedCountry}
+        province={decodedProvince}
 
         // ✅ circles drawn by Leaflet now
         supplyCircleCenters={supplyCircleCenters}
