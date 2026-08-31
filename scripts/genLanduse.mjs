@@ -23,16 +23,21 @@ const DATA = path.join(ROOT, "public", "data");
 const OUT = path.join(DATA, "landuse");
 
 const FORCE = process.argv.includes("--force");
-const PAD_KM = Number((process.argv.find((a) => a.startsWith("--pad=")) || "").split("=")[1]) || 20;
+// Cache farmland within PAD_KM of supply points. The app shows farmland within
+// the radius control (default 2 km) of those points, so a small pad keeps files
+// tiny while covering normal use; larger radii clip to what's cached.
+const PAD_KM = Number((process.argv.find((a) => a.startsWith("--pad=")) || "").split("=")[1]) || 3;
 
 // Mirrors tried in order, per attempt. curl bypasses CORS, so no-CORS mirrors
 // (kumi) are usable here even though the browser cannot use them.
 const MIRRORS = [
+  // openstreetmap.fr (full planet instance) is reachable from this network and
+  // has global data while overpass-api.de is unreachable and the rest 502 — so
+  // it leads. The others stay as fallbacks in case it rate-limits.
+  "https://overpass.openstreetmap.fr/api/interpreter",
   "https://overpass-api.de/api/interpreter",
   "https://overpass.kumi.systems/api/interpreter",
   "https://overpass.private.coffee/api/interpreter",
-  "https://overpass.osm.jp/api/interpreter",
-  "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
 ];
 
 const LANDUSE_TAGS = ["farmland", "plantation", "orchard", "vineyard", "greenhouse_horticulture"];
@@ -129,7 +134,12 @@ console.log(`Provinces with supply points: ${groups.size}  (pad ${PAD_KM} km)`);
 /* ---- Overpass fetch via curl, with mirror failover ---- */
 function curlOverpass(url, query, timeoutS) {
   try {
-    const body = execFileSync("curl", ["-sS", "-m", String(timeoutS), "-H", "User-Agent: Mozilla/5.0",
+    // -k: skip TLS verification. Safe here — this is a one-time local fetch of
+    // PUBLIC OSM data (validated as JSON below), and several mirrors fail only
+    // on Windows/schannel cert checks (expired/untrusted root) while serving
+    // fine. This runs offline in the generator, never in the shipped app.
+    const body = execFileSync("curl", ["-sS", "-k", "-m", String(timeoutS),
+      "-H", "User-Agent: P2GreeN-landuse-cache-generator/1.0",
       "--data-urlencode", "data=" + query, url], { maxBuffer: 1 << 30, encoding: "utf8" });
     if (body && body.trimStart().startsWith("{")) {
       const j = JSON.parse(body);
@@ -147,13 +157,15 @@ function anyMirrorUp() {
 function overpass(query) {
   for (let attempt = 0; attempt < 2; attempt++) {
     for (const url of MIRRORS) {
-      const j = curlOverpass(url, query, 120);
+      const j = curlOverpass(url, query, 300); // big rural regions can be 100+ MB
       if (j) return j;
     }
   }
   return null;
 }
 
+// Synchronous sleep (the loop below is synchronous via execFileSync).
+const sleepSync = (ms) => Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
 const round5 = (n) => Math.round(n * 1e5) / 1e5;
 function roundCoords(g) {
   if (g.type === "Polygon") g.coordinates = g.coordinates.map((r) => r.map(([x, y]) => [round5(x), round5(y)]));
@@ -176,28 +188,31 @@ const limit = Number((process.argv.find((a) => a.startsWith("--limit=")) || "").
 if (limit > 0) slugs = slugs.slice(0, limit);
 let done = 0, skipped = 0, failed = 0;
 
+const latPadDeg = PAD_KM / 111;
+const q = (bb) => `[out:json][timeout:280];\n(\n` +
+  `way["landuse"~"${LANDUSE_TAGS.join("|")}"]${bb};\nrelation["landuse"~"${LANDUSE_TAGS.join("|")}"]${bb};\n` +
+  `way["leisure"~"${GREEN_LEISURE.join("|")}"]${bb};\nrelation["leisure"~"${GREEN_LEISURE.join("|")}"]${bb};\n` +
+  `);\nout geom;`;
+
 for (const slug of slugs) {
   const { country, province, pts } = groups.get(slug);
   const outFile = path.join(OUT, `${slug}.geojson`);
   if (!FORCE && fs.existsSync(outFile)) { skipped++; continue; }
 
-  const lat = pts.reduce((s, p) => s + p[0], 0) / pts.length;
-  const latPad = PAD_KM / 111, lonPad = PAD_KM / (111 * Math.cos((lat * Math.PI) / 180));
-  const S = Math.min(...pts.map((p) => p[0])) - latPad, N = Math.max(...pts.map((p) => p[0])) + latPad;
+  // One bbox query for the whole province. Simplest and lowest total download
+  // (no overlap); for spread-out farming regions this can be large, so the
+  // curl timeout is generous. We keep only polygons within PAD_KM of a point.
+  const lat0 = pts.reduce((s, p) => s + p[0], 0) / pts.length;
+  const lonPad = PAD_KM / (111 * Math.cos((lat0 * Math.PI) / 180));
+  const S = Math.min(...pts.map((p) => p[0])) - latPadDeg, N = Math.max(...pts.map((p) => p[0])) + latPadDeg;
   const W = Math.min(...pts.map((p) => p[1])) - lonPad, E = Math.max(...pts.map((p) => p[1])) + lonPad;
-  const bb = `(${S},${W},${N},${E})`;
-  const query = `[out:json][timeout:180];\n(\n` +
-    `way["landuse"~"${LANDUSE_TAGS.join("|")}"]${bb};\nrelation["landuse"~"${LANDUSE_TAGS.join("|")}"]${bb};\n` +
-    `way["leisure"~"${GREEN_LEISURE.join("|")}"]${bb};\nrelation["leisure"~"${GREEN_LEISURE.join("|")}"]${bb};\n` +
-    `);\nout geom;`;
 
   process.stdout.write(`[${done + skipped + failed + 1}/${slugs.length}] ${slug} (${pts.length} pts) ... `);
-  const json = overpass(query);
+  const json = overpass(q(`(${S},${W},${N},${E})`));
   if (!json) { console.log("FAILED (all mirrors)"); failed++; continue; }
 
-  const gj = osmtogeojson(json);
   const kept = [];
-  for (const f of gj.features || []) {
+  for (const f of osmtogeojson(json).features || []) {
     const g = f.geometry;
     if (!g || (g.type !== "Polygon" && g.type !== "MultiPolygon")) continue;
     const props = f.properties || {};
@@ -207,20 +222,25 @@ for (const slug of slugs) {
       if (GREEN_LEISURE.includes(leisure)) lu = "green_public_spaces";
     }
     if (!lu || (!LANDUSE_TAGS.includes(lu) && lu !== "green_public_spaces")) continue;
-    let c;
-    try { c = turf.centroid(f).geometry.coordinates; } catch { continue; }
-    const [cx, cy] = c;
+
+    // Keep only polygons whose centroid is within PAD_KM of a supply point
+    // (cell bboxes are looser than that), then drop tiny slivers and simplify.
+    let cx, cy;
+    try { [cx, cy] = turf.centroid(f).geometry.coordinates; } catch { continue; }
     if (!Number.isFinite(cx) || !Number.isFinite(cy)) continue;
     let near = false;
     for (const [pa, pb] of pts) {
       if (turf.distance([cx, cy], [pb, pa], { units: "kilometers" }) <= PAD_KM) { near = true; break; }
     }
     if (!near) continue;
-    kept.push({ type: "Feature", properties: { landuse: lu }, geometry: roundCoords(g) });
+    if (!(turf.area(f) > 200)) continue;
+    let simp = f;
+    try { simp = turf.simplify(f, { tolerance: 0.0005, highQuality: false, mutate: false }); } catch { /* keep original */ }
+    kept.push({ type: "Feature", properties: { landuse: lu }, geometry: roundCoords(simp.geometry) });
   }
   fs.writeFileSync(outFile, JSON.stringify({ type: "FeatureCollection", features: kept }));
-  const kb = (fs.statSync(outFile).size / 1024).toFixed(0);
-  console.log(`${kept.length} polys, ${kb} KB`);
+  console.log(`${kept.length} polys, ${(fs.statSync(outFile).size / 1024).toFixed(0)} KB`);
   done++;
+  sleepSync(800); // be gentle on the public instance between provinces
 }
 console.log(`\nDone. generated=${done} skipped=${skipped} failed=${failed}  -> ${path.relative(ROOT, OUT)}`);
