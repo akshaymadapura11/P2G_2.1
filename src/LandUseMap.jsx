@@ -72,14 +72,16 @@ const LANDUSE_COLORS = {
   green_public_spaces: "#c9267dff",
 };
 
-// All mirrors here must send CORS headers, or the browser blocks the response.
-// osm.ch is first: it is healthy + CORS-enabled (Access-Control-Allow-Origin: *)
-// and reachable where overpass-api.de is currently blackholed (TCP timeout) from
-// some networks, so it must not sit at the front and stall the whole fetch.
+// Each mirror MUST satisfy all three: (1) up, (2) send CORS headers or the
+// browser blocks the response, and (3) hold GLOBAL data. Regional mirrors
+// (e.g. overpass.osm.ch = Switzerland only) return 200 with an empty result
+// outside their region, which silently renders no farmland — worse than an
+// error. overpass-api.de is the canonical global+CORS instance the app has
+// always used; the others are global+CORS fallbacks for when it is down.
 const OVERPASS_ENDPOINTS = [
-  "https://overpass.osm.ch/api/interpreter",
-  "https://overpass.private.coffee/api/interpreter",
   "https://overpass-api.de/api/interpreter",
+  "https://overpass.private.coffee/api/interpreter",
+  "https://overpass.osm.jp/api/interpreter",
 ];
 
 const overpassCache = new Map();
