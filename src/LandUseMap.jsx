@@ -11,6 +11,7 @@ import {
   useMap,
 } from "react-leaflet";
 import L from "leaflet";
+import osmtogeojson from "osmtogeojson";
 import { centroid, distance, feature as turfFeature } from "@turf/turf";
 import area from "@turf/area";
 import { landuseSlug } from "./utils/data";
@@ -72,11 +73,79 @@ const LANDUSE_COLORS = {
   green_public_spaces: "#c9267dff",
 };
 
-// Farmland/green polygons are pre-generated per province (scripts/genLanduse.mjs)
-// and served as static GeoJSON from /data/landuse/<slug>.geojson — same-origin,
-// so there is no runtime dependency on a live Overpass mirror (which were
-// unreliable: flapping, CORS-less, or region-limited). Each file is a
-// FeatureCollection of Polygon/MultiPolygon features tagged { landuse }.
+// LIVE Overpass for full-resolution farmland. openstreetmap.fr is a full-planet
+// instance that stays reachable with CORS (Access-Control-Allow-Origin: *) when
+// the others are down. overpass-api.de is a secondary for when it is back up.
+const OVERPASS_ENDPOINTS = [
+  "https://overpass.openstreetmap.fr/api/interpreter",
+  "https://overpass-api.de/api/interpreter",
+];
+const LIVE_TIMEOUT_MS = 30000;   // abort a slow endpoint and fail over / fall back
+const LIVE_CAP_BYTES = 24 * 1024 * 1024; // abort huge responses (big rural regions)
+const overpassCache = new Map(); // query -> Promise<geojson>
+
+// Fetch + parse Overpass JSON, but abort if it exceeds the byte cap or the time
+// limit — so a giant region (which a browser can't parse) fails over to the
+// pre-generated static file instead of freezing the tab.
+async function fetchCapped(endpoint, body, parentSignal) {
+  const ctrl = new AbortController();
+  const onAbort = () => ctrl.abort();
+  if (parentSignal) {
+    if (parentSignal.aborted) ctrl.abort();
+    else parentSignal.addEventListener("abort", onAbort, { once: true });
+  }
+  const timer = setTimeout(() => ctrl.abort(), LIVE_TIMEOUT_MS);
+  try {
+    const resp = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+      body,
+      signal: ctrl.signal,
+    });
+    if (!resp.ok) throw new Error(`Overpass HTTP ${resp.status}`);
+    const reader = resp.body.getReader();
+    const chunks = [];
+    let received = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      received += value.length;
+      if (received > LIVE_CAP_BYTES) { ctrl.abort(); throw new Error("Overpass response too large"); }
+      chunks.push(value);
+    }
+    const buf = new Uint8Array(received);
+    let off = 0;
+    for (const c of chunks) { buf.set(c, off); off += c.length; }
+    return osmtogeojson(JSON.parse(new TextDecoder().decode(buf)));
+  } finally {
+    clearTimeout(timer);
+    parentSignal?.removeEventListener("abort", onAbort);
+  }
+}
+
+function fetchOverpassLive(query, parentSignal) {
+  if (overpassCache.has(query)) return overpassCache.get(query);
+  const p = (async () => {
+    const body = "data=" + encodeURIComponent(query);
+    let lastErr;
+    for (const endpoint of OVERPASS_ENDPOINTS) {
+      try {
+        return await fetchCapped(endpoint, body, parentSignal);
+      } catch (e) {
+        if (parentSignal?.aborted) throw e;
+        lastErr = e;
+      }
+    }
+    throw lastErr || new Error("Overpass unavailable");
+  })();
+  overpassCache.set(query, p);
+  p.catch(() => overpassCache.delete(query));
+  return p;
+}
+
+// Pre-generated per-province static GeoJSON (scripts/genLanduse.mjs), served
+// same-origin from /data/landuse/<slug>.geojson. Used as a reliable FALLBACK
+// when the live Overpass fetch fails, times out, or is too large to parse.
 const landuseFileCache = new Map(); // slug -> Promise<FeatureCollection>
 
 function fetchLanduseFile(slug, abortSignal) {
@@ -343,20 +412,53 @@ export default function LandUseMap({
     const controller = new AbortController();
     abortRef.current = controller;
 
+    // Full-resolution live Overpass query for this province's bbox.
+    const { south, west, north, east } = bbox;
+    const landuseTags = enabled.filter((k) => k !== "green_public_spaces");
+    const wantGreen = enabled.includes("green_public_spaces");
+    const parts = [];
+    if (landuseTags.length) {
+      parts.push(
+        `way["landuse"~"${landuseTags.join("|")}"](${south},${west},${north},${east});`,
+        `relation["landuse"~"${landuseTags.join("|")}"](${south},${west},${north},${east});`
+      );
+    }
+    if (wantGreen) {
+      parts.push(
+        `way["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});`,
+        `relation["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});`
+      );
+    }
+    const query = `[out:json][timeout:30];\n(\n${parts.join("\n")}\n);\nout geom;`;
+
     const run = async () => {
       onLoadingChange(true);
       try {
-        // Pre-generated static polygons for this province (same-origin, no
-        // Overpass at runtime). The centroid/radius filter below still runs
-        // client-side so the radius control stays live.
-        const gj = await fetchLanduseFile(slug, controller.signal);
+        // Prefer live Overpass (full-resolution geometry, fresh data); fall back
+        // to the pre-generated static file if it fails, times out, or is too
+        // large to parse — so farmland always renders.
+        let gj;
+        try {
+          gj = await fetchOverpassLive(query, controller.signal);
+        } catch (e) {
+          if (controller.signal.aborted) return;
+          gj = await fetchLanduseFile(slug, controller.signal);
+        }
         if (controller.signal.aborted) return;
 
         const kept = [];
         let totalA = 0;
 
         for (const f of gj.features || []) {
-          const lu = f.properties?.landuse;
+          // Static files tag properties.landuse directly; live osmtogeojson
+          // output carries raw OSM tags (incl. leisure for green spaces).
+          let lu = f.properties?.landuse ?? f.properties?.tags?.landuse;
+          if (!lu) {
+            const leisure = f.properties?.leisure ?? f.properties?.tags?.leisure;
+            if (["park", "garden", "nature_reserve", "recreation_ground"].includes(leisure)) {
+              lu = "green_public_spaces";
+            }
+          }
           if (!lu || !landuseToggles[lu]) continue;
 
           const g = f.geometry;
