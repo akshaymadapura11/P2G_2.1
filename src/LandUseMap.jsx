@@ -164,6 +164,81 @@ function fetchLanduseFile(slug, abortSignal) {
   return p;
 }
 
+/* ---- Tiled live fetch: split the province bbox into small tiles so no single
+   Overpass query is huge (Attica whole-bbox = 13 MB). Each tile is fetched via
+   the proxy with limited concurrency, then features are merged + deduped. ---- */
+const TILE_MAX_DEG = 0.4;     // ~44 km per tile side — keeps each query light
+const TILE_CONCURRENCY = 3;   // simultaneous tiles (kind to the mirrors)
+
+function splitBbox({ south, west, north, east }, maxDeg) {
+  const rows = Math.max(1, Math.ceil((north - south) / maxDeg));
+  const cols = Math.max(1, Math.ceil((east - west) / maxDeg));
+  const dLat = (north - south) / rows;
+  const dLon = (east - west) / cols;
+  const tiles = [];
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      tiles.push({
+        south: south + r * dLat,
+        north: r === rows - 1 ? north : south + (r + 1) * dLat,
+        west: west + c * dLon,
+        east: c === cols - 1 ? east : west + (c + 1) * dLon,
+      });
+    }
+  }
+  return tiles;
+}
+
+function buildOverpassQuery({ south, west, north, east }, enabled) {
+  const landuseTags = enabled.filter((k) => k !== "green_public_spaces");
+  const wantGreen = enabled.includes("green_public_spaces");
+  const parts = [];
+  if (landuseTags.length) {
+    parts.push(
+      `way["landuse"~"${landuseTags.join("|")}"](${south},${west},${north},${east});`,
+      `relation["landuse"~"${landuseTags.join("|")}"](${south},${west},${north},${east});`
+    );
+  }
+  if (wantGreen) {
+    parts.push(
+      `way["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});`,
+      `relation["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});`
+    );
+  }
+  return `[out:json][timeout:30];\n(\n${parts.join("\n")}\n);\nout geom;`;
+}
+
+// Resolves with merged features (throws only if EVERY tile fails, so the caller
+// can fall back to the static file; partial tile failures keep what loaded).
+async function fetchOverpassTiled(bbox, enabled, signal, onProgress) {
+  const tiles = splitBbox(bbox, TILE_MAX_DEG);
+  const byId = new Map();
+  let done = 0, ok = 0;
+  let next = 0;
+  const worker = async () => {
+    while (next < tiles.length) {
+      const tile = tiles[next++];
+      if (signal?.aborted) return;
+      try {
+        const gj = await fetchOverpassLive(buildOverpassQuery(tile, enabled), signal);
+        for (const f of gj.features || []) {
+          const id = f.id ?? f.properties?.id ??
+            `${f.geometry?.type}:${JSON.stringify(f.geometry?.coordinates?.[0]?.[0])}`;
+          if (!byId.has(id)) byId.set(id, f);
+        }
+        ok++;
+      } catch {
+        if (signal?.aborted) return; // otherwise: skip this tile, keep the rest
+      }
+      onProgress?.(++done, tiles.length);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(TILE_CONCURRENCY, tiles.length) }, worker));
+  if (signal?.aborted) throw new DOMException("aborted", "AbortError");
+  if (ok === 0) throw new Error("all Overpass tiles failed");
+  return { type: "FeatureCollection", features: [...byId.values()] };
+}
+
 /* ✅ Recenter helper */
 function RecenterOnChange({ targetCenter, zoom = 12 }) {
   const map = useMap();
@@ -413,34 +488,16 @@ export default function LandUseMap({
     const controller = new AbortController();
     abortRef.current = controller;
 
-    // Full-resolution live Overpass query for this province's bbox.
-    const { south, west, north, east } = bbox;
-    const landuseTags = enabled.filter((k) => k !== "green_public_spaces");
-    const wantGreen = enabled.includes("green_public_spaces");
-    const parts = [];
-    if (landuseTags.length) {
-      parts.push(
-        `way["landuse"~"${landuseTags.join("|")}"](${south},${west},${north},${east});`,
-        `relation["landuse"~"${landuseTags.join("|")}"](${south},${west},${north},${east});`
-      );
-    }
-    if (wantGreen) {
-      parts.push(
-        `way["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});`,
-        `relation["leisure"~"park|garden|nature_reserve|recreation_ground"](${south},${west},${north},${east});`
-      );
-    }
-    const query = `[out:json][timeout:30];\n(\n${parts.join("\n")}\n);\nout geom;`;
-
     const run = async () => {
       onLoadingChange(true);
       try {
-        // Live Overpass via the same-origin proxy (full-resolution, fresh); fall
-        // back to the pre-generated static file if the proxy/mirrors fail, time
-        // out, or return too much to parse — so farmland always renders.
+        // Live Overpass via the same-origin proxy, fetched as several small
+        // tiles (full-resolution, fresh, no single huge query). Fall back to the
+        // pre-generated static file only if EVERY tile fails — so farmland
+        // always renders.
         let gj;
         try {
-          gj = await fetchOverpassLive(query, controller.signal);
+          gj = await fetchOverpassTiled(bbox, enabled, controller.signal);
         } catch (e) {
           if (controller.signal.aborted) return;
           gj = await fetchLanduseFile(slug, controller.signal);
