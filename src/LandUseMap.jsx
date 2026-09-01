@@ -81,8 +81,8 @@ const LANDUSE_COLORS = {
 const OVERPASS_ENDPOINTS = [
   "/api/overpass",
 ];
-const LIVE_TIMEOUT_MS = 30000;   // abort a slow endpoint and fail over / fall back
-const LIVE_CAP_BYTES = 24 * 1024 * 1024; // abort huge responses (big rural regions)
+const LIVE_TIMEOUT_MS = 45000;   // abort a slow endpoint and fail over / fall back
+const LIVE_CAP_BYTES = 40 * 1024 * 1024; // abort huge responses (very big rural regions)
 const overpassCache = new Map(); // query -> Promise<geojson>
 
 // Fetch + parse Overpass JSON, but abort if it exceeds the byte cap or the time

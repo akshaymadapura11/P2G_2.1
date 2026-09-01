@@ -11,11 +11,13 @@
   status = 200
 
 # Server-side Overpass proxy so the browser never talks to Overpass directly
-# (avoids CORS / ERR_FAILED against public mirrors). Must precede the SPA catch-all.
-[[redirects]]
-  from = "/api/overpass"
-  to = "/.netlify/functions/overpass"
-  status = 200
+# (avoids CORS / ERR_FAILED against public mirrors). An EDGE function so it can
+# STREAM responses larger than the ~6 MB regular-function cap (province queries
+# are 10-15 MB+). Edge functions run before redirects, so /api/overpass is
+# handled here and never hits the SPA catch-all.
+[[edge_functions]]
+  path = "/api/overpass"
+  function = "overpass"
 
 # SPA fallback so react-router routes work on refresh / deep links.
 [[redirects]]
