@@ -73,12 +73,13 @@ const LANDUSE_COLORS = {
   green_public_spaces: "#c9267dff",
 };
 
-// LIVE Overpass for full-resolution farmland. openstreetmap.fr is a full-planet
-// instance that stays reachable with CORS (Access-Control-Allow-Origin: *) when
-// the others are down. overpass-api.de is a secondary for when it is back up.
+// LIVE Overpass for full-resolution farmland, via our own same-origin proxy
+// (/api/overpass -> netlify/functions/overpass.mjs). Going through the proxy
+// removes CORS entirely (the browser only talks to our domain) and lets the
+// server retry across mirrors — direct browser calls to public Overpass mirrors
+// failed with "No Access-Control-Allow-Origin" / ERR_FAILED.
 const OVERPASS_ENDPOINTS = [
-  "https://overpass.openstreetmap.fr/api/interpreter",
-  "https://overpass-api.de/api/interpreter",
+  "/api/overpass",
 ];
 const LIVE_TIMEOUT_MS = 30000;   // abort a slow endpoint and fail over / fall back
 const LIVE_CAP_BYTES = 24 * 1024 * 1024; // abort huge responses (big rural regions)
@@ -434,19 +435,17 @@ export default function LandUseMap({
     const run = async () => {
       onLoadingChange(true);
       try {
-        // TEMP: static fallback disabled to force the live openstreetmap.fr path
-        // so we can confirm live works (and see any error in the console).
-        // Re-enable the try/catch below to restore the static fallback.
-        const gj = await fetchOverpassLive(query, controller.signal);
-        // let gj;
-        // try {
-        //   gj = await fetchOverpassLive(query, controller.signal);
-        // } catch (e) {
-        //   if (controller.signal.aborted) return;
-        //   gj = await fetchLanduseFile(slug, controller.signal);
-        // }
+        // Live Overpass via the same-origin proxy (full-resolution, fresh); fall
+        // back to the pre-generated static file if the proxy/mirrors fail, time
+        // out, or return too much to parse — so farmland always renders.
+        let gj;
+        try {
+          gj = await fetchOverpassLive(query, controller.signal);
+        } catch (e) {
+          if (controller.signal.aborted) return;
+          gj = await fetchLanduseFile(slug, controller.signal);
+        }
         if (controller.signal.aborted) return;
-        console.info(`landuse: live Overpass returned ${gj.features?.length ?? 0} features`);
 
         const kept = [];
         let totalA = 0;

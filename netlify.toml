@@ -10,6 +10,13 @@
   to = "/.netlify/functions/uploads"
   status = 200
 
+# Server-side Overpass proxy so the browser never talks to Overpass directly
+# (avoids CORS / ERR_FAILED against public mirrors). Must precede the SPA catch-all.
+[[redirects]]
+  from = "/api/overpass"
+  to = "/.netlify/functions/overpass"
+  status = 200
+
 # SPA fallback so react-router routes work on refresh / deep links.
 [[redirects]]
   from = "/*"
