@@ -29,21 +29,25 @@ export default async (req) => {
     status: 400, headers: { "content-type": "application/json" },
   });
 
-  let lastStatus = 502;
+  // A descriptive User-Agent is required by some Overpass instances (they 429 or
+  // block default/library agents). Short per-mirror timeouts so several fit in
+  // Netlify's ~10s function budget.
+  const HEADERS = {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "User-Agent": "P2GreeN/1.0 (agricultural nutrient map; +github.com/akshaymadapura11/P2G_2.1)",
+    "Accept": "application/json",
+  };
+  const tried = [];
   for (const url of MIRRORS) {
+    const host = new URL(url).host;
     try {
       const ctrl = new AbortController();
-      const timer = setTimeout(() => ctrl.abort(), 9000); // stay under Netlify's ~10s
-      const resp = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
-        signal: ctrl.signal,
-      });
+      const timer = setTimeout(() => ctrl.abort(), 4500);
+      const resp = await fetch(url, { method: "POST", headers: HEADERS, body, signal: ctrl.signal });
       clearTimeout(timer);
-      if (!resp.ok) { lastStatus = resp.status; continue; }
+      if (!resp.ok) { tried.push(`${host}:${resp.status}`); continue; }
       const text = await resp.text();
-      if (!text.trimStart().startsWith("{")) continue; // HTML error page — next mirror
+      if (!text.trimStart().startsWith("{")) { tried.push(`${host}:non-json`); continue; }
       return new Response(text, {
         status: 200,
         headers: {
@@ -52,11 +56,11 @@ export default async (req) => {
           "cache-control": "public, max-age=86400",
         },
       });
-    } catch {
-      // timeout / network error — try the next mirror
+    } catch (e) {
+      tried.push(`${host}:${e.name === "AbortError" ? "timeout" : "err"}`);
     }
   }
-  return new Response(JSON.stringify({ error: "overpass unavailable", lastStatus }), {
+  return new Response(JSON.stringify({ error: "overpass unavailable", tried }), {
     status: 502, headers: { "content-type": "application/json" },
   });
 };
