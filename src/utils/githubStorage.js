@@ -61,7 +61,7 @@ async function readError(res, fallback) {
 
 /**
  * Upload (create or overwrite) a CSV via the serverless function.
- * Returns { name, path, overwrote, downloadUrl, htmlUrl }.
+ * Returns { name }.
  */
 export async function uploadCsv(file, passcode = getPasscode()) {
   const name = file.name;
@@ -72,16 +72,5 @@ export async function uploadCsv(file, passcode = getPasscode()) {
     body: JSON.stringify({ name, contentBase64, passcode }),
   });
   if (!res.ok) throw new Error(await readError(res, "Upload failed"));
-  return res.json();
-}
-
-/**
- * List CSV files currently stored in the uploads folder.
- * Returns an array of { name, path, size, downloadUrl, htmlUrl }.
- */
-export async function listUploads(passcode = getPasscode()) {
-  const qs = passcode ? `?passcode=${encodeURIComponent(passcode)}` : "";
-  const res = await fetch(`${API}${qs}`);
-  if (!res.ok) throw new Error(await readError(res, "Failed to list files"));
   return res.json();
 }

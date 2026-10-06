@@ -1,7 +1,7 @@
 // netlify/functions/uploads.mjs — Netlify Function (v2)
 //
 // Holds the GitHub token as a SERVER-SIDE secret (never sent to the browser)
-// and proxies CSV uploads / listing to the repo's uploads/ folder.
+// and proxies CSV uploads to the repo's uploads/ folder.
 //
 // Set in Netlify → Site settings → Environment variables:
 //   GITHUB_TOKEN   fine-grained PAT for this repo with Contents: Read and write
@@ -9,8 +9,8 @@
 //   GH_OWNER, GH_REPO, GH_BRANCH, GH_FOLDER, UPLOAD_PASSCODE
 //
 // Exposed at /api/uploads via the redirect in netlify.toml.
-//   GET  -> list stored files
 //   POST { name, contentBase64 } -> create / overwrite a CSV
+//   (No listing endpoint — stored files are not exposed to visitors.)
 
 const OWNER = process.env.GH_OWNER || "akshaymadapura11";
 const REPO = process.env.GH_REPO || "P2G_2.1";
@@ -82,25 +82,7 @@ export default async (req) => {
   }
 
   try {
-    if (req.method === "GET") {
-      const r = await fetch(`${contentsUrl(FOLDER)}?ref=${BRANCH}`, { headers: ghHeaders() });
-      if (r.status === 404) return json(200, []); // folder not created yet
-      if (!r.ok) return json(r.status, { error: await ghError(r) });
-      const list = await r.json();
-      if (!Array.isArray(list)) return json(200, []);
-      const files = list
-        .filter((f) => f.type === "file")
-        .map((f) => ({
-          name: f.name,
-          path: f.path,
-          size: f.size,
-          downloadUrl: f.download_url,
-          htmlUrl: f.html_url,
-        }))
-        .sort((a, b) => a.name.localeCompare(b.name));
-      return json(200, files);
-    }
-
+    // No GET/listing: visitors must not be able to see what has been uploaded.
     if (req.method === "POST") {
       const name = sanitizeFilename(body.name);
       const contentBase64 = body.contentBase64;
@@ -137,14 +119,8 @@ export default async (req) => {
         }),
       });
       if (!put.ok) return json(put.status, { error: await ghError(put) });
-      const pj = await put.json();
-      return json(200, {
-        name,
-        path,
-        overwrote: !!sha,
-        downloadUrl: pj?.content?.download_url || "",
-        htmlUrl: pj?.content?.html_url || "",
-      });
+      // Only echo the uploader's own file name — nothing about existing files.
+      return json(200, { name });
     }
 
     return json(405, { error: "Method not allowed" });
